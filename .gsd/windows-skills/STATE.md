@@ -1,8 +1,8 @@
 # State: Windows Skill Installation
 
 ## Position
-- **Phase:** 2 of 4
-- **Status:** Phase 1 complete, ready for Phase 2
+- **Phase:** 4 of 4
+- **Status:** Phase 3 complete, ready for Phase 4 (testing)
 
 ## Decisions
 - **Primary PM:** winget (built into Windows 10+)
@@ -24,8 +24,14 @@ None
   - [x] Task 1.3: SkillInstallSpec updated with winget/choco
   - [x] Task 1.4: buildInstallCommand handles winget/choco
 
+- [x] **Phase 3: Skill Manifest Updates**
+  - [x] Task 3.1: Added winget specs to 5 cross-platform skills
+  - [x] Task 3.2: Marked 6 macOS-only skills with os:["darwin"]
+
 ## Commits
 - d642d54c5 feat: add winget/choco support for Windows skill installation
+- 70d1551a5 feat: add Windows fallback logic for skill installation
+- 04cb78754 feat: add Windows install specs to skills (Phase 3)
 
 ## Notes
 - winget path: `C:\Users\<user>\AppData\Local\Microsoft\WindowsApps\winget.exe`
