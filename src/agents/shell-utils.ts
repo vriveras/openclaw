@@ -2,6 +2,8 @@ import { spawn } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 
+import { shouldUseWindowsNative, buildWindowsShellCommand } from "../infra/windows-exec-shim.js";
+
 function resolvePowerShellPath(): string {
   const systemRoot = process.env.SystemRoot || process.env.WINDIR;
   if (systemRoot) {
@@ -17,9 +19,34 @@ function resolvePowerShellPath(): string {
   return "powershell.exe";
 }
 
+/**
+ * Get shell configuration for command execution.
+ *
+ * When CLAWDBOT_WINDOWS_NATIVE=true on Windows, uses the advanced Windows exec shim
+ * which provides:
+ * - PowerShell Core (pwsh) detection with fallback to Windows PowerShell
+ * - Profile loading for predictable environment
+ * - ExecutionPolicy bypass for scripts
+ *
+ * Otherwise falls back to standard behavior:
+ * - Windows: Basic PowerShell detection via resolvePowerShellPath()
+ * - Unix: User's $SHELL or fallback to sh (with fish → bash conversion)
+ */
 export function getShellConfig(): { shell: string; args: string[] } {
+  // Use advanced Windows shim when feature flag enabled
+  if (shouldUseWindowsNative()) {
+    const result = buildWindowsShellCommand("");
+    // Extract shell and args from the shim result
+    // The shim returns { argv: [shell, ...args, command], shell, shellPath }
+    // We need shell and the args without the final command placeholder
+    return {
+      shell: result.shellPath,
+      args: result.argv.slice(1, -1), // Remove shell path and empty command
+    };
+  }
+
   if (process.platform === "win32") {
-    // Use PowerShell instead of cmd.exe on Windows.
+    // Legacy fallback: Use PowerShell instead of cmd.exe on Windows.
     // Problem: Many Windows system utilities (ipconfig, systeminfo, etc.) write
     // directly to the console via WriteConsole API, bypassing stdout pipes.
     // When Node.js spawns cmd.exe with piped stdio, these utilities produce no output.
