@@ -86,6 +86,46 @@ function findInstallSpec(entry: SkillEntry, installId: string): SkillInstallSpec
   return undefined;
 }
 
+/**
+ * Find a Windows-compatible alternative for a brew install spec.
+ * Looks for winget or choco specs in the same skill's install array.
+ */
+function findWindowsAlternative(entry: SkillEntry): SkillInstallSpec | undefined {
+  const specs = entry.metadata?.install ?? [];
+  // Prefer winget over choco
+  const wingetSpec = specs.find((s) => s.kind === "winget" && s.wingetId);
+  if (wingetSpec) return wingetSpec;
+  const chocoSpec = specs.find((s) => s.kind === "choco" && s.chocoPackage);
+  if (chocoSpec) return chocoSpec;
+  return undefined;
+}
+
+/**
+ * Check if a skill has any Windows-compatible install option.
+ */
+function hasWindowsInstallOption(entry: SkillEntry): boolean {
+  const specs = entry.metadata?.install ?? [];
+  return specs.some(
+    (s) =>
+      s.kind === "winget" ||
+      s.kind === "choco" ||
+      s.kind === "node" ||
+      s.kind === "go" ||
+      s.kind === "download",
+  );
+}
+
+/**
+ * Check if a skill is Windows-incompatible (has brew-only installs).
+ */
+function isWindowsIncompatible(entry: SkillEntry): boolean {
+  const specs = entry.metadata?.install ?? [];
+  if (specs.length === 0) return false;
+  // If all specs are brew-only and we're on Windows, it's incompatible
+  const hasBrewOnly = specs.every((s) => s.kind === "brew");
+  return hasBrewOnly && !hasWindowsInstallOption(entry);
+}
+
 function buildNodeInstallCommand(packageName: string, prefs: SkillsInstallPreferences): string[] {
   switch (prefs.nodeManager) {
     case "pnpm":
@@ -102,16 +142,30 @@ function buildNodeInstallCommand(packageName: string, prefs: SkillsInstallPrefer
 function buildInstallCommand(
   spec: SkillInstallSpec,
   prefs: SkillsInstallPreferences,
+  entry?: SkillEntry,
 ): {
   argv: string[] | null;
   error?: string;
+  skipped?: boolean;
+  skipReason?: string;
 } {
   switch (spec.kind) {
     case "brew": {
       if (!spec.formula) return { argv: null, error: "missing brew formula" };
-      // On Windows, brew is not available
+      // On Windows, brew is not available - try to find alternative
       if (isWindowsPlatform()) {
-        return { argv: null, error: "brew not available on Windows" };
+        if (entry) {
+          const alt = findWindowsAlternative(entry);
+          if (alt) {
+            // Recursively build command for the alternative
+            return buildInstallCommand(alt, prefs, entry);
+          }
+        }
+        return {
+          argv: null,
+          skipped: true,
+          skipReason: "not available on Windows (no winget/choco alternative)",
+        };
       }
       return { argv: ["brew", "install", spec.formula] };
     }
@@ -354,7 +408,19 @@ export async function installSkill(params: SkillInstallRequest): Promise<SkillIn
   }
 
   const prefs = resolveSkillsInstallPreferences(params.config);
-  const command = buildInstallCommand(spec, prefs);
+  const command = buildInstallCommand(spec, prefs, entry);
+
+  // Handle skipped installs (e.g., Windows-incompatible)
+  if (command.skipped) {
+    return {
+      ok: false,
+      message: command.skipReason ?? "install skipped",
+      stdout: "",
+      stderr: "",
+      code: null,
+    };
+  }
+
   if (command.error) {
     return {
       ok: false,
