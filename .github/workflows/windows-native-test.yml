@@ -1,0 +1,49 @@
+name: Windows Native Tests
+
+on:
+  push:
+    branches: [feat/windows-native-exec]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/infra/windows-*.ts'
+      - 'src/infra/node-shell.ts'
+      - 'src/agents/shell-utils.ts'
+  workflow_dispatch:
+
+jobs:
+  test-windows-native:
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+          
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts
+        
+      - name: Run Windows Native Tests
+        env:
+          CLAWDBOT_WINDOWS_NATIVE: 'true'
+        run: |
+          Write-Host "Node version: $(node --version)"
+          Write-Host "Platform: $env:OS"
+          Write-Host "CLAWDBOT_WINDOWS_NATIVE: $env:CLAWDBOT_WINDOWS_NATIVE"
+          pnpm exec vitest run src/infra/windows-paths src/infra/windows-exec-shim src/infra/node-shell src/agents/shell-utils --reporter=verbose
+        shell: pwsh
+        
+      - name: Run Full Test Suite (Windows)
+        env:
+          CLAWDBOT_WINDOWS_NATIVE: 'true'
+        run: pnpm test
+        shell: pwsh
+        continue-on-error: true  # Don't fail on unrelated test issues
