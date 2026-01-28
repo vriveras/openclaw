@@ -2,33 +2,55 @@ import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
 
 import { buildNodeShellCommand } from "./node-shell.js";
 
+// When running with CLAWDBOT_WINDOWS_NATIVE=true, PowerShell is preferred
+const isWindowsNativeMode = process.env.CLAWDBOT_WINDOWS_NATIVE === "true";
+
 describe("buildNodeShellCommand", () => {
   describe("platform detection", () => {
     it("uses cmd.exe for win32", () => {
-      expect(buildNodeShellCommand("echo hi", "win32")).toEqual([
-        "cmd.exe",
-        "/d",
-        "/s",
-        "/c",
-        "echo hi",
-      ]);
+      // When running in Windows native mode, PowerShell is preferred
+      if (isWindowsNativeMode) {
+        const result = buildNodeShellCommand("echo hi", "win32");
+        expect(result[0]).toMatch(/pwsh\.exe$/i);
+        expect(result).toContain("-Command");
+        expect(result).toContain("echo hi");
+      } else {
+        expect(buildNodeShellCommand("echo hi", "win32")).toEqual([
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "echo hi",
+        ]);
+      }
     });
 
     it("uses cmd.exe for windows labels", () => {
-      expect(buildNodeShellCommand("echo hi", "windows")).toEqual([
-        "cmd.exe",
-        "/d",
-        "/s",
-        "/c",
-        "echo hi",
-      ]);
-      expect(buildNodeShellCommand("echo hi", "Windows 11")).toEqual([
-        "cmd.exe",
-        "/d",
-        "/s",
-        "/c",
-        "echo hi",
-      ]);
+      // When running in Windows native mode, PowerShell is preferred
+      if (isWindowsNativeMode) {
+        const result1 = buildNodeShellCommand("echo hi", "windows");
+        expect(result1[0]).toMatch(/pwsh\.exe$/i);
+        expect(result1).toContain("echo hi");
+
+        const result2 = buildNodeShellCommand("echo hi", "Windows 11");
+        expect(result2[0]).toMatch(/pwsh\.exe$/i);
+        expect(result2).toContain("echo hi");
+      } else {
+        expect(buildNodeShellCommand("echo hi", "windows")).toEqual([
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "echo hi",
+        ]);
+        expect(buildNodeShellCommand("echo hi", "Windows 11")).toEqual([
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "echo hi",
+        ]);
+      }
     });
 
     it("uses /bin/sh for linux", () => {
@@ -40,11 +62,25 @@ describe("buildNodeShellCommand", () => {
     });
 
     it("uses /bin/sh when platform is null", () => {
-      expect(buildNodeShellCommand("echo hi", null)).toEqual(["/bin/sh", "-lc", "echo hi"]);
+      // When running on Windows native mode, it detects actual platform
+      if (isWindowsNativeMode && process.platform === "win32") {
+        const result = buildNodeShellCommand("echo hi", null);
+        expect(result[0]).toMatch(/pwsh\.exe$/i);
+        expect(result).toContain("echo hi");
+      } else {
+        expect(buildNodeShellCommand("echo hi", null)).toEqual(["/bin/sh", "-lc", "echo hi"]);
+      }
     });
 
     it("uses /bin/sh when platform is omitted", () => {
-      expect(buildNodeShellCommand("echo hi")).toEqual(["/bin/sh", "-lc", "echo hi"]);
+      // When running on Windows native mode, it detects actual platform
+      if (isWindowsNativeMode && process.platform === "win32") {
+        const result = buildNodeShellCommand("echo hi");
+        expect(result[0]).toMatch(/pwsh\.exe$/i);
+        expect(result).toContain("echo hi");
+      } else {
+        expect(buildNodeShellCommand("echo hi")).toEqual(["/bin/sh", "-lc", "echo hi"]);
+      }
     });
   });
 
