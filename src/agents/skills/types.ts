@@ -2,18 +2,28 @@ import type { Skill } from "@mariozechner/pi-coding-agent";
 
 export type SkillInstallSpec = {
   id?: string;
-  kind: "brew" | "node" | "go" | "uv" | "download";
+  kind: "brew" | "node" | "go" | "uv" | "download" | "winget" | "choco";
   label?: string;
   bins?: string[];
   os?: string[];
+  /** Platforms this install spec applies to. If omitted, applies to all. */
+  platforms?: ("windows" | "macos" | "linux")[];
+  // brew
   formula?: string;
+  // node
   package?: string;
+  // go
   module?: string;
+  // download
   url?: string;
   archive?: string;
   extract?: boolean;
   stripComponents?: number;
   targetDir?: string;
+  // winget (Windows)
+  wingetId?: string;
+  // choco (Windows)
+  chocoPackage?: string;
 };
 
 export type MoltbotSkillMetadata = {

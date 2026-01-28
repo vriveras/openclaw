@@ -6,6 +6,11 @@ import { pipeline } from "node:stream/promises";
 
 import type { MoltbotConfig } from "../config/config.js";
 import { resolveBrewExecutable } from "../infra/brew.js";
+import {
+  buildWingetInstallCommand,
+  buildChocoInstallCommand,
+  isWindowsPlatform,
+} from "../infra/winget.js";
 import { runCommandWithTimeout } from "../process/exec.js";
 import { CONFIG_DIR, ensureDir, resolveUserPath } from "../utils.js";
 import {
@@ -104,7 +109,25 @@ function buildInstallCommand(
   switch (spec.kind) {
     case "brew": {
       if (!spec.formula) return { argv: null, error: "missing brew formula" };
+      // On Windows, brew is not available
+      if (isWindowsPlatform()) {
+        return { argv: null, error: "brew not available on Windows" };
+      }
       return { argv: ["brew", "install", spec.formula] };
+    }
+    case "winget": {
+      if (!spec.wingetId) return { argv: null, error: "missing winget package ID" };
+      if (!isWindowsPlatform()) {
+        return { argv: null, error: "winget only available on Windows" };
+      }
+      return { argv: buildWingetInstallCommand(spec.wingetId) };
+    }
+    case "choco": {
+      if (!spec.chocoPackage) return { argv: null, error: "missing choco package" };
+      if (!isWindowsPlatform()) {
+        return { argv: null, error: "choco only available on Windows" };
+      }
+      return { argv: buildChocoInstallCommand(spec.chocoPackage) };
     }
     case "node": {
       if (!spec.package) return { argv: null, error: "missing node package" };
