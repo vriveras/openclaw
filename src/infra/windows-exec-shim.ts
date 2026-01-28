@@ -17,6 +17,8 @@
 import { existsSync } from "node:fs";
 import { execSync } from "node:child_process";
 
+import { resolvePathForExec, isWslMountPath, wslToWindows } from "./windows-paths.js";
+
 // Feature flag check
 const WINDOWS_NATIVE_ENV = "CLAWDBOT_WINDOWS_NATIVE";
 
@@ -194,14 +196,7 @@ export function buildWindowsShellCommand(command: string): ShellCommand {
     // -Command: Run the command
     // Note: NOT using -NoProfile so user profile loads (predictable environment)
     return {
-      argv: [
-        psInfo.path,
-        "-NoLogo",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-Command",
-        command,
-      ],
+      argv: [psInfo.path, "-NoLogo", "-ExecutionPolicy", "Bypass", "-Command", command],
       shell: psInfo.variant!,
       shellPath: psInfo.path,
     };
@@ -272,14 +267,27 @@ export function buildShellCommand(
  *
  * This matches the signature of the existing buildNodeShellCommand() function.
  */
-export function buildShellCommandArgv(
-  command: string,
-  platform?: string | null,
-): string[] {
+export function buildShellCommandArgv(command: string, platform?: string | null): string[] {
   const result = buildShellCommand(command, {
     platform: platform ?? undefined,
   });
   return result.argv;
+}
+
+/**
+ * Resolve working directory for Windows execution.
+ * Converts WSL paths to Windows paths when needed.
+ */
+export function resolveWindowsWorkdir(cwd?: string): string | undefined {
+  if (!cwd) return undefined;
+
+  // Convert WSL mount paths to Windows paths
+  if (isWslMountPath(cwd)) {
+    const converted = wslToWindows(cwd);
+    if (converted) return converted;
+  }
+
+  return cwd;
 }
 
 /**
