@@ -183,6 +183,15 @@ export type ExecToolConfig = {
   cleanupMs?: number;
   /** Emit a system event and heartbeat when a backgrounded exec exits. */
   notifyOnExit?: boolean;
+  /**
+   * Enable Windows native shell execution (default: false).
+   * When enabled on Windows:
+   * - Uses PowerShell (pwsh or powershell.exe) as primary shell
+   * - Loads user profile for predictable environment
+   * - Falls back to cmd.exe if PowerShell unavailable
+   * Can also be enabled via CLAWDBOT_WINDOWS_NATIVE=true environment variable.
+   */
+  windowsNative?: boolean;
   /** apply_patch subtool configuration (experimental). */
   applyPatch?: {
     /** Enable apply_patch for OpenAI models (default: false). */
