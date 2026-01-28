@@ -23,7 +23,7 @@ describe("windows-paths", () => {
       expect(isWslMountPath("/mnt/d/projects")).toBe(true);
       expect(isWslMountPath("/mnt/z/")).toBe(true);
       expect(isWslMountPath("/mnt/C/Users")).toBe(true); // uppercase
-      expect(isWslMountPath("/mnt/c")).toBe(false); // missing trailing slash or content
+      expect(isWslMountPath("/mnt/c")).toBe(true); // drive root (end of string matches)
     });
 
     it("should return false for non-WSL paths", () => {
@@ -104,7 +104,7 @@ describe("windows-paths", () => {
 
     it("should handle drive root paths", () => {
       expect(wslToWindows("/mnt/c/")).toBe("C:\\");
-      expect(wslToWindows("/mnt/c")).toBe("/mnt/c"); // no trailing slash = not matched
+      expect(wslToWindows("/mnt/c")).toBe("C:\\"); // drive root without trailing slash
     });
 
     it("should preserve non-WSL paths", () => {
