@@ -18,6 +18,7 @@ import { existsSync } from "node:fs";
 import { execSync } from "node:child_process";
 
 import { resolvePathForExec, isWslMountPath, wslToWindows } from "./windows-paths.js";
+import { maybeTranslateCmdToPs } from "./windows-cmd-compat.js";
 
 // Feature flag check
 const WINDOWS_NATIVE_ENV = "CLAWDBOT_WINDOWS_NATIVE";
@@ -185,24 +186,30 @@ export type ShellCommand = {
  *
  * Note: We intentionally load the profile for predictable environment.
  * Use -NoProfile if you need faster startup without user customizations.
+ *
+ * CMD compatibility: When using PowerShell, CMD-style commands are
+ * automatically translated (e.g., `dir /b` → `Get-ChildItem -Name`).
  */
 export function buildWindowsShellCommand(command: string): ShellCommand {
   const psInfo = detectPowerShell();
 
   if (psInfo.available && psInfo.path) {
+    // Translate CMD-style commands to PowerShell equivalents
+    const { translated } = maybeTranslateCmdToPs(command);
+
     // Use PowerShell with profile loading
     // -NoLogo: Skip the PowerShell banner
     // -ExecutionPolicy Bypass: Allow running scripts
     // -Command: Run the command
     // Note: NOT using -NoProfile so user profile loads (predictable environment)
     return {
-      argv: [psInfo.path, "-NoLogo", "-ExecutionPolicy", "Bypass", "-Command", command],
+      argv: [psInfo.path, "-NoLogo", "-ExecutionPolicy", "Bypass", "-Command", translated],
       shell: psInfo.variant!,
       shellPath: psInfo.path,
     };
   }
 
-  // Fallback to cmd.exe
+  // Fallback to cmd.exe (no translation needed)
   return {
     argv: ["cmd.exe", "/d", "/s", "/c", command],
     shell: "cmd",

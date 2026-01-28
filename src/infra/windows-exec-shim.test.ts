@@ -169,6 +169,32 @@ describe("windows-exec-shim", () => {
       // Command should be in the argv somewhere
       expect(result.argv.some((arg) => arg.includes("echo hello"))).toBe(true);
     });
+
+    it("translates CMD-style dir /b to PowerShell Get-ChildItem -Name", () => {
+      const result = buildWindowsShellCommand("dir /b");
+
+      // If PowerShell is available, command should be translated
+      // If cmd.exe fallback, original command is used
+      if (result.shell === "pwsh" || result.shell === "powershell") {
+        expect(result.argv.some((arg) => arg.includes("Get-ChildItem -Name"))).toBe(true);
+      } else {
+        expect(result.argv.some((arg) => arg.includes("dir /b"))).toBe(true);
+      }
+    });
+
+    it("translates CMD-style del /q to PowerShell Remove-Item -Force", () => {
+      const result = buildWindowsShellCommand("del /q file.txt");
+
+      if (result.shell === "pwsh" || result.shell === "powershell") {
+        expect(result.argv.some((arg) => arg.includes("Remove-Item -Force"))).toBe(true);
+      }
+    });
+
+    it("passes through PowerShell commands unchanged", () => {
+      const result = buildWindowsShellCommand("Get-ChildItem -Recurse");
+
+      expect(result.argv.some((arg) => arg.includes("Get-ChildItem -Recurse"))).toBe(true);
+    });
   });
 
   describe("getShellInfo", () => {
