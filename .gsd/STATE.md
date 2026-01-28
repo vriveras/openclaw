@@ -85,6 +85,30 @@ f4ff55734 feat(task-3.1): add Windows path conversion utilities
 - Updated `node-shell.test.ts` to handle `CLAWDBOT_WINDOWS_NATIVE=true` mode
 - Tests now correctly expect PowerShell when running on actual Windows
 
+## Phase 6: CMD→PowerShell Translation ✅
+
+**Completed: 2026-01-28 ~08:37 PST**
+
+Added automatic CMD→PowerShell translation layer:
+- `windows-cmd-compat.ts` with translation rules for common commands
+- Translates CMD switches to PowerShell parameters automatically
+- Integrated into `buildWindowsShellCommand()` when PowerShell is used
+
+### Supported Commands
+| CMD | PowerShell | Example |
+|-----|------------|---------|
+| dir /b | Get-ChildItem -Name | `dir /b` → `Get-ChildItem -Name` |
+| dir /s | Get-ChildItem -Recurse | `dir /s` → `Get-ChildItem -Recurse` |
+| del /q | Remove-Item -Force | `del /q file.txt` → `Remove-Item -Force file.txt` |
+| copy /y | Copy-Item -Force | `copy /y src dst` → `Copy-Item -Force src dst` |
+| type | Get-Content | `type file.txt` → `Get-Content file.txt` |
+| cls | Clear-Host | `cls` → `Clear-Host` |
+| tasklist | Get-Process | `tasklist` → `Get-Process` |
+| taskkill /f | Stop-Process -Force | `taskkill /f /pid 123` → `Stop-Process -Force -Id 123` |
+
+### Commits
+- 4c5681f39 feat: add CMD→PowerShell translation for Windows native exec
+
 ## Next Steps (Future)
 
 - Push to remote branch
