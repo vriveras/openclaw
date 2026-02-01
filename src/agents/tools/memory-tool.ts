@@ -5,6 +5,7 @@ import { getMemorySearchManager } from "../../memory/index.js";
 import { resolveSessionAgentId } from "../agent-scope.js";
 import { resolveMemorySearchConfig } from "../memory-search.js";
 import { jsonResult, readNumberParam, readStringParam } from "./common.js";
+import { createInternalHookEvent, triggerInternalHook } from "../../hooks/internal-hooks.js";
 
 const MemorySearchSchema = Type.Object({
   query: Type.String(),
@@ -57,8 +58,29 @@ export function createMemorySearchTool(options: {
           sessionKey: options.agentSessionKey,
         });
         const status = manager.status();
+        
+        // Dispatch hook event to allow skills to augment results
+        const hookEvent = createInternalHookEvent(
+          "tool",
+          "memory_search:post",
+          options.agentSessionKey ?? "",
+          {
+            query,
+            results,
+            provider: status.provider,
+            model: status.model,
+            cfg,
+            agentId,
+          },
+        );
+        await triggerInternalHook(hookEvent);
+        
+        // Check if hooks added augmented results
+        const augmentedResults = hookEvent.context.augmentedResults as typeof results | undefined;
+        const finalResults = augmentedResults ?? results;
+        
         return jsonResult({
-          results,
+          results: finalResults,
           provider: status.provider,
           model: status.model,
           fallback: status.fallback,
