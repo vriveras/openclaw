@@ -29,15 +29,33 @@ function makePreview(snippet: string, previewChars: number) {
   return s.slice(0, previewChars).trimEnd() + "…";
 }
 
+function looksBinaryOrBase64(preview: string) {
+  const t = (preview || "").trim();
+  // Long, no-spaces, base64-ish lines (QR / inline media artifacts)
+  if (t.length >= 60 && !t.includes(" ") && /^[A-Za-z0-9+/=]+$/.test(t)) {
+    return true;
+  }
+  // Unicode replacement char often indicates binary-ish decoding artifacts
+  if (t.includes("�")) {
+    return true;
+  }
+  return false;
+}
+
 function toRefs(results: MemorySearchResult[], previewChars: number) {
-  return results.map((r) => ({
-    path: r.path,
-    startLine: r.startLine,
-    endLine: r.endLine,
-    score: r.score,
-    source: r.source,
-    preview: makePreview(r.snippet ?? "", previewChars),
-  }));
+  return (
+    results
+      .map((r) => ({
+        path: r.path,
+        startLine: r.startLine,
+        endLine: r.endLine,
+        score: r.score,
+        source: r.source,
+        preview: makePreview(r.snippet ?? "", previewChars),
+      }))
+      // Avoid returning refs that are likely gigantic/binary when expanded.
+      .filter((r) => !looksBinaryOrBase64(r.preview))
+  );
 }
 
 export function createMemorySearchRefsTool(options: {

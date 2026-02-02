@@ -19,6 +19,7 @@ const MemoryExpandSchema = Type.Object({
   ),
   defaultLines: Type.Optional(Type.Number()),
   maxRefs: Type.Optional(Type.Number()),
+  maxChars: Type.Optional(Type.Number()),
 });
 
 type Ref = {
@@ -64,6 +65,8 @@ export function createMemoryExpandTool(options: {
     execute: async (_toolCallId, params) => {
       const defaultLines = readNumberParam(params, "defaultLines", { integer: true }) ?? 60;
       const maxRefs = readNumberParam(params, "maxRefs", { integer: true }) ?? 2;
+      // Hard safety cap: a single line can be enormous (e.g. base64 blobs). Cap per-ref output.
+      const maxChars = readNumberParam(params, "maxChars", { integer: true }) ?? 8000;
 
       const refs = (params as any)?.refs as Ref[] | undefined;
       if (!Array.isArray(refs) || refs.length === 0) {
@@ -86,7 +89,9 @@ export function createMemoryExpandTool(options: {
             from: nr.from,
             lines: nr.lines,
           });
-          expanded.push({ path: nr.path, from: nr.from, lines: nr.lines, text: out.text });
+          const text =
+            out.text.length > maxChars ? out.text.slice(0, maxChars) + "\n…TRUNCATED…" : out.text;
+          expanded.push({ path: nr.path, from: nr.from, lines: nr.lines, text });
         }
 
         const hookEvent = createInternalHookEvent(
@@ -106,7 +111,7 @@ export function createMemoryExpandTool(options: {
 
         return jsonResult({
           results: augmented ?? expanded,
-          budget: { maxRefs, defaultLines },
+          budget: { maxRefs, defaultLines, maxChars },
         });
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
