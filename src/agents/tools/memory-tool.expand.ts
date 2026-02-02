@@ -45,7 +45,9 @@ export function createMemoryExpandTool(options: {
   agentSessionKey?: string;
 }): AnyAgentTool | null {
   const cfg = options.config;
-  if (!cfg) return null;
+  if (!cfg) {
+    return null;
+  }
 
   const agentId = resolveSessionAgentId({
     sessionKey: options.agentSessionKey,
@@ -68,7 +70,7 @@ export function createMemoryExpandTool(options: {
       // Hard safety cap: a single line can be enormous (e.g. base64 blobs). Cap per-ref output.
       const maxChars = readNumberParam(params, "maxChars", { integer: true }) ?? 8000;
 
-      const refs = (params as any)?.refs as Ref[] | undefined;
+      const refs = params?.refs as Ref[] | undefined;
       if (!Array.isArray(refs) || refs.length === 0) {
         return jsonResult({ results: [], error: "refs must be a non-empty array" });
       }

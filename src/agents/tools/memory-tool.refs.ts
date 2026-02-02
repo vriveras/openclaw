@@ -51,7 +51,9 @@ type MemorySearchResult = {
 
 function makePreview(snippet: string, previewChars: number) {
   const s = snippet.replace(/\s+/g, " ").trim();
-  if (s.length <= previewChars) return s;
+  if (s.length <= previewChars) {
+    return s;
+  }
   return s.slice(0, previewChars).trimEnd() + "…";
 }
 
@@ -134,7 +136,9 @@ export function createMemorySearchRefsTool(options: {
   agentSessionKey?: string;
 }): AnyAgentTool | null {
   const cfg = options.config;
-  if (!cfg) return null;
+  if (!cfg) {
+    return null;
+  }
 
   const agentId = resolveSessionAgentId({
     sessionKey: options.agentSessionKey,
@@ -167,12 +171,10 @@ export function createMemorySearchRefsTool(options: {
         const msCfg = resolveMemorySearchConfig(cfg, agentId);
 
         const cfgRecursive = msCfg?.query?.recursiveRefs;
-        const paramRecursive = ((params as any)?.recursive ?? undefined) as
-          | RecursiveRefsConfig
-          | undefined;
+        const paramRecursive = (params?.recursive ?? undefined) as RecursiveRefsConfig | undefined;
         const mergedRecursive = normalizeRecursiveCfg({
-          ...(cfgRecursive ?? {}),
-          ...(paramRecursive ?? {}),
+          ...cfgRecursive,
+          ...paramRecursive,
         });
 
         // Fast path: non-recursive refs-first.
@@ -271,7 +273,7 @@ export function createMemorySearchRefsTool(options: {
           for (const r of augmented) {
             const k = keyOf(r);
             if (!allRefs.has(k)) {
-              allRefs.set(k, { ...r, hop } as any);
+              allRefs.set(k, { ...(r as object), hop } as typeof r & { hop: number });
               newCount += 1;
             }
           }
@@ -289,7 +291,7 @@ export function createMemorySearchRefsTool(options: {
           // Expand topK refs from this hop to derive a follow-up query.
           const top = augmented
             .slice()
-            .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+            .toSorted((a, b) => (b.score ?? 0) - (a.score ?? 0))
             .slice(0, mergedRecursive.expandTopK);
 
           const expandedTexts: string[] = [];
@@ -335,7 +337,7 @@ export function createMemorySearchRefsTool(options: {
           currentQuery = `${query} ${derived}`;
         }
 
-        const finalRefs = Array.from(allRefs.values()).sort(
+        const finalRefs = Array.from(allRefs.values()).toSorted(
           (a, b) => (b.score ?? 0) - (a.score ?? 0),
         );
 

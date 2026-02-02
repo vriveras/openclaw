@@ -58,12 +58,12 @@ const refreshOnTranscriptUpdate: InternalHookHandler = async (event) => {
 
   // debounce per agent
   if (pending.has(agentId)) {
-    clearTimeout(pending.get(agentId)!);
+    clearTimeout(pending.get(agentId));
   }
 
   const timer = setTimeout(async () => {
     try {
-      const cfg = await loadConfig();
+      const cfg = loadConfig();
       const workspaceDir = resolveAgentWorkspaceDir(cfg, agentId);
       await refreshIndex(agentId, workspaceDir);
       lastRun.set(agentId, Date.now());

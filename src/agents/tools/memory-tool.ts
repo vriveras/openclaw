@@ -13,7 +13,7 @@ const MemorySearchSchema = Type.Object({
   minScore: Type.Optional(Type.Number()),
 });
 
-const MemorySearchRefsSchema = Type.Object({
+const _MemorySearchRefsSchema = Type.Object({
   query: Type.String(),
   maxResults: Type.Optional(Type.Number()),
   minScore: Type.Optional(Type.Number()),
@@ -26,7 +26,7 @@ const MemoryGetSchema = Type.Object({
   lines: Type.Optional(Type.Number()),
 });
 
-const MemoryExpandSchema = Type.Object({
+const _MemoryExpandSchema = Type.Object({
   refs: Type.Array(
     Type.Object({
       path: Type.String(),
@@ -55,7 +55,7 @@ type MemorySearchResult = {
   source?: string;
 };
 
-function toRefs(results: MemorySearchResult[], previewChars: number) {
+function _toRefs(results: MemorySearchResult[], previewChars: number) {
   return results.map((r) => ({
     path: r.path,
     startLine: r.startLine,
@@ -123,7 +123,7 @@ export function createMemorySearchTool(options: {
         await triggerInternalHook(hookEvent);
 
         // Check if hooks added augmented results
-        const augmentedResults = hookEvent.context.augmentedResults as unknown as
+        const augmentedResults = hookEvent.context.augmentedResults as
           | MemorySearchResult[]
           | undefined;
         const finalResults = augmentedResults ?? results;

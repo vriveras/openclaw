@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Local validation harness for the reference-first memory tools.
  *
@@ -37,7 +38,7 @@ type Ref = {
 };
 
 async function main() {
-  const cfg = await loadConfig();
+  const cfg = loadConfig();
   const sessionKey = "agent:main:main";
 
   const search = createMemorySearchTool({ config: cfg, agentSessionKey: sessionKey });

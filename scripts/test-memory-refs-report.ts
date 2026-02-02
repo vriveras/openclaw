@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Generates a JSON report for reference-first memory retrieval.
  *
@@ -61,17 +62,17 @@ function jsonSize(obj: unknown) {
 }
 
 function flattenText(block: any): string {
-  if (!block) return "";
-  if (typeof block === "string") return block;
-  if (Array.isArray(block)) return block.map(flattenText).join("\n");
+  if (!block) {return "";}
+  if (typeof block === "string") {return block;}
+  if (Array.isArray(block)) {return block.map(flattenText).join("\n");}
   if (typeof block === "object") {
-    if (Array.isArray((block as any).content)) {
-      return (block as any).content
+    if (Array.isArray((block).content)) {
+      return (block).content
         .filter((c: any) => c?.type === "text")
         .map((c: any) => String(c.text || ""))
         .join("\n");
     }
-    if (typeof (block as any).text === "string") return (block as any).text;
+    if (typeof (block).text === "string") {return (block).text;}
   }
   return "";
 }
@@ -81,9 +82,9 @@ function normalizeLower(s: string) {
 }
 
 function stats(values: number[]) {
-  const xs = values.filter((v) => Number.isFinite(v)).slice().sort((a, b) => a - b);
+  const xs = values.filter((v) => Number.isFinite(v)).slice().toSorted((a, b) => a - b);
   const n = xs.length;
-  if (n === 0) return { n: 0, mean: 0, median: 0, p95: 0 };
+  if (n === 0) {return { n: 0, mean: 0, median: 0, p95: 0 };}
   const mean = xs.reduce((a, b) => a + b, 0) / n;
   const median = n % 2 ? xs[(n - 1) / 2] : (xs[n / 2 - 1] + xs[n / 2]) / 2;
   const p95 = xs[Math.min(n - 1, Math.ceil(0.95 * n) - 1)];
@@ -94,7 +95,7 @@ function parseArgs(argv: string[]) {
   const set = new Set(argv);
   const valueOf = (flag: string) => {
     const i = argv.indexOf(flag);
-    if (i >= 0 && i + 1 < argv.length) return argv[i + 1];
+    if (i >= 0 && i + 1 < argv.length) {return argv[i + 1];}
     return undefined;
   };
   return {
@@ -126,7 +127,7 @@ function defaultRecursive(maxHops = 3): RecursiveCfg {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
 
-  const cfg = await loadConfig();
+  const cfg = loadConfig();
   const sessionKey = "agent:main:main";
 
   const search = createMemorySearchTool({ config: cfg, agentSessionKey: sessionKey });
@@ -222,10 +223,10 @@ async function main() {
       const okRecursive = recursiveOut ? expects.some((e) => recursiveText.toLowerCase().includes(e)) : false;
 
       const ok = okRefs || okExpanded || okBaseline || okRecursive;
-      if (ok) passCount += 1;
-      if (recursiveOut) recPass.push(okRecursive ? 1 : 0);
+      if (ok) {passCount += 1;}
+      if (recursiveOut) {recPass.push(okRecursive ? 1 : 0);}
 
-      const recDetails = (recursiveOut as any)?.details?.recursive ?? null;
+      const recDetails = (recursiveOut)?.details?.recursive ?? null;
 
       suite.cases.push({
         id: tc.id,
@@ -324,7 +325,7 @@ async function main() {
 
   const checkpoint = async () => {
     await fs.writeFile(outPath, JSON.stringify(report, null, 2));
-    if (!args.quiet) console.log(`checkpoint: ${outPath}`);
+    if (!args.quiet) {console.log(`checkpoint: ${outPath}`);}
   };
 
   // Always run the default suite (non-recursive refs-first with expand)
@@ -387,9 +388,9 @@ async function main() {
             break;
           }
         }
-        if (args.maxConfigs && configsRun >= args.maxConfigs) break;
+        if (args.maxConfigs && configsRun >= args.maxConfigs) {break;}
       }
-      if (args.maxConfigs && configsRun >= args.maxConfigs) break;
+      if (args.maxConfigs && configsRun >= args.maxConfigs) {break;}
     }
 
     // Select best: maximize pass rate, then minimize mean tokens for recursiveRefs, then minimize p95 latency.
@@ -405,7 +406,7 @@ async function main() {
     const bestPass = Math.max(...withRec.map((c) => c.passRate));
     const bestCandidates = withRec.filter((c) => c.passRate === bestPass);
     bestCandidates.sort((a, b) => {
-      if (a.recTokensMean !== b.recTokensMean) return a.recTokensMean - b.recTokensMean;
+      if (a.recTokensMean !== b.recTokensMean) {return a.recTokensMean - b.recTokensMean;}
       return a.recLatencyP95 - b.recLatencyP95;
     });
 
