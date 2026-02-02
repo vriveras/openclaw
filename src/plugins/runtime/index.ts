@@ -1,7 +1,9 @@
 import { createRequire } from "node:module";
 import type { PluginRuntime } from "./types.js";
 import { resolveEffectiveMessagesConfig, resolveHumanDelayConfig } from "../../agents/identity.js";
+import { createMemoryExpandTool } from "../../agents/tools/memory-tool.expand.js";
 import { createMemoryGetTool, createMemorySearchTool } from "../../agents/tools/memory-tool.js";
+import { createMemorySearchRefsTool } from "../../agents/tools/memory-tool.refs.js";
 import { handleSlackAction } from "../../agents/tools/slack-actions.js";
 import { handleWhatsAppAction } from "../../agents/tools/whatsapp-actions.js";
 import {
@@ -188,6 +190,8 @@ export function createPluginRuntime(): PluginRuntime {
     tools: {
       createMemoryGetTool,
       createMemorySearchTool,
+      createMemorySearchRefsTool,
+      createMemoryExpandTool,
       registerMemoryCli,
     },
     channel: {

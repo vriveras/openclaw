@@ -7,7 +7,7 @@ metadata:
     "openclaw":
       {
         "emoji": "🔍",
-        "events": ["tool:memory_search:post"],
+        "events": ["tool:memory_search:post", "tool:memory_search_refs:post"],
         "requires": { "config": ["workspace.dir"] },
         "install": [{ "id": "bundled", "kind": "bundled", "label": "Bundled with OpenClaw" }],
       },

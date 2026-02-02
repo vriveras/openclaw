@@ -1,11 +1,11 @@
 import { Type } from "@sinclair/typebox";
 import type { OpenClawConfig } from "../../config/config.js";
 import type { AnyAgentTool } from "./common.js";
+import { createInternalHookEvent, triggerInternalHook } from "../../hooks/internal-hooks.js";
 import { getMemorySearchManager } from "../../memory/index.js";
 import { resolveSessionAgentId } from "../agent-scope.js";
 import { resolveMemorySearchConfig } from "../memory-search.js";
 import { jsonResult, readNumberParam, readStringParam } from "./common.js";
-import { createInternalHookEvent, triggerInternalHook } from "../../hooks/internal-hooks.js";
 
 const MemorySearchSchema = Type.Object({
   query: Type.String(),
@@ -13,11 +13,58 @@ const MemorySearchSchema = Type.Object({
   minScore: Type.Optional(Type.Number()),
 });
 
+const MemorySearchRefsSchema = Type.Object({
+  query: Type.String(),
+  maxResults: Type.Optional(Type.Number()),
+  minScore: Type.Optional(Type.Number()),
+  previewChars: Type.Optional(Type.Number()),
+});
+
 const MemoryGetSchema = Type.Object({
   path: Type.String(),
   from: Type.Optional(Type.Number()),
   lines: Type.Optional(Type.Number()),
 });
+
+const MemoryExpandSchema = Type.Object({
+  refs: Type.Array(
+    Type.Object({
+      path: Type.String(),
+      from: Type.Optional(Type.Number()),
+      lines: Type.Optional(Type.Number()),
+    }),
+  ),
+  defaultLines: Type.Optional(Type.Number()),
+  maxRefs: Type.Optional(Type.Number()),
+});
+
+function makePreview(snippet: string, previewChars: number) {
+  const s = snippet.replace(/\s+/g, " ").trim();
+  if (s.length <= previewChars) {
+    return s;
+  }
+  return s.slice(0, previewChars).trimEnd() + "…";
+}
+
+type MemorySearchResult = {
+  path: string;
+  startLine: number;
+  endLine: number;
+  score: number;
+  snippet: string;
+  source?: string;
+};
+
+function toRefs(results: MemorySearchResult[], previewChars: number) {
+  return results.map((r) => ({
+    path: r.path,
+    startLine: r.startLine,
+    endLine: r.endLine,
+    score: r.score,
+    source: r.source,
+    preview: makePreview(r.snippet ?? "", previewChars),
+  }));
+}
 
 export function createMemorySearchTool(options: {
   config?: OpenClawConfig;
@@ -52,13 +99,13 @@ export function createMemorySearchTool(options: {
         return jsonResult({ results: [], disabled: true, error });
       }
       try {
-        const results = await manager.search(query, {
+        const results = (await manager.search(query, {
           maxResults,
           minScore,
           sessionKey: options.agentSessionKey,
-        });
+        })) as unknown as MemorySearchResult[];
         const status = manager.status();
-        
+
         // Dispatch hook event to allow skills to augment results
         const hookEvent = createInternalHookEvent(
           "tool",
@@ -74,11 +121,13 @@ export function createMemorySearchTool(options: {
           },
         );
         await triggerInternalHook(hookEvent);
-        
+
         // Check if hooks added augmented results
-        const augmentedResults = hookEvent.context.augmentedResults as typeof results | undefined;
+        const augmentedResults = hookEvent.context.augmentedResults as unknown as
+          | MemorySearchResult[]
+          | undefined;
         const finalResults = augmentedResults ?? results;
-        
+
         return jsonResult({
           results: finalResults,
           provider: status.provider,

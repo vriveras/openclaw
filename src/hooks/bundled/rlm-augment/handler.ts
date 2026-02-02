@@ -103,24 +103,94 @@ function mergeResults(
   return merged;
 }
 
+function makePreview(snippet: string, previewChars: number) {
+  const s = snippet.replace(/\s+/g, " ").trim();
+  if (s.length <= previewChars) {
+    return s;
+  }
+  return s.slice(0, previewChars).trimEnd() + "…";
+}
+
+function mergeRefs(
+  semanticRefs: Array<{
+    path: string;
+    startLine: number;
+    endLine: number;
+    score: number;
+    preview: string;
+    source?: string;
+  }>,
+  rlmResults: RLMResult[],
+  previewChars: number,
+) {
+  const merged = [...semanticRefs];
+  const previews = new Set(semanticRefs.map((r) => r.preview.toLowerCase()));
+
+  for (const rlm of rlmResults) {
+    const preview = makePreview(rlm.snippet, previewChars);
+    const previewLower = preview.toLowerCase();
+
+    let isDuplicate = false;
+    for (const existing of previews) {
+      if (
+        previewLower.includes(existing.substring(0, 40)) ||
+        existing.includes(previewLower.substring(0, 40))
+      ) {
+        isDuplicate = true;
+        break;
+      }
+    }
+
+    if (!isDuplicate) {
+      merged.push({
+        path: `memory/transcripts/${rlm.date}.md`,
+        startLine: 0,
+        endLine: 0,
+        score: rlm.score ?? 0.5,
+        preview,
+        source: "sessions" as const,
+      });
+      previews.add(previewLower);
+    }
+  }
+
+  return merged;
+}
+
 /**
  * Hook handler that augments memory_search with RLM retrieval
  */
 const augmentMemorySearch: InternalHookHandler = async (event) => {
-  // Only handle tool:memory_search:post events
-  if (event.type !== "tool" || event.action !== "memory_search:post") {
+  // Handle both snippet-heavy search and reference-first search.
+  if (
+    event.type !== "tool" ||
+    (event.action !== "memory_search:post" && event.action !== "memory_search_refs:post")
+  ) {
     return;
   }
 
   const context = event.context;
   const query = context.query as string;
-  const results = context.results as MemorySearchResult[];
+  const results = context.results as MemorySearchResult[] | undefined;
+  const refs = context.refs as
+    | Array<{
+        path: string;
+        startLine: number;
+        endLine: number;
+        score: number;
+        preview: string;
+        source?: string;
+      }>
+    | undefined;
   const cfg = context.cfg as OpenClawConfig | undefined;
   const agentId = context.agentId as string | undefined;
 
   if (!query || !cfg || !agentId) {
     return;
   }
+
+  const isRefsMode = event.action === "memory_search_refs:post";
+  const previewChars = 140;
 
   try {
     const workspaceDir = resolveAgentWorkspaceDir(cfg, agentId);
@@ -145,11 +215,15 @@ const augmentMemorySearch: InternalHookHandler = async (event) => {
     // Parse RLM results
     const rlmResults = parseRLMOutput(stdout);
 
-    // Merge with semantic results
-    const augmentedResults = mergeResults(results, rlmResults);
-
-    // Store augmented results back in context for the tool to use
-    context.augmentedResults = augmentedResults;
+    if (isRefsMode) {
+      const semanticRefs = refs ?? [];
+      const augmentedRefs = mergeRefs(semanticRefs, rlmResults, previewChars);
+      context.augmentedRefs = augmentedRefs;
+    } else {
+      const semanticResults = results ?? [];
+      const augmentedResults = mergeResults(semanticResults, rlmResults);
+      context.augmentedResults = augmentedResults;
+    }
   } catch (err) {
     // Silent failure - if RLM augmentation fails, we still have semantic results
     console.error("[rlm-augment] Hook failed:", err);
