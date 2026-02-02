@@ -91,9 +91,18 @@ function stats(values: number[]) {
 
 function parseArgs(argv: string[]) {
   const set = new Set(argv);
+  const valueOf = (flag: string) => {
+    const i = argv.indexOf(flag);
+    if (i >= 0 && i + 1 < argv.length) return argv[i + 1];
+    return undefined;
+  };
   return {
     recursive: set.has("--recursive"),
     sweep: set.has("--sweep"),
+    quiet: set.has("--quiet"),
+    out: valueOf("--out"),
+    resume: valueOf("--resume"),
+    maxConfigs: valueOf("--max-configs") ? Number(valueOf("--max-configs")) : undefined,
   };
 }
 
@@ -143,7 +152,9 @@ async function main() {
 
     for (const tc of gt.cases) {
       const query = tc.query;
-      console.log(`\n[${label}] [case] ${tc.id}: ${query}`);
+      if (!args.quiet) {
+        console.log(`\n[${label}] [case] ${tc.id}: ${query}`);
+      }
 
       const t0 = performance.now();
 
@@ -293,19 +304,37 @@ async function main() {
     return suite;
   };
 
-  const report: any = {
-    generatedAt: new Date().toISOString(),
-    groundTruth: { description: gt.description, version: gt.version },
-    defaults: gt.defaults,
-    suites: [],
-    sweep: null,
+  const outPath =
+    args.out ??
+    args.resume ??
+    path.join(outDir, `memory-refs-report-sweep-${Date.now()}.json`);
+
+  const report: any = args.resume
+    ? JSON.parse(await fs.readFile(args.resume, "utf8"))
+    : {
+        generatedAt: new Date().toISOString(),
+        groundTruth: { description: gt.description, version: gt.version },
+        defaults: gt.defaults,
+        suites: [],
+        sweep: null,
+      };
+
+  const checkpoint = async () => {
+    await fs.writeFile(outPath, JSON.stringify(report, null, 2));
+    if (!args.quiet) console.log(`checkpoint: ${outPath}`);
   };
 
   // Always run the default suite (non-recursive refs-first with expand)
-  report.suites.push(await runSuite("default"));
+  if (!report.suites.some((s: any) => s.label === "default")) {
+    report.suites.push(await runSuite("default"));
+    await checkpoint();
+  }
 
   if (args.recursive && !args.sweep) {
-    report.suites.push(await runSuite("recursive", defaultRecursive(3)));
+    if (!report.suites.some((s: any) => s.label === "recursive")) {
+      report.suites.push(await runSuite("recursive", defaultRecursive(3)));
+      await checkpoint();
+    }
   }
 
   if (args.sweep) {
@@ -316,9 +345,15 @@ async function main() {
 
     const candidates: Array<{ cfg: RecursiveCfg; summary: any }> = [];
 
+    let configsRun = 0;
     for (const k of expandTopKs) {
       for (const lines of defaultLines) {
         for (const totalChars of maxTotalExpandedChars) {
+          const label = `sweep[maxHops=${maxHops},k=${k},lines=${lines},totalChars=${totalChars}]`;
+          if (report.suites.some((s: any) => s.label === label)) {
+            continue;
+          }
+
           const rcfg: RecursiveCfg = {
             ...defaultRecursive(maxHops),
             expandTopK: k,
@@ -326,11 +361,19 @@ async function main() {
             maxTotalExpandedChars: totalChars,
           };
 
-          const suite = await runSuite(`sweep[maxHops=${maxHops},k=${k},lines=${lines},totalChars=${totalChars}]`, rcfg);
+          const suite = await runSuite(label, rcfg);
           report.suites.push(suite);
           candidates.push({ cfg: rcfg, summary: suite.summary });
+          configsRun += 1;
+          await checkpoint();
+
+          if (args.maxConfigs && configsRun >= args.maxConfigs) {
+            break;
+          }
         }
+        if (args.maxConfigs && configsRun >= args.maxConfigs) break;
       }
+      if (args.maxConfigs && configsRun >= args.maxConfigs) break;
     }
 
     // Select best: maximize pass rate, then minimize mean tokens for recursiveRefs, then minimize p95 latency.
@@ -357,12 +400,13 @@ async function main() {
     };
   }
 
-  const outPath = path.join(outDir, `memory-refs-report-${Date.now()}.json`);
-  await fs.writeFile(outPath, JSON.stringify(report, null, 2));
+  await checkpoint();
 
-  console.log(`\nWrote report: ${outPath}`);
-  if (report.sweep?.best) {
-    console.log(`\nBest recursive config (tokens-first):`, report.sweep.best);
+  if (!args.quiet) {
+    console.log(`\nWrote report: ${outPath}`);
+    if (report.sweep?.best) {
+      console.log(`\nBest recursive config (tokens-first):`, report.sweep.best);
+    }
   }
 }
 
