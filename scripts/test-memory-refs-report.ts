@@ -13,6 +13,7 @@
  *   node --import tsx scripts/test-memory-refs-report.ts
  *   node --import tsx scripts/test-memory-refs-report.ts --recursive
  *   node --import tsx scripts/test-memory-refs-report.ts --sweep
+ *   node --import tsx scripts/test-memory-refs-report.ts --best --best-from memory/metrics/memory-refs-sweep-checkpoint.json
  */
 
 import fs from "node:fs/promises";
@@ -99,9 +100,11 @@ function parseArgs(argv: string[]) {
   return {
     recursive: set.has("--recursive"),
     sweep: set.has("--sweep"),
+    best: set.has("--best"),
     quiet: set.has("--quiet"),
     out: valueOf("--out"),
     resume: valueOf("--resume"),
+    bestFrom: valueOf("--best-from"),
     maxConfigs: valueOf("--max-configs") ? Number(valueOf("--max-configs")) : undefined,
   };
 }
@@ -335,6 +338,19 @@ async function main() {
       report.suites.push(await runSuite("recursive", defaultRecursive(3)));
       await checkpoint();
     }
+  }
+
+  if (args.best) {
+    const bestFrom = args.bestFrom ?? path.join(outDir, "memory-refs-sweep-checkpoint.json");
+    const sweepData = JSON.parse(await fs.readFile(bestFrom, "utf8"));
+    const best = sweepData?.sweep?.best?.cfg;
+    if (!best) {
+      throw new Error(`--best requested but no sweep.best.cfg found in ${bestFrom}`);
+    }
+    report.suites.push(await runSuite("recursive(best)", best as RecursiveCfg));
+    report.bestFrom = bestFrom;
+    report.best = sweepData.sweep.best;
+    await checkpoint();
   }
 
   if (args.sweep) {

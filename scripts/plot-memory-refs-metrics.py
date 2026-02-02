@@ -95,27 +95,69 @@ def main():
 
     report_path = Path(sys.argv[1])
     data = json.loads(report_path.read_text())
-    cases = data["cases"]
 
+    # Support both legacy report shape (top-level cases) and suite-based reports.
+    if "cases" in data:
+        suites = [(data.get("label") or "report", data["cases"])]
+    else:
+        suites = []
+        for s in data.get("suites", []):
+            if isinstance(s, dict) and isinstance(s.get("cases"), list):
+                suites.append((s.get("label", "suite"), s["cases"]))
+
+    if not suites:
+        raise KeyError("No cases found (expected data.cases or data.suites[].cases)")
+
+    out_dir = report_path.parent
+
+    # Pick the default suite for per-case charts (usually the first),
+    # and optionally overlay recursive(best) if present.
+    default_label, default_cases = suites[0]
+    overlay = None
+    for lab, cs in suites:
+        if "recursive" in lab:
+            overlay = (lab, cs)
+            break
+
+    cases = default_cases
     labels = [c["id"] for c in cases]
     baseline = [c["sizes"]["baseline"]["tokens"] for c in cases]
     refs = [c["sizes"]["refs"]["tokens"] for c in cases]
     expand = [c["sizes"]["expanded"]["tokens"] for c in cases]
+
+    recursive = [0 for _ in cases]
+    latency_recursive = [0 for _ in cases]
+    if overlay:
+        _, overlay_cases = overlay
+        by_id = {c["id"]: c for c in overlay_cases}
+        for i, cid in enumerate(labels):
+            oc = by_id.get(cid)
+            if oc:
+                rr = oc.get("sizes", {}).get("recursiveRefs")
+                recursive[i] = rr.get("tokens", 0) if rr else 0
+                latency_recursive[i] = oc.get("latencyMs", {}).get("recursiveRefs", 0) or 0
+
     refs_count = [c["counts"]["refsReturned"] for c in cases]
     expand_count = [c["counts"]["expandedRequested"] for c in cases]
 
-    out_dir = report_path.parent
+    # out_dir set above
+
+    series1 = [
+        ("baseline (memory_search)", baseline),
+        ("refs (memory_search_refs)", refs),
+        ("expand(top2) (memory_expand)", expand),
+    ]
+    colors1 = ["#60a5fa", "#a78bfa", "#34d399"]
+    if any(v > 0 for v in recursive):
+        series1.append(("recursive(best)", recursive))
+        colors1.append("#fbbf24")
 
     out1 = out_dir / (report_path.stem + "-tokens.svg")
     _svg_bar_chart(
-        title="Token Cost: baseline vs refs-first vs expansion",
+        title="Token Cost: baseline vs refs-first vs expansion" + (" vs recursive" if any(v > 0 for v in recursive) else ""),
         labels=labels,
-        series=[
-            ("baseline (memory_search)", baseline),
-            ("refs (memory_search_refs)", refs),
-            ("expand(top2) (memory_expand)", expand),
-        ],
-        colors=["#60a5fa", "#a78bfa", "#34d399"],
+        series=series1,
+        colors=colors1,
         y_label="Approx tokens (chars/4)",
         out_path=out1,
     )
@@ -135,18 +177,28 @@ def main():
     latency_refs = [c.get("latencyMs", {}).get("refs", 0) for c in cases]
     latency_expand = [c.get("latencyMs", {}).get("expand", 0) for c in cases]
     latency_total = [c.get("latencyMs", {}).get("total", 0) for c in cases]
+    latency_recursive = [
+        c.get("latencyMs", {}).get("recursiveRefs", 0) if c.get("latencyMs", {}).get("recursiveRefs") is not None else 0
+        for c in cases
+    ]
+
+    series3 = [
+        ("baseline", latency_baseline),
+        ("refs", latency_refs),
+        ("expand", latency_expand),
+        ("total", latency_total),
+    ]
+    colors3 = ["#60a5fa", "#a78bfa", "#34d399", "#f87171"]
+    if any(v > 0 for v in latency_recursive):
+        series3.append(("recursive", latency_recursive))
+        colors3.append("#fbbf24")
 
     out3 = out_dir / (report_path.stem + "-latency.svg")
     _svg_bar_chart(
-        title="Latency per stage (ms)",
+        title="Latency per stage (ms)" + (" + recursive" if any(v > 0 for v in latency_recursive) else ""),
         labels=labels,
-        series=[
-            ("baseline", latency_baseline),
-            ("refs", latency_refs),
-            ("expand", latency_expand),
-            ("total", latency_total),
-        ],
-        colors=["#60a5fa", "#a78bfa", "#34d399", "#f87171"],
+        series=series3,
+        colors=colors3,
         y_label="Milliseconds",
         out_path=out3,
     )
