@@ -1,8 +1,8 @@
 # State
 
 ## Position
-- **Phase:** 3 ✅ (Baselines + measurement complete)
-- **Status:** Ready for Part 3 blog
+- **Phase:** 4 (Recursive retrieval + quality uplift)
+- **Status:** In progress
 
 ## Latest Results (25-case suite)
 

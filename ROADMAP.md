@@ -19,8 +19,17 @@
 - Expand: top-k expansion token/latency.
 - Aggregate summary (mean/median/p95) and per-case results.
 
-## Phase 4: Final verification + packaging for Part 3
+## Phase 4: Recursive retrieval (bounded) + quality uplift
+**Goal:** Implement the “recursive” / multi-hop retrieval loop (bounded budgets) so refs-first can improve *quality*, not just cost.
+- Add a bounded recursive expansion loop (depth + expand budget + total char budget).
+- Derive follow-up queries from expanded snippets (lightweight heuristic) and re-run search.
+- Merge + de-dupe refs across hops; surface hop metadata in output.
+- Make it configurable and safe-by-default.
+
+## Phase 5: Final verification + packaging for Part 3
 **Goal:** A single “results bundle” + notes ready to paste into blog.
-- Freeze query suite and results artifact.
+- Run the full Part 1 suite as baseline.
+- Run the suite again with recursive retrieval enabled.
+- Freeze results artifacts + charts (before/after).
 - Document how to run locally.
 - Optional: trajectory-style JSONL logging (RLM repo inspired).
