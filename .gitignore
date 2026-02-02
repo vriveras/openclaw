@@ -10,6 +10,9 @@ bun.lockb
 coverage
 .pnpm-store
 .worktrees/
+
+# Local metrics artifacts
+memory/metrics/
 .DS_Store
 **/.DS_Store
 ui/src/ui/__screenshots__/

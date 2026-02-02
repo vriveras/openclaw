@@ -224,11 +224,14 @@ function mergeConfig(
     minScore: overrides?.query?.minScore ?? defaults?.query?.minScore ?? DEFAULT_MIN_SCORE,
   };
 
+  // Defaults promoted from sweep best (tokens-first, passRate=1.0):
+  // maxHops=3, maxRefsPerHop=8, expandTopK=1, defaultLines=40, maxTotalExpandedChars=6000,
+  // maxCharsPerRef=8000, derivedQueryMaxTerms=12, earlyStop=true.
   const recursiveRefs = {
     enabled:
       overrides?.query?.recursiveRefs?.enabled ?? defaults?.query?.recursiveRefs?.enabled ?? false,
     maxHops:
-      overrides?.query?.recursiveRefs?.maxHops ?? defaults?.query?.recursiveRefs?.maxHops ?? 1,
+      overrides?.query?.recursiveRefs?.maxHops ?? defaults?.query?.recursiveRefs?.maxHops ?? 3,
     maxRefsPerHop:
       overrides?.query?.recursiveRefs?.maxRefsPerHop ??
       defaults?.query?.recursiveRefs?.maxRefsPerHop ??
@@ -236,11 +239,11 @@ function mergeConfig(
     expandTopK:
       overrides?.query?.recursiveRefs?.expandTopK ??
       defaults?.query?.recursiveRefs?.expandTopK ??
-      2,
+      1,
     defaultLines:
       overrides?.query?.recursiveRefs?.defaultLines ??
       defaults?.query?.recursiveRefs?.defaultLines ??
-      20,
+      40,
     maxCharsPerRef:
       overrides?.query?.recursiveRefs?.maxCharsPerRef ??
       defaults?.query?.recursiveRefs?.maxCharsPerRef ??
@@ -248,7 +251,7 @@ function mergeConfig(
     maxTotalExpandedChars:
       overrides?.query?.recursiveRefs?.maxTotalExpandedChars ??
       defaults?.query?.recursiveRefs?.maxTotalExpandedChars ??
-      12000,
+      6000,
     derivedQueryMaxTerms:
       overrides?.query?.recursiveRefs?.derivedQueryMaxTerms ??
       defaults?.query?.recursiveRefs?.derivedQueryMaxTerms ??
