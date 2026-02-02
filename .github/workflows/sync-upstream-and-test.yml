@@ -107,24 +107,67 @@ git push --force-with-lease
           pnpm --version
 
       - name: Install dependencies (frozen lockfile)
+        id: deps
         if: steps.check_conflicts.outputs.conflict != 'true'
+        continue-on-error: true
         run: pnpm install --frozen-lockfile
 
       - name: Lint
+        id: lint
         if: steps.check_conflicts.outputs.conflict != 'true'
+        continue-on-error: true
         run: pnpm lint
 
       - name: Build
+        id: build
         if: steps.check_conflicts.outputs.conflict != 'true'
+        continue-on-error: true
         run: pnpm build
 
+      - name: Create sync-failure issue (lint/build/install failed)
+        if: steps.check_conflicts.outputs.conflict != 'true' && (steps.deps.outcome == 'failure' || steps.lint.outcome == 'failure' || steps.build.outcome == 'failure')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '🚨 Upstream sync failed: clean build check failed';
+            const body = `## Build/Lint Failure
+
+Nightly sync completed rebase without conflicts, but the verification steps failed.
+
+**Results:**
+- deps: ${'${{ steps.deps.outcome }}'}
+- lint: ${'${{ steps.lint.outcome }}'}
+- build: ${'${{ steps.build.outcome }}'}
+
+**Branch:** feature/memory-search-hook
+**Detected:** ${new Date().toISOString()}
+
+Check the workflow run logs for details.`;
+
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'sync-failure'
+            });
+
+            if (issues.data.length === 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['sync-failure', 'automated']
+              });
+            }
+
       - name: Push rebased feature branch
-        if: steps.check_conflicts.outputs.conflict != 'true'
+        if: steps.check_conflicts.outputs.conflict != 'true' && (steps.deps.outcome != 'failure' && steps.lint.outcome != 'failure' && steps.build.outcome != 'failure')
         run: |
           git push --force-with-lease origin feature/memory-search-hook
 
       - name: Close resolved sync-failure issues
-        if: steps.check_conflicts.outputs.conflict != 'true'
+        if: steps.check_conflicts.outputs.conflict != 'true' && (steps.deps.outcome != 'failure' && steps.lint.outcome != 'failure' && steps.build.outcome != 'failure')
         uses: actions/github-script@v7
         with:
           script: |
@@ -156,5 +199,7 @@ git push --force-with-lease
         run: |
           echo "✅ main synced to upstream/main"
           echo "✅ feature/memory-search-hook rebased"
-          echo "✅ pnpm lint + pnpm build passed"
+          echo "deps:  ${{ steps.deps.outcome }}"
+          echo "lint:  ${{ steps.lint.outcome }}"
+          echo "build: ${{ steps.build.outcome }}"
           git log --oneline -5
