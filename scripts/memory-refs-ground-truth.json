@@ -1,0 +1,63 @@
+{
+  "description": "Ground-truth queries for validating reference-first memory retrieval (memory_search_refs + memory_expand).",
+  "version": 1,
+  "defaults": {
+    "maxResults": 8,
+    "previewChars": 140,
+    "expand": {
+      "maxRefs": 2,
+      "defaultLines": 20,
+      "maxChars": 4000
+    }
+  },
+  "cases": [
+    {
+      "id": "whatsapp-connected",
+      "query": "WhatsApp gateway connected",
+      "expect": {
+        "anyContains": ["WhatsApp gateway connected", "WhatsApp gateway"],
+        "pathsLike": ["memory/transcripts/"]
+      }
+    },
+    {
+      "id": "rlm-augment-hook",
+      "query": "rlm-augment",
+      "expect": {
+        "anyContains": ["rlm-augment", "memory_search:post", "memory_search_refs:post"],
+        "pathsLike": ["memory/transcripts/"]
+      }
+    },
+    {
+      "id": "token-optimization",
+      "query": "Return references first, lazy-load snippets",
+      "expect": {
+        "anyContains": ["references first", "lazy-load", "RLM"],
+        "pathsLike": ["memory/transcripts/"]
+      }
+    },
+    {
+      "id": "chessrt",
+      "query": "ChessRT Phase 3 RTC engine",
+      "expect": {
+        "anyContains": ["ChessRT", "Phase 3", "RTC"],
+        "pathsLike": ["memory/transcripts/"]
+      }
+    },
+    {
+      "id": "analysis-queue",
+      "query": "queue analysis job",
+      "expect": {
+        "anyContains": ["Queue analysis job", "analysis", "queued"],
+        "pathsLike": ["memory/transcripts/"]
+      }
+    },
+    {
+      "id": "glicko",
+      "query": "Glicko-2",
+      "expect": {
+        "anyContains": ["Glicko", "Glicko-2"],
+        "pathsLike": ["memory/transcripts/"]
+      }
+    }
+  ]
+}
