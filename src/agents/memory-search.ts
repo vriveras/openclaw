@@ -63,6 +63,17 @@ export type ResolvedMemorySearchConfig = {
       textWeight: number;
       candidateMultiplier: number;
     };
+    recursiveRefs: {
+      enabled: boolean;
+      maxHops: number;
+      maxRefsPerHop: number;
+      expandTopK: number;
+      defaultLines: number;
+      maxCharsPerRef: number;
+      maxTotalExpandedChars: number;
+      derivedQueryMaxTerms: number;
+      earlyStop: boolean;
+    };
   };
   cache: {
     enabled: boolean;
@@ -212,6 +223,41 @@ function mergeConfig(
     maxResults: overrides?.query?.maxResults ?? defaults?.query?.maxResults ?? DEFAULT_MAX_RESULTS,
     minScore: overrides?.query?.minScore ?? defaults?.query?.minScore ?? DEFAULT_MIN_SCORE,
   };
+
+  const recursiveRefs = {
+    enabled:
+      overrides?.query?.recursiveRefs?.enabled ?? defaults?.query?.recursiveRefs?.enabled ?? false,
+    maxHops:
+      overrides?.query?.recursiveRefs?.maxHops ?? defaults?.query?.recursiveRefs?.maxHops ?? 1,
+    maxRefsPerHop:
+      overrides?.query?.recursiveRefs?.maxRefsPerHop ??
+      defaults?.query?.recursiveRefs?.maxRefsPerHop ??
+      8,
+    expandTopK:
+      overrides?.query?.recursiveRefs?.expandTopK ??
+      defaults?.query?.recursiveRefs?.expandTopK ??
+      2,
+    defaultLines:
+      overrides?.query?.recursiveRefs?.defaultLines ??
+      defaults?.query?.recursiveRefs?.defaultLines ??
+      20,
+    maxCharsPerRef:
+      overrides?.query?.recursiveRefs?.maxCharsPerRef ??
+      defaults?.query?.recursiveRefs?.maxCharsPerRef ??
+      8000,
+    maxTotalExpandedChars:
+      overrides?.query?.recursiveRefs?.maxTotalExpandedChars ??
+      defaults?.query?.recursiveRefs?.maxTotalExpandedChars ??
+      12000,
+    derivedQueryMaxTerms:
+      overrides?.query?.recursiveRefs?.derivedQueryMaxTerms ??
+      defaults?.query?.recursiveRefs?.derivedQueryMaxTerms ??
+      12,
+    earlyStop:
+      overrides?.query?.recursiveRefs?.earlyStop ??
+      defaults?.query?.recursiveRefs?.earlyStop ??
+      true,
+  };
   const hybrid = {
     enabled:
       overrides?.query?.hybrid?.enabled ??
@@ -274,6 +320,17 @@ function mergeConfig(
         vectorWeight: normalizedVectorWeight,
         textWeight: normalizedTextWeight,
         candidateMultiplier,
+      },
+      recursiveRefs: {
+        enabled: Boolean(recursiveRefs.enabled),
+        maxHops: clampInt(recursiveRefs.maxHops, 1, 5),
+        maxRefsPerHop: clampInt(recursiveRefs.maxRefsPerHop, 1, 50),
+        expandTopK: clampInt(recursiveRefs.expandTopK, 0, 20),
+        defaultLines: clampInt(recursiveRefs.defaultLines, 1, 500),
+        maxCharsPerRef: clampInt(recursiveRefs.maxCharsPerRef, 200, 200_000),
+        maxTotalExpandedChars: clampInt(recursiveRefs.maxTotalExpandedChars, 200, 500_000),
+        derivedQueryMaxTerms: clampInt(recursiveRefs.derivedQueryMaxTerms, 0, 200),
+        earlyStop: Boolean(recursiveRefs.earlyStop),
       },
     },
     cache: {
