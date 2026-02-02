@@ -14,6 +14,7 @@
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import { performance } from "node:perf_hooks";
 import { loadConfig } from "../src/config/config.js";
 import { createMemorySearchTool } from "../src/agents/tools/memory-tool.js";
 import { createMemorySearchRefsTool } from "../src/agents/tools/memory-tool.refs.js";
@@ -64,6 +65,16 @@ function normalizeLower(s: string) {
   return (s || "").toLowerCase();
 }
 
+function stats(values: number[]) {
+  const xs = values.filter((v) => Number.isFinite(v)).slice().sort((a, b) => a - b);
+  const n = xs.length;
+  if (n === 0) return { n: 0, mean: 0, median: 0, p95: 0 };
+  const mean = xs.reduce((a, b) => a + b, 0) / n;
+  const median = n % 2 ? xs[(n - 1) / 2] : (xs[n / 2 - 1] + xs[n / 2]) / 2;
+  const p95 = xs[Math.min(n - 1, Math.ceil(0.95 * n) - 1)];
+  return { n, mean, median, p95 };
+}
+
 async function main() {
   const cfg = await loadConfig();
   const sessionKey = "agent:main:main";
@@ -95,16 +106,22 @@ async function main() {
     const query = tc.query;
     console.log(`\n[case] ${tc.id}: ${query}`);
 
+    const t0 = performance.now();
+
+    const b0 = performance.now();
     const baseline = await search.execute("tc-baseline", {
       query,
       maxResults: gt.defaults.maxResults,
     });
+    const baselineMs = performance.now() - b0;
 
+    const r0 = performance.now();
     const refsOut = await searchRefs.execute("tc-refs", {
       query,
       maxResults: gt.defaults.maxResults,
       previewChars: gt.defaults.previewChars,
     });
+    const refsMs = performance.now() - r0;
 
     const refsDetails = (refsOut as any)?.details ?? {};
     const refs: any[] = Array.isArray(refsDetails.refs) ? refsDetails.refs : [];
@@ -115,12 +132,16 @@ async function main() {
       endLine: r.endLine,
     }));
 
+    const e0 = performance.now();
     const expanded = await expand.execute("tc-expand", {
       refs: toExpand,
       defaultLines: gt.defaults.expand.defaultLines,
       maxRefs: gt.defaults.expand.maxRefs,
       maxChars: gt.defaults.expand.maxChars,
     });
+    const expandMs = performance.now() - e0;
+
+    const totalMs = performance.now() - t0;
 
     const baselineText = flattenText(baseline);
     const refsText = flattenText(refsOut);
@@ -144,6 +165,12 @@ async function main() {
         refs: jsonSize(refsOut),
         expanded: jsonSize(expanded),
       },
+      latencyMs: {
+        baseline: Math.round(baselineMs),
+        refs: Math.round(refsMs),
+        expand: Math.round(expandMs),
+        total: Math.round(totalMs),
+      },
       counts: {
         refsReturned: refs.length,
         expandedRequested: toExpand.length,
@@ -152,10 +179,39 @@ async function main() {
     });
   }
 
+  const tokenBaseline = report.cases.map((c: any) => c.sizes.baseline.tokens);
+  const tokenRefs = report.cases.map((c: any) => c.sizes.refs.tokens);
+  const tokenExpanded = report.cases.map((c: any) => c.sizes.expanded.tokens);
+
+  const latencyBaseline = report.cases.map((c: any) => c.latencyMs.baseline);
+  const latencyRefs = report.cases.map((c: any) => c.latencyMs.refs);
+  const latencyExpand = report.cases.map((c: any) => c.latencyMs.expand);
+  const latencyTotal = report.cases.map((c: any) => c.latencyMs.total);
+
+  const refsReturned = report.cases.map((c: any) => c.counts.refsReturned);
+  const expandedRequested = report.cases.map((c: any) => c.counts.expandedRequested);
+
   report.summary = {
     total: gt.cases.length,
     passed: passCount,
     passRate: passCount / gt.cases.length,
+    aggregates: {
+      tokens: {
+        baseline: stats(tokenBaseline),
+        refs: stats(tokenRefs),
+        expanded: stats(tokenExpanded),
+      },
+      latencyMs: {
+        baseline: stats(latencyBaseline),
+        refs: stats(latencyRefs),
+        expand: stats(latencyExpand),
+        total: stats(latencyTotal),
+      },
+      counts: {
+        refsReturned: stats(refsReturned),
+        expandedRequested: stats(expandedRequested),
+      },
+    },
   };
 
   const outPath = path.join(outDir, `memory-refs-report-${Date.now()}.json`);

@@ -130,8 +130,30 @@ def main():
         out_path=out2,
     )
 
+    # Latency chart (ms)
+    latency_baseline = [c.get("latencyMs", {}).get("baseline", 0) for c in cases]
+    latency_refs = [c.get("latencyMs", {}).get("refs", 0) for c in cases]
+    latency_expand = [c.get("latencyMs", {}).get("expand", 0) for c in cases]
+    latency_total = [c.get("latencyMs", {}).get("total", 0) for c in cases]
+
+    out3 = out_dir / (report_path.stem + "-latency.svg")
+    _svg_bar_chart(
+        title="Latency per stage (ms)",
+        labels=labels,
+        series=[
+            ("baseline", latency_baseline),
+            ("refs", latency_refs),
+            ("expand", latency_expand),
+            ("total", latency_total),
+        ],
+        colors=["#60a5fa", "#a78bfa", "#34d399", "#f87171"],
+        y_label="Milliseconds",
+        out_path=out3,
+    )
+
     print(f"Wrote: {out1}")
     print(f"Wrote: {out2}")
+    print(f"Wrote: {out3}")
     return 0
 
 
