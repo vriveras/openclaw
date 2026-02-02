@@ -1,0 +1,49 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='520' viewBox='0 0 1400 520'>
+<rect x='0' y='0' width='100%' height='100%' fill='#0b1220' />
+<text x='80' y='32' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='20' font-weight='600'>Token Cost: baseline vs refs-first vs expansion</text>
+<line x1='80' y1='60' x2='80' y2='380' stroke='#94a3b8' stroke-width='2' />
+<line x1='80' y1='380' x2='1360' y2='380' stroke='#94a3b8' stroke-width='2' />
+<text x='16' y='220.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='14' transform='rotate(-90 16 220.0)'>Approx tokens (chars/4)</text>
+<line x1='74' y1='380.0' x2='80' y2='380.0' stroke='#94a3b8' />
+<text x='70' y='384.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>0</text>
+<line x1='74' y1='316.0' x2='80' y2='316.0' stroke='#94a3b8' />
+<text x='70' y='320.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>59</text>
+<line x1='74' y1='252.0' x2='80' y2='252.0' stroke='#94a3b8' />
+<text x='70' y='256.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>118</text>
+<line x1='74' y1='188.0' x2='80' y2='188.0' stroke='#94a3b8' />
+<text x='70' y='192.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>177</text>
+<line x1='74' y1='124.0' x2='80' y2='124.0' stroke='#94a3b8' />
+<text x='70' y='128.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>236</text>
+<line x1='74' y1='60.0' x2='80' y2='60.0' stroke='#94a3b8' />
+<text x='70' y='64.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>295</text>
+<text x='186.66666666666669' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 186.66666666666669 402)'>whatsapp-connected</text>
+<rect x='106.66666666666667' y='89.09090909090912' width='42.66666666666667' height='290.9090909090909' fill='#60a5fa' />
+<rect x='160.0' y='90.1723555255154' width='42.66666666666667' height='289.8276444744846' fill='#a78bfa' />
+<rect x='213.33333333333334' y='331.33491044271716' width='42.66666666666667' height='48.66508955728284' fill='#34d399' />
+<text x='400.00000000000006' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 400.00000000000006 402)'>rlm-augment-hook</text>
+<rect x='320.00000000000006' y='89.09090909090912' width='42.66666666666667' height='290.9090909090909' fill='#60a5fa' />
+<rect x='373.33333333333337' y='90.1723555255154' width='42.66666666666667' height='289.8276444744846' fill='#a78bfa' />
+<rect x='426.66666666666674' y='331.33491044271716' width='42.66666666666667' height='48.66508955728284' fill='#34d399' />
+<text x='613.3333333333334' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 613.3333333333334 402)'>token-optimization</text>
+<rect x='533.3333333333334' y='89.09090909090912' width='42.66666666666667' height='290.9090909090909' fill='#60a5fa' />
+<rect x='586.6666666666667' y='90.1723555255154' width='42.66666666666667' height='289.8276444744846' fill='#a78bfa' />
+<rect x='640.0' y='331.33491044271716' width='42.66666666666667' height='48.66508955728284' fill='#34d399' />
+<text x='826.6666666666666' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 826.6666666666666 402)'>chessrt</text>
+<rect x='746.6666666666666' y='89.09090909090912' width='42.66666666666667' height='290.9090909090909' fill='#60a5fa' />
+<rect x='800.0' y='90.1723555255154' width='42.66666666666667' height='289.8276444744846' fill='#a78bfa' />
+<rect x='853.3333333333334' y='331.33491044271716' width='42.66666666666667' height='48.66508955728284' fill='#34d399' />
+<text x='1040.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1040.0 402)'>analysis-queue</text>
+<rect x='960.0' y='89.09090909090912' width='42.66666666666667' height='290.9090909090909' fill='#60a5fa' />
+<rect x='1013.3333333333334' y='90.1723555255154' width='42.66666666666667' height='289.8276444744846' fill='#a78bfa' />
+<rect x='1066.6666666666667' y='331.33491044271716' width='42.66666666666667' height='48.66508955728284' fill='#34d399' />
+<text x='1253.3333333333335' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1253.3333333333335 402)'>glicko</text>
+<rect x='1173.3333333333335' y='89.09090909090912' width='42.66666666666667' height='290.9090909090909' fill='#60a5fa' />
+<rect x='1226.6666666666667' y='90.1723555255154' width='42.66666666666667' height='289.8276444744846' fill='#a78bfa' />
+<rect x='1280.0' y='331.33491044271716' width='42.66666666666667' height='48.66508955728284' fill='#34d399' />
+<rect x='80' y='460' width='14' height='14' fill='#60a5fa' />
+<text x='100' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>baseline (memory_search)</text>
+<rect x='340' y='460' width='14' height='14' fill='#a78bfa' />
+<text x='360' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>refs (memory_search_refs)</text>
+<rect x='600' y='460' width='14' height='14' fill='#34d399' />
+<text x='620' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>expand(top2) (memory_expand)</text>
+</svg>

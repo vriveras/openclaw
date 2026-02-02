@@ -1,0 +1,57 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='520' viewBox='0 0 1400 520'>
+<rect x='0' y='0' width='100%' height='100%' fill='#0b1220' />
+<text x='80' y='32' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='20' font-weight='600'>Latency per stage (ms)</text>
+<line x1='80' y1='60' x2='80' y2='380' stroke='#94a3b8' stroke-width='2' />
+<line x1='80' y1='380' x2='1360' y2='380' stroke='#94a3b8' stroke-width='2' />
+<text x='16' y='220.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='14' transform='rotate(-90 16 220.0)'>Milliseconds</text>
+<line x1='74' y1='380.0' x2='80' y2='380.0' stroke='#94a3b8' />
+<text x='70' y='384.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>0</text>
+<line x1='74' y1='316.0' x2='80' y2='316.0' stroke='#94a3b8' />
+<text x='70' y='320.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>5</text>
+<line x1='74' y1='252.0' x2='80' y2='252.0' stroke='#94a3b8' />
+<text x='70' y='256.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>10</text>
+<line x1='74' y1='188.0' x2='80' y2='188.0' stroke='#94a3b8' />
+<text x='70' y='192.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>15</text>
+<line x1='74' y1='124.00000000000003' x2='80' y2='124.00000000000003' stroke='#94a3b8' />
+<text x='70' y='128.00000000000003' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>21</text>
+<line x1='74' y1='60.00000000000006' x2='80' y2='60.00000000000006' stroke='#94a3b8' />
+<text x='70' y='64.00000000000006' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>26</text>
+<text x='186.66666666666669' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 186.66666666666669 402)'>whatsapp-connected</text>
+<rect x='101.33333333333334' y='101.21212121212125' width='34.13333333333334' height='278.78787878787875' fill='#60a5fa' />
+<rect x='144.0' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#a78bfa' />
+<rect x='186.66666666666669' y='380.0' width='34.13333333333334' height='0.0' fill='#34d399' />
+<rect x='229.33333333333334' y='89.09090909090912' width='34.13333333333334' height='290.9090909090909' fill='#f87171' />
+<text x='400.00000000000006' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 400.00000000000006 402)'>rlm-augment-hook</text>
+<rect x='314.6666666666667' y='355.75757575757575' width='34.13333333333334' height='24.24242424242425' fill='#60a5fa' />
+<rect x='357.33333333333337' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#a78bfa' />
+<rect x='400.00000000000006' y='380.0' width='34.13333333333334' height='0.0' fill='#34d399' />
+<rect x='442.66666666666674' y='343.6363636363636' width='34.13333333333334' height='36.363636363636374' fill='#f87171' />
+<text x='613.3333333333334' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 613.3333333333334 402)'>token-optimization</text>
+<rect x='528.0' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#60a5fa' />
+<rect x='570.6666666666667' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#a78bfa' />
+<rect x='613.3333333333334' y='380.0' width='34.13333333333334' height='0.0' fill='#34d399' />
+<rect x='656.0' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#f87171' />
+<text x='826.6666666666666' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 826.6666666666666 402)'>chessrt</text>
+<rect x='741.3333333333334' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#60a5fa' />
+<rect x='784.0' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#a78bfa' />
+<rect x='826.6666666666667' y='380.0' width='34.13333333333334' height='0.0' fill='#34d399' />
+<rect x='869.3333333333334' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#f87171' />
+<text x='1040.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1040.0 402)'>analysis-queue</text>
+<rect x='954.6666666666667' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#60a5fa' />
+<rect x='997.3333333333334' y='380.0' width='34.13333333333334' height='0.0' fill='#a78bfa' />
+<rect x='1040.0' y='380.0' width='34.13333333333334' height='0.0' fill='#34d399' />
+<rect x='1082.6666666666667' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#f87171' />
+<text x='1253.3333333333335' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1253.3333333333335 402)'>glicko</text>
+<rect x='1168.0' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#60a5fa' />
+<rect x='1210.6666666666667' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#a78bfa' />
+<rect x='1253.3333333333335' y='380.0' width='34.13333333333334' height='0.0' fill='#34d399' />
+<rect x='1296.0' y='367.8787878787879' width='34.13333333333334' height='12.121212121212125' fill='#f87171' />
+<rect x='80' y='460' width='14' height='14' fill='#60a5fa' />
+<text x='100' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>baseline</text>
+<rect x='340' y='460' width='14' height='14' fill='#a78bfa' />
+<text x='360' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>refs</text>
+<rect x='600' y='460' width='14' height='14' fill='#34d399' />
+<text x='620' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>expand</text>
+<rect x='860' y='460' width='14' height='14' fill='#f87171' />
+<text x='880' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>total</text>
+</svg>

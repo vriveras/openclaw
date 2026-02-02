@@ -1,0 +1,125 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='520' viewBox='0 0 1400 520'>
+<rect x='0' y='0' width='100%' height='100%' fill='#0b1220' />
+<text x='80' y='32' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='20' font-weight='600'>Token Cost: baseline vs refs-first vs expansion</text>
+<line x1='80' y1='60' x2='80' y2='380' stroke='#94a3b8' stroke-width='2' />
+<line x1='80' y1='380' x2='1360' y2='380' stroke='#94a3b8' stroke-width='2' />
+<text x='16' y='220.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='14' transform='rotate(-90 16 220.0)'>Approx tokens (chars/4)</text>
+<line x1='74' y1='380.0' x2='80' y2='380.0' stroke='#94a3b8' />
+<text x='70' y='384.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>0</text>
+<line x1='74' y1='316.0' x2='80' y2='316.0' stroke='#94a3b8' />
+<text x='70' y='320.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>1026</text>
+<line x1='74' y1='252.0' x2='80' y2='252.0' stroke='#94a3b8' />
+<text x='70' y='256.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>2053</text>
+<line x1='74' y1='188.0' x2='80' y2='188.0' stroke='#94a3b8' />
+<text x='70' y='192.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>3080</text>
+<line x1='74' y1='124.0' x2='80' y2='124.0' stroke='#94a3b8' />
+<text x='70' y='128.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>4106</text>
+<line x1='74' y1='60.0' x2='80' y2='60.0' stroke='#94a3b8' />
+<text x='70' y='64.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>5133</text>
+<text x='105.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 105.6 402)'>whatsapp-connected</text>
+<rect x='86.4' y='154.72777918460372' width='10.240000000000002' height='225.27222081539628' fill='#60a5fa' />
+<rect x='99.2' y='295.66316691664883' width='10.240000000000002' height='84.33683308335117' fill='#a78bfa' />
+<rect x='112.0' y='197.05202875119312' width='10.240000000000002' height='182.94797124880688' fill='#34d399' />
+<text x='156.79999999999998' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 156.79999999999998 402)'>rlm-augment-hook</text>
+<rect x='137.6' y='149.8034555973275' width='10.240000000000002' height='230.1965444026725' fill='#60a5fa' />
+<rect x='150.39999999999998' y='295.78783333657987' width='10.240000000000002' height='84.21216666342013' fill='#a78bfa' />
+<rect x='163.2' y='267.737888852095' width='10.240000000000002' height='112.26211114790499' fill='#34d399' />
+<text x='208.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 208.0 402)'>token-optimization</text>
+<rect x='188.8' y='290.11551122971736' width='10.240000000000002' height='89.88448877028264' fill='#60a5fa' />
+<rect x='201.60000000000002' y='345.0934024193077' width='10.240000000000002' height='34.90659758069228' fill='#a78bfa' />
+<rect x='214.4' y='264.99522761361203' width='10.240000000000002' height='115.00477238638797' fill='#34d399' />
+<text x='259.20000000000005' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 259.20000000000005 402)'>chessrt-rtc</text>
+<rect x='240.00000000000003' y='151.17478621656898' width='10.240000000000002' height='228.82521378343102' fill='#60a5fa' />
+<rect x='252.8' y='294.60350234723495' width='10.240000000000002' height='85.39649765276505' fill='#a78bfa' />
+<rect x='265.6' y='268.1742213218537' width='10.240000000000002' height='111.82577867814632' fill='#34d399' />
+<text x='310.40000000000003' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 310.40000000000003 402)'>analysis-queue</text>
+<rect x='291.2' y='348.64639538734247' width='10.240000000000002' height='31.353604612657534' fill='#60a5fa' />
+<rect x='304.0' y='365.4140288680679' width='10.240000000000002' height='14.585971131932126' fill='#a78bfa' />
+<rect x='316.8' y='321.1574497925473' width='10.240000000000002' height='58.84255020745269' fill='#34d399' />
+<text x='361.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 361.6 402)'>glicko-rating</text>
+<rect x='342.4' y='144.0688002804995' width='10.240000000000002' height='235.9311997195005' fill='#60a5fa' />
+<rect x='355.2' y='296.16183259637296' width='10.240000000000002' height='83.83816740362704' fill='#a78bfa' />
+<rect x='368.0' y='274.8438747881645' width='10.240000000000002' height='105.1561252118355' fill='#34d399' />
+<text x='412.80000000000007' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 412.80000000000007 402)'>memory-search-refs-tool</text>
+<rect x='393.6' y='148.18279213822393' width='10.240000000000002' height='231.81720786177607' fill='#60a5fa' />
+<rect x='406.40000000000003' y='295.66316691664883' width='10.240000000000002' height='84.33683308335117' fill='#a78bfa' />
+<rect x='419.20000000000005' y='266.6158910727156' width='10.240000000000002' height='113.38410892728439' fill='#34d399' />
+<text x='464.00000000000006' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 464.00000000000006 402)'>memory-expand-tool</text>
+<rect x='444.8' y='376.6963398718273' width='10.240000000000002' height='3.3036601281726803' fill='#60a5fa' />
+<rect x='457.6' y='375.63667530241344' width='10.240000000000002' height='4.363324697586563' fill='#a78bfa' />
+<rect x='470.40000000000003' y='377.1950055515515' width='10.240000000000002' height='2.8049944484484968' fill='#34d399' />
+<text x='515.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 515.2 402)'>base64-blob-filter</text>
+<rect x='496.0' y='376.6963398718273' width='10.240000000000002' height='3.3036601281726803' fill='#60a5fa' />
+<rect x='508.8' y='375.3873424625514' width='10.240000000000002' height='4.6126575374486265' fill='#a78bfa' />
+<rect x='521.6' y='377.1950055515515' width='10.240000000000002' height='2.8049944484484968' fill='#34d399' />
+<text x='566.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 566.4 402)'>transcript-dump</text>
+<rect x='547.1999999999999' y='148.74379102791363' width='10.240000000000002' height='231.25620897208637' fill='#60a5fa' />
+<rect x='560.0' y='294.66583555720047' width='10.240000000000002' height='85.33416444279953' fill='#a78bfa' />
+<rect x='572.8' y='267.737888852095' width='10.240000000000002' height='112.26211114790499' fill='#34d399' />
+<text x='617.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 617.6 402)'>claude-code-skill</text>
+<rect x='598.4' y='148.9307906578102' width='10.240000000000002' height='231.0692093421898' fill='#60a5fa' />
+<rect x='611.2' y='294.85283518709707' width='10.240000000000002' height='85.14716481290293' fill='#a78bfa' />
+<rect x='624.0' y='269.2338858912675' width='10.240000000000002' height='110.7661141087325' fill='#34d399' />
+<text x='668.8000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 668.8000000000001 402)'>hook-event-post</text>
+<rect x='649.6' y='141.8248047217407' width='10.240000000000002' height='238.1751952782593' fill='#60a5fa' />
+<rect x='662.4000000000001' y='294.4788359273039' width='10.240000000000002' height='85.52116407269608' fill='#a78bfa' />
+<rect x='675.2' y='267.36388959230186' width='10.240000000000002' height='112.63611040769814' fill='#34d399' />
+<text x='720.0000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 720.0000000000001 402)'>session-transcript-update</text>
+<rect x='700.8000000000001' y='144.81679880008573' width='10.240000000000002' height='235.18320119991427' fill='#60a5fa' />
+<rect x='713.6000000000001' y='294.35416950737283' width='10.240000000000002' height='85.64583049262717' fill='#a78bfa' />
+<rect x='726.4000000000001' y='269.296219101233' width='10.240000000000002' height='110.70378089876698' fill='#34d399' />
+<text x='771.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 771.2 402)'>openclaw-fork</text>
+<rect x='752.0' y='139.39380953308532' width='10.240000000000002' height='240.60619046691468' fill='#60a5fa' />
+<rect x='764.8000000000001' y='291.73617468882094' width='10.240000000000002' height='88.26382531117906' fill='#a78bfa' />
+<rect x='777.6' y='89.09090909090912' width='10.240000000000002' height='290.9090909090909' fill='#34d399' />
+<text x='822.4000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 822.4000000000001 402)'>blog-part1</text>
+<rect x='803.2' y='147.74645966846526' width='10.240000000000002' height='232.25354033153474' fill='#60a5fa' />
+<rect x='816.0000000000001' y='294.66583555720047' width='10.240000000000002' height='85.33416444279953' fill='#a78bfa' />
+<rect x='828.8000000000001' y='299.9641584042698' width='10.240000000000002' height='80.03584159573018' fill='#34d399' />
+<text x='873.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 873.6 402)'>blog-part2</text>
+<rect x='854.4' y='149.74112238736197' width='10.240000000000002' height='230.25887761263803' fill='#60a5fa' />
+<rect x='867.2' y='295.72550012661435' width='10.240000000000002' height='84.27449987338565' fill='#a78bfa' />
+<rect x='880.0' y='264.9328944036465' width='10.240000000000002' height='115.06710559635349' fill='#34d399' />
+<text x='924.8000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 924.8000000000001 402)'>temporal-search</text>
+<rect x='905.6' y='139.95480842277502' width='10.240000000000002' height='240.04519157722498' fill='#60a5fa' />
+<rect x='918.4000000000001' y='292.7335060482693' width='10.240000000000002' height='87.2664939517307' fill='#a78bfa' />
+<rect x='931.2' y='262.127899955198' width='10.240000000000002' height='117.87210004480198' fill='#34d399' />
+<text x='976.0000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 976.0000000000001 402)'>index-sessions</text>
+<rect x='956.8000000000001' y='145.2531312698444' width='10.240000000000002' height='234.7468687301556' fill='#60a5fa' />
+<rect x='969.6000000000001' y='295.9124997565109' width='10.240000000000002' height='84.0875002434891' fill='#a78bfa' />
+<rect x='982.4000000000001' y='264.0602294641292' width='10.240000000000002' height='115.93977053587082' fill='#34d399' />
+<text x='1027.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1027.2 402)'>vitest-ci</text>
+<rect x='1008.0' y='376.6963398718273' width='10.240000000000002' height='3.3036601281726803' fill='#60a5fa' />
+<rect x='1020.8000000000001' y='375.3873424625514' width='10.240000000000002' height='4.6126575374486265' fill='#a78bfa' />
+<rect x='1033.6' y='377.1950055515515' width='10.240000000000002' height='2.8049944484484968' fill='#34d399' />
+<text x='1078.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1078.4 402)'>wlxc-container</text>
+<rect x='1059.2000000000003' y='147.68412645849975' width='10.240000000000002' height='232.31587354150025' fill='#60a5fa' />
+<rect x='1072.0000000000002' y='295.0398348169936' width='10.240000000000002' height='84.96016518300638' fill='#a78bfa' />
+<rect x='1084.8000000000002' y='268.1118881118881' width='10.240000000000002' height='111.8881118881119' fill='#34d399' />
+<text x='1129.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1129.6 402)'>debounce-cooldown</text>
+<rect x='1110.4' y='376.6963398718273' width='10.240000000000002' height='3.3036601281726803' fill='#60a5fa' />
+<rect x='1123.2' y='375.32500925258586' width='10.240000000000002' height='4.674990747414142' fill='#a78bfa' />
+<rect x='1136.0' y='377.1950055515515' width='10.240000000000002' height='2.8049944484484968' fill='#34d399' />
+<text x='1180.8' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1180.8 402)'>hybrid-retrieval</text>
+<rect x='1161.6000000000001' y='149.865788807293' width='10.240000000000002' height='230.134211192707' fill='#60a5fa' />
+<rect x='1174.4' y='294.91516839706253' width='10.240000000000002' height='85.08483160293747' fill='#a78bfa' />
+<rect x='1187.2' y='273.0985449091299' width='10.240000000000002' height='106.90145509087012' fill='#34d399' />
+<text x='1232.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1232.0 402)'>accuracy-998</text>
+<rect x='1212.8000000000002' y='348.2100629175838' width='10.240000000000002' height='31.789937082416202' fill='#60a5fa' />
+<rect x='1225.6000000000001' y='365.5386952879989' width='10.240000000000002' height='14.461304712001095' fill='#a78bfa' />
+<rect x='1238.4' y='322.6534468317198' width='10.240000000000002' height='57.346553168280195' fill='#34d399' />
+<text x='1283.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1283.2 402)'>option2-tools</text>
+<rect x='1264.0000000000002' y='376.6963398718273' width='10.240000000000002' height='3.3036601281726803' fill='#60a5fa' />
+<rect x='1276.8000000000002' y='375.3873424625514' width='10.240000000000002' height='4.6126575374486265' fill='#a78bfa' />
+<rect x='1289.6000000000001' y='377.1950055515515' width='10.240000000000002' height='2.8049944484484968' fill='#34d399' />
+<text x='1334.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1334.4 402)'>ground-truth-suite</text>
+<rect x='1315.2000000000003' y='263.1252313146464' width='10.240000000000002' height='116.87476868535362' fill='#60a5fa' />
+<rect x='1328.0000000000002' y='335.55642129458283' width='10.240000000000002' height='44.44357870541717' fill='#a78bfa' />
+<rect x='1340.8000000000002' y='268.6728870015778' width='10.240000000000002' height='111.3271129984222' fill='#34d399' />
+<rect x='80' y='460' width='14' height='14' fill='#60a5fa' />
+<text x='100' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>baseline (memory_search)</text>
+<rect x='340' y='460' width='14' height='14' fill='#a78bfa' />
+<text x='360' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>refs (memory_search_refs)</text>
+<rect x='600' y='460' width='14' height='14' fill='#34d399' />
+<text x='620' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>expand(top2) (memory_expand)</text>
+</svg>

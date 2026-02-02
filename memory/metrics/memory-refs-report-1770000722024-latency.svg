@@ -1,0 +1,152 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='520' viewBox='0 0 1400 520'>
+<rect x='0' y='0' width='100%' height='100%' fill='#0b1220' />
+<text x='80' y='32' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='20' font-weight='600'>Latency per stage (ms)</text>
+<line x1='80' y1='60' x2='80' y2='380' stroke='#94a3b8' stroke-width='2' />
+<line x1='80' y1='380' x2='1360' y2='380' stroke='#94a3b8' stroke-width='2' />
+<text x='16' y='220.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='14' transform='rotate(-90 16 220.0)'>Milliseconds</text>
+<line x1='74' y1='380.0' x2='80' y2='380.0' stroke='#94a3b8' />
+<text x='70' y='384.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>0</text>
+<line x1='74' y1='316.0' x2='80' y2='316.0' stroke='#94a3b8' />
+<text x='70' y='320.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>1541</text>
+<line x1='74' y1='252.0' x2='80' y2='252.0' stroke='#94a3b8' />
+<text x='70' y='256.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>3082</text>
+<line x1='74' y1='187.99999999999997' x2='80' y2='187.99999999999997' stroke='#94a3b8' />
+<text x='70' y='191.99999999999997' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>4623</text>
+<line x1='74' y1='124.0' x2='80' y2='124.0' stroke='#94a3b8' />
+<text x='70' y='128.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>6165</text>
+<line x1='74' y1='60.0' x2='80' y2='60.0' stroke='#94a3b8' />
+<text x='70' y='64.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>7706</text>
+<text x='105.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 105.6 402)'>whatsapp-connected</text>
+<rect x='85.12' y='259.3761191705811' width='8.192' height='120.62388082941891' fill='#60a5fa' />
+<rect x='95.36' y='270.04749176030936' width='8.192' height='109.95250823969064' fill='#a78bfa' />
+<rect x='105.6' y='379.2525886902136' width='8.192' height='0.7474113097864006' fill='#34d399' />
+<rect x='115.84' y='148.676199621104' width='8.192' height='231.323800378896' fill='#f87171' />
+<text x='156.79999999999998' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 156.79999999999998 402)'>rlm-augment-hook</text>
+<rect x='136.32' y='282.71196117613476' width='8.192' height='97.28803882386524' fill='#60a5fa' />
+<rect x='146.56' y='279.14099602937745' width='8.192' height='100.85900397062255' fill='#a78bfa' />
+<rect x='156.79999999999998' y='379.33563439130097' width='8.192' height='0.664365608699029' fill='#34d399' />
+<rect x='167.04' y='181.18859159681313' width='8.192' height='198.81140840318687' fill='#f87171' />
+<text x='208.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 208.0 402)'>token-optimization</text>
+<rect x='187.52' y='278.68424467339685' width='8.192' height='101.31575532660315' fill='#60a5fa' />
+<rect x='197.76' y='289.1480030104067' width='8.192' height='90.85199698959332' fill='#a78bfa' />
+<rect x='208.0' y='379.37715724184466' width='8.192' height='0.6228427581553433' fill='#34d399' />
+<rect x='218.24' y='187.20940492564813' width='8.192' height='192.79059507435187' fill='#f87171' />
+<text x='259.20000000000005' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 259.20000000000005 402)'>chessrt-rtc</text>
+<rect x='238.72000000000003' y='284.9957179560377' width='8.192' height='95.00428204396229' fill='#60a5fa' />
+<rect x='248.96000000000004' y='290.6843484805232' width='8.192' height='89.31565151947677' fill='#a78bfa' />
+<rect x='259.20000000000005' y='377.67472036955337' width='8.192' height='2.32527963044663' fill='#34d399' />
+<rect x='269.44000000000005' y='193.35478680611425' width='8.192' height='186.64521319388575' fill='#f87171' />
+<text x='310.40000000000003' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 310.40000000000003 402)'>analysis-queue</text>
+<rect x='289.92' y='285.3694236109309' width='8.192' height='94.63057638906912' fill='#60a5fa' />
+<rect x='300.16' y='275.03023382555216' width='8.192' height='104.96976617444784' fill='#a78bfa' />
+<rect x='310.40000000000003' y='379.33563439130097' width='8.192' height='0.664365608699029' fill='#34d399' />
+<rect x='320.64' y='179.735291827784' width='8.192' height='200.264708172216' fill='#f87171' />
+<text x='361.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 361.6 402)'>glicko-rating</text>
+<rect x='341.12' y='281.54932136091145' width='8.192' height='98.45067863908855' fill='#60a5fa' />
+<rect x='351.36' y='283.45937248592116' width='8.192' height='96.54062751407884' fill='#a78bfa' />
+<rect x='361.6' y='378.42213167933977' width='8.192' height='1.5778683206602295' fill='#34d399' />
+<rect x='371.84000000000003' y='183.43082552617238' width='8.192' height='196.56917447382762' fill='#f87171' />
+<text x='412.80000000000007' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 412.80000000000007 402)'>memory-search-refs-tool</text>
+<rect x='392.32000000000005' y='285.57703786364937' width='8.192' height='94.42296213635063' fill='#60a5fa' />
+<rect x='402.56000000000006' y='273.36931980380456' width='8.192' height='106.63068019619544' fill='#a78bfa' />
+<rect x='412.80000000000007' y='379.2941115407573' width='8.192' height='0.7058884592427148' fill='#34d399' />
+<rect x='423.0400000000001' y='178.24046920821115' width='8.192' height='201.75953079178885' fill='#f87171' />
+<text x='464.00000000000006' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 464.00000000000006 402)'>memory-expand-tool</text>
+<rect x='443.52000000000004' y='287.4870889886591' width='8.192' height='92.51291101134092' fill='#60a5fa' />
+<rect x='453.76000000000005' y='286.36597202397945' width='8.192' height='93.63402797602055' fill='#a78bfa' />
+<rect x='464.00000000000006' y='380.0' width='8.192' height='0.0' fill='#34d399' />
+<rect x='474.24' y='193.85306101263853' width='8.192' height='186.14693898736147' fill='#f87171' />
+<text x='515.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 515.2 402)'>base64-blob-filter</text>
+<rect x='494.72' y='280.34515869514445' width='8.192' height='99.65484130485555' fill='#60a5fa' />
+<rect x='504.96000000000004' y='277.6461734098046' width='8.192' height='102.35382659019541' fill='#a78bfa' />
+<rect x='515.2' y='380.0' width='8.192' height='0.0' fill='#34d399' />
+<rect x='525.44' y='177.991332104949' width='8.192' height='202.008667895051' fill='#f87171' />
+<text x='566.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 566.4 402)'>transcript-dump</text>
+<rect x='545.92' y='280.30363584460076' width='8.192' height='99.69636415539924' fill='#60a5fa' />
+<rect x='556.16' y='290.1030285729115' width='8.192' height='89.89697142708849' fill='#a78bfa' />
+<rect x='566.4' y='379.2525886902136' width='8.192' height='0.7474113097864006' fill='#34d399' />
+<rect x='576.64' y='189.70077595826953' width='8.192' height='190.29922404173047' fill='#f87171' />
+<text x='617.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 617.6 402)'>claude-code-skill</text>
+<rect x='597.12' y='286.82272337996005' width='8.192' height='93.17727662003995' fill='#60a5fa' />
+<rect x='607.36' y='288.1514545973581' width='8.192' height='91.84854540264189' fill='#a78bfa' />
+<rect x='617.6' y='379.2525886902136' width='8.192' height='0.7474113097864006' fill='#34d399' />
+<rect x='627.84' y='194.18524381698805' width='8.192' height='185.81475618301195' fill='#f87171' />
+<text x='668.8000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 668.8000000000001 402)'>hook-event-post</text>
+<rect x='648.32' y='275.69459943425113' width='8.192' height='104.30540056574887' fill='#60a5fa' />
+<rect x='658.5600000000001' y='281.42475280928033' width='8.192' height='98.57524719071967' fill='#a78bfa' />
+<rect x='668.8000000000001' y='379.33563439130097' width='8.192' height='0.664365608699029' fill='#34d399' />
+<rect x='679.0400000000001' y='176.49650948537618' width='8.192' height='203.50349051462382' fill='#f87171' />
+<text x='720.0000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 720.0000000000001 402)'>session-transcript-update</text>
+<rect x='699.5200000000001' y='283.8746009913581' width='8.192' height='96.12539900864192' fill='#60a5fa' />
+<rect x='709.7600000000001' y='279.8053616380764' width='8.192' height='100.19463836192358' fill='#a78bfa' />
+<rect x='720.0000000000001' y='379.33563439130097' width='8.192' height='0.664365608699029' fill='#34d399' />
+<rect x='730.2400000000001' y='183.05711987127918' width='8.192' height='196.94288012872082' fill='#f87171' />
+<text x='771.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 771.2 402)'>openclaw-fork</text>
+<rect x='750.72' y='282.71196117613476' width='8.192' height='97.28803882386524' fill='#60a5fa' />
+<rect x='760.96' y='187.0848363740171' width='8.192' height='192.9151636259829' fill='#a78bfa' />
+<rect x='771.2' y='379.2941115407573' width='8.192' height='0.7058884592427148' fill='#34d399' />
+<rect x='781.44' y='89.09090909090912' width='8.192' height='290.9090909090909' fill='#f87171' />
+<text x='822.4000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 822.4000000000001 402)'>blog-part1</text>
+<rect x='801.9200000000001' y='278.4351075701347' width='8.192' height='101.56489242986532' fill='#60a5fa' />
+<rect x='812.1600000000001' y='283.75003243972697' width='8.192' height='96.24996756027303' fill='#a78bfa' />
+<rect x='822.4000000000001' y='378.42213167933977' width='8.192' height='1.5778683206602295' fill='#34d399' />
+<rect x='832.6400000000001' y='180.6072716892015' width='8.192' height='199.3927283107985' fill='#f87171' />
+<text x='873.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 873.6 402)'>blog-part2</text>
+<rect x='853.12' y='282.6289154750474' width='8.192' height='97.37108452495261' fill='#60a5fa' />
+<rect x='863.36' y='284.66353515168817' width='8.192' height='95.33646484831183' fill='#a78bfa' />
+<rect x='873.6' y='379.33563439130097' width='8.192' height='0.664365608699029' fill='#34d399' />
+<rect x='883.84' y='186.6280850180365' width='8.192' height='193.3719149819635' fill='#f87171' />
+<text x='924.8000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 924.8000000000001 402)'>temporal-search</text>
+<rect x='904.32' y='288.73277450496977' width='8.192' height='91.26722549503023' fill='#60a5fa' />
+<rect x='914.5600000000001' y='283.25175823320274' width='8.192' height='96.74824176679726' fill='#a78bfa' />
+<rect x='924.8000000000001' y='378.795837334233' width='8.192' height='1.2041626657670008' fill='#34d399' />
+<rect x='935.0400000000001' y='190.7803700724055' width='8.192' height='189.2196299275945' fill='#f87171' />
+<text x='976.0000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 976.0000000000001 402)'>index-sessions</text>
+<rect x='955.5200000000001' y='282.1721641190668' width='8.192' height='97.82783588093321' fill='#60a5fa' />
+<rect x='965.7600000000001' y='246.71164975475565' width='8.192' height='133.28835024524435' fill='#a78bfa' />
+<rect x='976.0000000000001' y='379.41868009238834' width='8.192' height='0.5813199076116575' fill='#34d399' />
+<rect x='986.2400000000001' y='148.34401681675448' width='8.192' height='231.65598318324552' fill='#f87171' />
+<text x='1027.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1027.2 402)'>vitest-ci</text>
+<rect x='1006.72' y='283.5839410375522' width='8.192' height='96.41605896244778' fill='#60a5fa' />
+<rect x='1016.96' y='278.22749331741625' width='8.192' height='101.77250668258375' fill='#a78bfa' />
+<rect x='1027.2' y='380.0' width='8.192' height='0.0' fill='#34d399' />
+<rect x='1037.44' y='181.85295720551215' width='8.192' height='198.14704279448785' fill='#f87171' />
+<text x='1078.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1078.4 402)'>wlxc-container</text>
+<rect x='1057.92' y='276.4004878934939' width='8.192' height='103.5995121065061' fill='#60a5fa' />
+<rect x='1068.16' y='284.6220123011445' width='8.192' height='95.37798769885552' fill='#a78bfa' />
+<rect x='1078.4' y='378.2975631277087' width='8.192' height='1.7024368722912868' fill='#34d399' />
+<rect x='1088.64' y='179.3200633223471' width='8.192' height='200.6799366776529' fill='#f87171' />
+<text x='1129.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1129.6 402)'>debounce-cooldown</text>
+<rect x='1109.12' y='282.9610982793969' width='8.192' height='97.03890172060312' fill='#60a5fa' />
+<rect x='1119.36' y='283.16871253211536' width='8.192' height='96.83128746788464' fill='#a78bfa' />
+<rect x='1129.6' y='380.0' width='8.192' height='0.0' fill='#34d399' />
+<rect x='1139.84' y='186.12981081151221' width='8.192' height='193.87018918848779' fill='#f87171' />
+<text x='1180.8' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1180.8 402)'>hybrid-retrieval</text>
+<rect x='1160.32' y='288.73277450496977' width='8.192' height='91.26722549503023' fill='#60a5fa' />
+<rect x='1170.56' y='283.8746009913581' width='8.192' height='96.12539900864192' fill='#a78bfa' />
+<rect x='1180.8' y='378.3390859782524' width='8.192' height='1.660914021747601' fill='#34d399' />
+<rect x='1191.04' y='190.94646147458025' width='8.192' height='189.05353852541975' fill='#f87171' />
+<text x='1232.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1232.0 402)'>accuracy-998</text>
+<rect x='1211.52' y='282.79500687722214' width='8.192' height='97.20499312277786' fill='#60a5fa' />
+<rect x='1221.76' y='285.618560714193' width='8.192' height='94.381439285807' fill='#a78bfa' />
+<rect x='1232.0' y='379.33563439130097' width='8.192' height='0.664365608699029' fill='#34d399' />
+<rect x='1242.24' y='187.74920198271613' width='8.192' height='192.25079801728387' fill='#f87171' />
+<text x='1283.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1283.2 402)'>option2-tools</text>
+<rect x='1262.72' y='281.88150416526094' width='8.192' height='98.11849583473906' fill='#60a5fa' />
+<rect x='1272.96' y='289.18952586095037' width='8.192' height='90.81047413904963' fill='#a78bfa' />
+<rect x='1283.2' y='380.0' width='8.192' height='0.0' fill='#34d399' />
+<rect x='1293.44' y='191.11255287675502' width='8.192' height='188.88744712324498' fill='#f87171' />
+<text x='1334.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1334.4 402)'>ground-truth-suite</text>
+<rect x='1313.92' y='283.6669867386396' width='8.192' height='96.3330132613604' fill='#60a5fa' />
+<rect x='1324.16' y='284.66353515168817' width='8.192' height='95.33646484831183' fill='#a78bfa' />
+<rect x='1334.4' y='378.256040277165' width='8.192' height='1.7439597228349726' fill='#34d399' />
+<rect x='1344.64' y='186.6280850180365' width='8.192' height='193.3719149819635' fill='#f87171' />
+<rect x='80' y='460' width='14' height='14' fill='#60a5fa' />
+<text x='100' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>baseline</text>
+<rect x='340' y='460' width='14' height='14' fill='#a78bfa' />
+<text x='360' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>refs</text>
+<rect x='600' y='460' width='14' height='14' fill='#34d399' />
+<text x='620' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>expand</text>
+<rect x='860' y='460' width='14' height='14' fill='#f87171' />
+<text x='880' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>total</text>
+</svg>
