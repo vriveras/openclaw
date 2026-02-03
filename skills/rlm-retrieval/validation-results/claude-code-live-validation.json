@@ -1,0 +1,938 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-31T18:34:26.336556",
+    "total_queries": 52,
+    "categories": [
+      "project",
+      "technical",
+      "temporal",
+      "adversarial",
+      "people"
+    ],
+    "total_found": 52,
+    "retrieval_rate": 100.0
+  },
+  "categories": {
+    "project": {
+      "queries": [
+        {
+          "query": "ChessRT",
+          "found": true,
+          "num_results": 8,
+          "duration_ms": 150.7,
+          "output_preview": "\ud83d\udd0d Searching: \"ChessRT\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['chessrt']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0",
+          "error": null
+        },
+        {
+          "query": "chess-realtime",
+          "found": true,
+          "num_results": 7,
+          "duration_ms": 174.24,
+          "output_preview": "\ud83d\udd0d Searching: \"chess-realtime\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['chess-realtime']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "wlxc",
+          "found": true,
+          "num_results": 9,
+          "duration_ms": 489.58,
+          "output_preview": "\ud83d\udd0d Searching: \"wlxc\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['wlxc']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0 (2026-",
+          "error": null
+        },
+        {
+          "query": "OpenClaw",
+          "found": true,
+          "num_results": 2,
+          "duration_ms": 404.34,
+          "output_preview": "\ud83d\udd0d Searching: \"OpenClaw\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['openclaw']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 4 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n",
+          "error": null
+        },
+        {
+          "query": "clawd workspace",
+          "found": true,
+          "num_results": 3,
+          "duration_ms": 116.74,
+          "output_preview": "\ud83d\udd0d Searching: \"clawd workspace\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['clawd', 'workspace']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "context-memory skill",
+          "found": true,
+          "num_results": 2,
+          "duration_ms": 72.17,
+          "output_preview": "\ud83d\udd0d Searching: \"context-memory skill\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['context-memory', 'skill']\n   26 topic matches + 158 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "validation tests",
+          "found": true,
+          "num_results": 14,
+          "duration_ms": 79.55,
+          "output_preview": "\ud83d\udd0d Searching: \"validation tests\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['tests', 'validation']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "skills development",
+          "found": true,
+          "num_results": 16,
+          "duration_ms": 301.45,
+          "output_preview": "\ud83d\udd0d Searching: \"skills development\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['skills', 'development']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "agent projects",
+          "found": true,
+          "num_results": 15,
+          "duration_ms": 174.69,
+          "output_preview": "\ud83d\udd0d Searching: \"agent projects\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['agent', 'projects']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "project setup",
+          "found": true,
+          "num_results": 13,
+          "duration_ms": 216.65,
+          "output_preview": "\ud83d\udd0d Searching: \"project setup\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['setup', 'project']\n   3 topic matches + 181 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        }
+      ],
+      "total": 10,
+      "found": 10,
+      "avg_duration_ms": 218.01
+    },
+    "technical": {
+      "queries": [
+        {
+          "query": "Glicko-2",
+          "found": true,
+          "num_results": 14,
+          "duration_ms": 292.87,
+          "output_preview": "\ud83d\udd0d Searching: \"Glicko-2\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['glicko-2']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n",
+          "error": null
+        },
+        {
+          "query": "Glicko-2 rating system",
+          "found": true,
+          "num_results": 9,
+          "duration_ms": 425.25,
+          "output_preview": "\ud83d\udd0d Searching: \"Glicko-2 rating system\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['glicko-2', 'rating', 'system']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "WebSocket",
+          "found": true,
+          "num_results": 18,
+          "duration_ms": 391.64,
+          "output_preview": "\ud83d\udd0d Searching: \"WebSocket\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['websocket']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "WebSocket implementation",
+          "found": true,
+          "num_results": 19,
+          "duration_ms": 552.82,
+          "output_preview": "\ud83d\udd0d Searching: \"WebSocket implementation\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['websocket', 'implementation']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "API design",
+          "found": true,
+          "num_results": 9,
+          "duration_ms": 370.3,
+          "output_preview": "\ud83d\udd0d Searching: \"API design\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['design', 'api']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "REST API",
+          "found": true,
+          "num_results": 4,
+          "duration_ms": 110.59,
+          "output_preview": "\ud83d\udd0d Searching: \"REST API\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['rest', 'api']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "JSON schema",
+          "found": true,
+          "num_results": 13,
+          "duration_ms": 314.51,
+          "output_preview": "\ud83d\udd0d Searching: \"JSON schema\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['json', 'schema']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "database queries",
+          "found": true,
+          "num_results": 18,
+          "duration_ms": 166.77,
+          "output_preview": "\ud83d\udd0d Searching: \"database queries\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['database', 'queries']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "async await",
+          "found": true,
+          "num_results": 8,
+          "duration_ms": 1341.2,
+          "output_preview": "\ud83d\udd0d Searching: \"async await\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['async', 'await']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "error handling",
+          "found": true,
+          "num_results": 6,
+          "duration_ms": 246.86,
+          "output_preview": "\ud83d\udd0d Searching: \"error handling\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['error', 'handling']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 7 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "authentication",
+          "found": true,
+          "num_results": 6,
+          "duration_ms": 97.44,
+          "output_preview": "\ud83d\udd0d Searching: \"authentication\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['authentication']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "rate limiting",
+          "found": true,
+          "num_results": 8,
+          "duration_ms": 153.9,
+          "output_preview": "\ud83d\udd0d Searching: \"rate limiting\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['rate', 'limiting']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        }
+      ],
+      "total": 12,
+      "found": 12,
+      "avg_duration_ms": 372.01
+    },
+    "temporal": {
+      "queries": [
+        {
+          "query": "yesterday",
+          "found": true,
+          "num_results": 1,
+          "duration_ms": 74.67,
+          "output_preview": "\ud83d\udd0d Searching: \"yesterday\"\n\n\ud83d\udcc5 Temporal filter: yesterday \u2192 2026-01-30 to 2026-01-30\n   Filtered to 35 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['yesterday']\n   0 topic matches + 35 to search\n\n\ud83d\udcca Searched 35/184 session",
+          "error": null
+        },
+        {
+          "query": "last week",
+          "found": true,
+          "num_results": 1,
+          "duration_ms": 31.17,
+          "output_preview": "\ud83d\udd0d Searching: \"last week\"\n\n\ud83d\udcc5 Temporal filter: last week \u2192 2026-01-19 to 2026-01-25\n   Filtered to 0 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['last', 'week']\n   0 topic matches + 0 to search\n\n\ud83d\udcca Searched 0/184 session",
+          "error": null
+        },
+        {
+          "query": "recent work",
+          "found": true,
+          "num_results": 14,
+          "duration_ms": 288.5,
+          "output_preview": "\ud83d\udd0d Searching: \"recent work\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['recent', 'work']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 9 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "today",
+          "found": true,
+          "num_results": 4,
+          "duration_ms": 91.71,
+          "output_preview": "\ud83d\udd0d Searching: \"today\"\n\n\ud83d\udcc5 Temporal filter: today \u2192 2026-01-31 to 2026-01-31\n   Filtered to 32 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['today']\n   0 topic matches + 32 to search\n\n\ud83d\udcca Searched 32/184 sessions\n   Found 3",
+          "error": null
+        },
+        {
+          "query": "this morning",
+          "found": true,
+          "num_results": 1,
+          "duration_ms": 67.65,
+          "output_preview": "\ud83d\udd0d Searching: \"this morning\"\n\n\ud83d\udcc5 Temporal filter: this morning \u2192 2026-01-31 to 2026-01-31\n   Filtered to 32 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['morning', 'this']\n   0 topic matches + 32 to search\n\n\ud83d\udcca Searched 32",
+          "error": null
+        },
+        {
+          "query": "this week",
+          "found": true,
+          "num_results": 10,
+          "duration_ms": 107.76,
+          "output_preview": "\ud83d\udd0d Searching: \"this week\"\n\n\ud83d\udcc5 Temporal filter: this week \u2192 2026-01-26 to 2026-01-31\n   Filtered to 150 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['week', 'this']\n   0 topic matches + 150 to search\n\n\ud83d\udcca Searched 150/184 s",
+          "error": null
+        },
+        {
+          "query": "past few days",
+          "found": true,
+          "num_results": 2,
+          "duration_ms": 147.21,
+          "output_preview": "\ud83d\udd0d Searching: \"past few days\"\n\n\ud83d\udcc5 Temporal filter: past few days \u2192 2026-01-28 to 2026-01-31\n   Filtered to 131 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['past', 'days', 'few']\n   0 topic matches + 131 to search\n\n\ud83d\udcca Sea",
+          "error": null
+        },
+        {
+          "query": "recently discussed",
+          "found": true,
+          "num_results": 3,
+          "duration_ms": 203.2,
+          "output_preview": "\ud83d\udd0d Searching: \"recently discussed\"\n\n\ud83d\udcc5 Temporal filter: recently \u2192 2026-01-24 to 2026-01-31\n   Filtered to 150 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['recently']\n   0 topic matches + 150 to search\n\n\ud83d\udcca Searched 150/1",
+          "error": null
+        },
+        {
+          "query": "earlier today",
+          "found": true,
+          "num_results": 4,
+          "duration_ms": 95.3,
+          "output_preview": "\ud83d\udd0d Searching: \"earlier today\"\n\n\ud83d\udcc5 Temporal filter: today \u2192 2026-01-31 to 2026-01-31\n   Filtered to 32 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['today', 'earlier']\n   0 topic matches + 32 to search\n\n\ud83d\udcca Searched 32/184 ",
+          "error": null
+        },
+        {
+          "query": "two days ago",
+          "found": true,
+          "num_results": 1,
+          "duration_ms": 93.13,
+          "output_preview": "\ud83d\udd0d Searching: \"two days ago\"\n\n\ud83d\udcc5 Temporal filter: two days ago \u2192 2026-01-29 to 2026-01-29\n   Filtered to 35 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['days', 'two', 'ago']\n   0 topic matches + 35 to search\n\n\ud83d\udcca Searched",
+          "error": null
+        }
+      ],
+      "total": 10,
+      "found": 10,
+      "avg_duration_ms": 120.03
+    },
+    "adversarial": {
+      "queries": [
+        {
+          "query": "Stripe integration",
+          "found": true,
+          "num_results": 3,
+          "duration_ms": 1145.63,
+          "output_preview": "\ud83d\udd0d Searching: \"Stripe integration\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['stripe', 'integration']\n   4 topic matches + 180 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "Kubernetes deployment",
+          "found": true,
+          "num_results": 2,
+          "duration_ms": 878.81,
+          "output_preview": "\ud83d\udd0d Searching: \"Kubernetes deployment\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['kubernetes', 'deployment']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 3 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "AWS Lambda",
+          "found": true,
+          "num_results": 3,
+          "duration_ms": 584.05,
+          "output_preview": "\ud83d\udd0d Searching: \"AWS Lambda\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['lambda', 'aws']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 3 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "Docker Compose",
+          "found": true,
+          "num_results": 15,
+          "duration_ms": 581.15,
+          "output_preview": "\ud83d\udd0d Searching: \"Docker Compose\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['docker', 'compose']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "React components",
+          "found": true,
+          "num_results": 9,
+          "duration_ms": 306.71,
+          "output_preview": "\ud83d\udd0d Searching: \"React components\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['react', 'components']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 7 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "MongoDB aggregation",
+          "found": true,
+          "num_results": 5,
+          "duration_ms": 554.15,
+          "output_preview": "\ud83d\udd0d Searching: \"MongoDB aggregation\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['mongodb', 'aggregation']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 3 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "Redis caching",
+          "found": true,
+          "num_results": 7,
+          "duration_ms": 545.07,
+          "output_preview": "\ud83d\udd0d Searching: \"Redis caching\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['redis', 'caching']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "Terraform modules",
+          "found": true,
+          "num_results": 3,
+          "duration_ms": 1278.19,
+          "output_preview": "\ud83d\udd0d Searching: \"Terraform modules\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['terraform', 'modules']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 2 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "GraphQL resolvers",
+          "found": true,
+          "num_results": 3,
+          "duration_ms": 563.92,
+          "output_preview": "\ud83d\udd0d Searching: \"GraphQL resolvers\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['graphql', 'resolvers']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "blockchain smart contracts",
+          "found": true,
+          "num_results": 1,
+          "duration_ms": 1555.5,
+          "output_preview": "\ud83d\udd0d Searching: \"blockchain smart contracts\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['smart', 'blockchain', 'contracts']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 4 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        }
+      ],
+      "total": 10,
+      "found": 10,
+      "avg_duration_ms": 799.32
+    },
+    "people": {
+      "queries": [
+        {
+          "query": "Fei Su",
+          "found": true,
+          "num_results": 12,
+          "duration_ms": 207.45,
+          "output_preview": "\ud83d\udd0d Searching: \"Fei Su\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['fei']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0 (202",
+          "error": null
+        },
+        {
+          "query": "Logan",
+          "found": true,
+          "num_results": 5,
+          "duration_ms": 294.1,
+          "output_preview": "\ud83d\udd0d Searching: \"Logan\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['logan']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0 (20",
+          "error": null
+        },
+        {
+          "query": "meeting notes",
+          "found": true,
+          "num_results": 7,
+          "duration_ms": 106.24,
+          "output_preview": "\ud83d\udd0d Searching: \"meeting notes\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['notes', 'meeting']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "discussed with",
+          "found": true,
+          "num_results": 10,
+          "duration_ms": 64.55,
+          "output_preview": "\ud83d\udd0d Searching: \"discussed with\"\n\n\ud83d\udcc6 No filters, using 20 most recent sessions\n\n\ud83d\udcca Searched 20/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0 (2026-02-01) ",
+          "error": null
+        },
+        {
+          "query": "Vicente",
+          "found": true,
+          "num_results": 1,
+          "duration_ms": 70.6,
+          "output_preview": "\ud83d\udd0d Searching: \"Vicente\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['vicente']\n   145 topic matches + 39 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n",
+          "error": null
+        },
+        {
+          "query": "collaboration",
+          "found": true,
+          "num_results": 6,
+          "duration_ms": 449.69,
+          "output_preview": "\ud83d\udd0d Searching: \"collaboration\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['collaboration']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "team discussion",
+          "found": true,
+          "num_results": 3,
+          "duration_ms": 238.99,
+          "output_preview": "\ud83d\udd0d Searching: \"team discussion\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['team', 'discussion']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "code review",
+          "found": true,
+          "num_results": 1,
+          "duration_ms": 345.96,
+          "output_preview": "\ud83d\udd0d Searching: \"code review\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['review', 'code']\n   2 topic matches + 182 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "pair programming",
+          "found": true,
+          "num_results": 4,
+          "duration_ms": 492.18,
+          "output_preview": "\ud83d\udd0d Searching: \"pair programming\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['pair', 'programming']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        },
+        {
+          "query": "feedback from",
+          "found": true,
+          "num_results": 2,
+          "duration_ms": 99.41,
+          "output_preview": "\ud83d\udd0d Searching: \"feedback from\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['from', 'feedback']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+          "error": null
+        }
+      ],
+      "total": 10,
+      "found": 10,
+      "avg_duration_ms": 236.92
+    }
+  },
+  "queries": [
+    {
+      "query": "ChessRT",
+      "found": true,
+      "num_results": 8,
+      "duration_ms": 150.7,
+      "output_preview": "\ud83d\udd0d Searching: \"ChessRT\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['chessrt']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "chess-realtime",
+      "found": true,
+      "num_results": 7,
+      "duration_ms": 174.24,
+      "output_preview": "\ud83d\udd0d Searching: \"chess-realtime\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['chess-realtime']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "wlxc",
+      "found": true,
+      "num_results": 9,
+      "duration_ms": 489.58,
+      "output_preview": "\ud83d\udd0d Searching: \"wlxc\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['wlxc']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0 (2026-",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "OpenClaw",
+      "found": true,
+      "num_results": 2,
+      "duration_ms": 404.34,
+      "output_preview": "\ud83d\udd0d Searching: \"OpenClaw\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['openclaw']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 4 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "clawd workspace",
+      "found": true,
+      "num_results": 3,
+      "duration_ms": 116.74,
+      "output_preview": "\ud83d\udd0d Searching: \"clawd workspace\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['clawd', 'workspace']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "context-memory skill",
+      "found": true,
+      "num_results": 2,
+      "duration_ms": 72.17,
+      "output_preview": "\ud83d\udd0d Searching: \"context-memory skill\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['context-memory', 'skill']\n   26 topic matches + 158 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "validation tests",
+      "found": true,
+      "num_results": 14,
+      "duration_ms": 79.55,
+      "output_preview": "\ud83d\udd0d Searching: \"validation tests\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['tests', 'validation']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "skills development",
+      "found": true,
+      "num_results": 16,
+      "duration_ms": 301.45,
+      "output_preview": "\ud83d\udd0d Searching: \"skills development\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['skills', 'development']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "agent projects",
+      "found": true,
+      "num_results": 15,
+      "duration_ms": 174.69,
+      "output_preview": "\ud83d\udd0d Searching: \"agent projects\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['agent', 'projects']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "project setup",
+      "found": true,
+      "num_results": 13,
+      "duration_ms": 216.65,
+      "output_preview": "\ud83d\udd0d Searching: \"project setup\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['setup', 'project']\n   3 topic matches + 181 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "project"
+    },
+    {
+      "query": "Glicko-2",
+      "found": true,
+      "num_results": 14,
+      "duration_ms": 292.87,
+      "output_preview": "\ud83d\udd0d Searching: \"Glicko-2\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['glicko-2']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "Glicko-2 rating system",
+      "found": true,
+      "num_results": 9,
+      "duration_ms": 425.25,
+      "output_preview": "\ud83d\udd0d Searching: \"Glicko-2 rating system\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['glicko-2', 'rating', 'system']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "WebSocket",
+      "found": true,
+      "num_results": 18,
+      "duration_ms": 391.64,
+      "output_preview": "\ud83d\udd0d Searching: \"WebSocket\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['websocket']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "WebSocket implementation",
+      "found": true,
+      "num_results": 19,
+      "duration_ms": 552.82,
+      "output_preview": "\ud83d\udd0d Searching: \"WebSocket implementation\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['websocket', 'implementation']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "API design",
+      "found": true,
+      "num_results": 9,
+      "duration_ms": 370.3,
+      "output_preview": "\ud83d\udd0d Searching: \"API design\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['design', 'api']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "REST API",
+      "found": true,
+      "num_results": 4,
+      "duration_ms": 110.59,
+      "output_preview": "\ud83d\udd0d Searching: \"REST API\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['rest', 'api']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "JSON schema",
+      "found": true,
+      "num_results": 13,
+      "duration_ms": 314.51,
+      "output_preview": "\ud83d\udd0d Searching: \"JSON schema\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['json', 'schema']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "database queries",
+      "found": true,
+      "num_results": 18,
+      "duration_ms": 166.77,
+      "output_preview": "\ud83d\udd0d Searching: \"database queries\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['database', 'queries']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "async await",
+      "found": true,
+      "num_results": 8,
+      "duration_ms": 1341.2,
+      "output_preview": "\ud83d\udd0d Searching: \"async await\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['async', 'await']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "error handling",
+      "found": true,
+      "num_results": 6,
+      "duration_ms": 246.86,
+      "output_preview": "\ud83d\udd0d Searching: \"error handling\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['error', 'handling']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 7 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "authentication",
+      "found": true,
+      "num_results": 6,
+      "duration_ms": 97.44,
+      "output_preview": "\ud83d\udd0d Searching: \"authentication\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['authentication']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "rate limiting",
+      "found": true,
+      "num_results": 8,
+      "duration_ms": 153.9,
+      "output_preview": "\ud83d\udd0d Searching: \"rate limiting\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['rate', 'limiting']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "technical"
+    },
+    {
+      "query": "yesterday",
+      "found": true,
+      "num_results": 1,
+      "duration_ms": 74.67,
+      "output_preview": "\ud83d\udd0d Searching: \"yesterday\"\n\n\ud83d\udcc5 Temporal filter: yesterday \u2192 2026-01-30 to 2026-01-30\n   Filtered to 35 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['yesterday']\n   0 topic matches + 35 to search\n\n\ud83d\udcca Searched 35/184 session",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "last week",
+      "found": true,
+      "num_results": 1,
+      "duration_ms": 31.17,
+      "output_preview": "\ud83d\udd0d Searching: \"last week\"\n\n\ud83d\udcc5 Temporal filter: last week \u2192 2026-01-19 to 2026-01-25\n   Filtered to 0 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['last', 'week']\n   0 topic matches + 0 to search\n\n\ud83d\udcca Searched 0/184 session",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "recent work",
+      "found": true,
+      "num_results": 14,
+      "duration_ms": 288.5,
+      "output_preview": "\ud83d\udd0d Searching: \"recent work\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['recent', 'work']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 9 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "today",
+      "found": true,
+      "num_results": 4,
+      "duration_ms": 91.71,
+      "output_preview": "\ud83d\udd0d Searching: \"today\"\n\n\ud83d\udcc5 Temporal filter: today \u2192 2026-01-31 to 2026-01-31\n   Filtered to 32 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['today']\n   0 topic matches + 32 to search\n\n\ud83d\udcca Searched 32/184 sessions\n   Found 3",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "this morning",
+      "found": true,
+      "num_results": 1,
+      "duration_ms": 67.65,
+      "output_preview": "\ud83d\udd0d Searching: \"this morning\"\n\n\ud83d\udcc5 Temporal filter: this morning \u2192 2026-01-31 to 2026-01-31\n   Filtered to 32 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['morning', 'this']\n   0 topic matches + 32 to search\n\n\ud83d\udcca Searched 32",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "this week",
+      "found": true,
+      "num_results": 10,
+      "duration_ms": 107.76,
+      "output_preview": "\ud83d\udd0d Searching: \"this week\"\n\n\ud83d\udcc5 Temporal filter: this week \u2192 2026-01-26 to 2026-01-31\n   Filtered to 150 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['week', 'this']\n   0 topic matches + 150 to search\n\n\ud83d\udcca Searched 150/184 s",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "past few days",
+      "found": true,
+      "num_results": 2,
+      "duration_ms": 147.21,
+      "output_preview": "\ud83d\udd0d Searching: \"past few days\"\n\n\ud83d\udcc5 Temporal filter: past few days \u2192 2026-01-28 to 2026-01-31\n   Filtered to 131 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['past', 'days', 'few']\n   0 topic matches + 131 to search\n\n\ud83d\udcca Sea",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "recently discussed",
+      "found": true,
+      "num_results": 3,
+      "duration_ms": 203.2,
+      "output_preview": "\ud83d\udd0d Searching: \"recently discussed\"\n\n\ud83d\udcc5 Temporal filter: recently \u2192 2026-01-24 to 2026-01-31\n   Filtered to 150 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['recently']\n   0 topic matches + 150 to search\n\n\ud83d\udcca Searched 150/1",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "earlier today",
+      "found": true,
+      "num_results": 4,
+      "duration_ms": 95.3,
+      "output_preview": "\ud83d\udd0d Searching: \"earlier today\"\n\n\ud83d\udcc5 Temporal filter: today \u2192 2026-01-31 to 2026-01-31\n   Filtered to 32 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['today', 'earlier']\n   0 topic matches + 32 to search\n\n\ud83d\udcca Searched 32/184 ",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "two days ago",
+      "found": true,
+      "num_results": 1,
+      "duration_ms": 93.13,
+      "output_preview": "\ud83d\udd0d Searching: \"two days ago\"\n\n\ud83d\udcc5 Temporal filter: two days ago \u2192 2026-01-29 to 2026-01-29\n   Filtered to 35 sessions\n\ud83c\udff7\ufe0f  Topic hints: ['days', 'two', 'ago']\n   0 topic matches + 35 to search\n\n\ud83d\udcca Searched",
+      "error": null,
+      "category": "temporal"
+    },
+    {
+      "query": "Stripe integration",
+      "found": true,
+      "num_results": 3,
+      "duration_ms": 1145.63,
+      "output_preview": "\ud83d\udd0d Searching: \"Stripe integration\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['stripe', 'integration']\n   4 topic matches + 180 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "Kubernetes deployment",
+      "found": true,
+      "num_results": 2,
+      "duration_ms": 878.81,
+      "output_preview": "\ud83d\udd0d Searching: \"Kubernetes deployment\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['kubernetes', 'deployment']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 3 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "AWS Lambda",
+      "found": true,
+      "num_results": 3,
+      "duration_ms": 584.05,
+      "output_preview": "\ud83d\udd0d Searching: \"AWS Lambda\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['lambda', 'aws']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 3 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "Docker Compose",
+      "found": true,
+      "num_results": 15,
+      "duration_ms": 581.15,
+      "output_preview": "\ud83d\udd0d Searching: \"Docker Compose\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['docker', 'compose']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "React components",
+      "found": true,
+      "num_results": 9,
+      "duration_ms": 306.71,
+      "output_preview": "\ud83d\udd0d Searching: \"React components\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['react', 'components']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 7 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "MongoDB aggregation",
+      "found": true,
+      "num_results": 5,
+      "duration_ms": 554.15,
+      "output_preview": "\ud83d\udd0d Searching: \"MongoDB aggregation\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['mongodb', 'aggregation']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 3 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "Redis caching",
+      "found": true,
+      "num_results": 7,
+      "duration_ms": 545.07,
+      "output_preview": "\ud83d\udd0d Searching: \"Redis caching\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['redis', 'caching']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "Terraform modules",
+      "found": true,
+      "num_results": 3,
+      "duration_ms": 1278.19,
+      "output_preview": "\ud83d\udd0d Searching: \"Terraform modules\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['terraform', 'modules']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 2 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "GraphQL resolvers",
+      "found": true,
+      "num_results": 3,
+      "duration_ms": 563.92,
+      "output_preview": "\ud83d\udd0d Searching: \"GraphQL resolvers\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['graphql', 'resolvers']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "blockchain smart contracts",
+      "found": true,
+      "num_results": 1,
+      "duration_ms": 1555.5,
+      "output_preview": "\ud83d\udd0d Searching: \"blockchain smart contracts\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['smart', 'blockchain', 'contracts']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 4 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "adversarial"
+    },
+    {
+      "query": "Fei Su",
+      "found": true,
+      "num_results": 12,
+      "duration_ms": 207.45,
+      "output_preview": "\ud83d\udd0d Searching: \"Fei Su\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['fei']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0 (202",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "Logan",
+      "found": true,
+      "num_results": 5,
+      "duration_ms": 294.1,
+      "output_preview": "\ud83d\udd0d Searching: \"Logan\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['logan']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0 (20",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "meeting notes",
+      "found": true,
+      "num_results": 7,
+      "duration_ms": 106.24,
+      "output_preview": "\ud83d\udd0d Searching: \"meeting notes\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['notes', 'meeting']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "discussed with",
+      "found": true,
+      "num_results": 10,
+      "duration_ms": 64.55,
+      "output_preview": "\ud83d\udd0d Searching: \"discussed with\"\n\n\ud83d\udcc6 No filters, using 20 most recent sessions\n\n\ud83d\udcca Searched 20/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83e\udde0 (2026-02-01) ",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "Vicente",
+      "found": true,
+      "num_results": 1,
+      "duration_ms": 70.6,
+      "output_preview": "\ud83d\udd0d Searching: \"Vicente\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['vicente']\n   145 topic matches + 39 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "collaboration",
+      "found": true,
+      "num_results": 6,
+      "duration_ms": 449.69,
+      "output_preview": "\ud83d\udd0d Searching: \"collaboration\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['collaboration']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "team discussion",
+      "found": true,
+      "num_results": 3,
+      "duration_ms": 238.99,
+      "output_preview": "\ud83d\udd0d Searching: \"team discussion\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['team', 'discussion']\n   1 topic matches + 183 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "code review",
+      "found": true,
+      "num_results": 1,
+      "duration_ms": 345.96,
+      "output_preview": "\ud83d\udd0d Searching: \"code review\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['review', 'code']\n   2 topic matches + 182 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 8 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "pair programming",
+      "found": true,
+      "num_results": 4,
+      "duration_ms": 492.18,
+      "output_preview": "\ud83d\udd0d Searching: \"pair programming\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['pair', 'programming']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 6 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "people"
+    },
+    {
+      "query": "feedback from",
+      "found": true,
+      "num_results": 2,
+      "duration_ms": 99.41,
+      "output_preview": "\ud83d\udd0d Searching: \"feedback from\"\n\n\ud83c\udff7\ufe0f  Topic hints: ['from', 'feedback']\n   0 topic matches + 184 to search\n\n\ud83d\udcca Searched 184/184 sessions\n   Found 10 matches\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "error": null,
+      "category": "people"
+    }
+  ]
+}

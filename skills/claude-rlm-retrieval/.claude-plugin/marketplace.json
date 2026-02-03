@@ -1,0 +1,20 @@
+{
+  "name": "vriveras",
+  "owner": {
+    "name": "Vicente Rivera",
+    "email": "vriveras@gmail.com"
+  },
+  "metadata": {
+    "description": "Memory and productivity plugins for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "claude-rlm-retrieval",
+      "source": "./",
+      "description": "RLM-inspired retrieval. Search Claude Code transcripts deterministically with temporal + enhanced keyword matching.",
+      "version": "3.1.0",
+      "category": "productivity",
+      "tags": ["memory", "retrieval", "rlm", "sessions", "persistence"]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "baseline_accuracy": 100.0,
+  "skill_accuracy": 100.0,
+  "improvement": 0.0,
+  "tests": 31,
+  "sessions": 10,
+  "messages": 220,
+  "baseline": {
+    "passed": 31,
+    "total": 31,
+    "categories": {
+      "partial": {
+        "passed": 10,
+        "total": 10
+      },
+      "compound": {
+        "passed": 5,
+        "total": 5
+      },
+      "fact": {
+        "passed": 4,
+        "total": 4
+      },
+      "adversarial": {
+        "passed": 12,
+        "total": 12
+      }
+    }
+  },
+  "skill": {
+    "passed": 31,
+    "total": 31,
+    "categories": {
+      "partial": {
+        "passed": 10,
+        "total": 10
+      },
+      "compound": {
+        "passed": 5,
+        "total": 5
+      },
+      "fact": {
+        "passed": 4,
+        "total": 4
+      },
+      "adversarial": {
+        "passed": 12,
+        "total": 12
+      }
+    }
+  }
+}

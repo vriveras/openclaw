@@ -1,0 +1,30 @@
+{
+  "basic": {
+    "iterations": 1000,
+    "total_queries": 10,
+    "latency_ms": {
+      "mean": 0.022,
+      "median": 0.021,
+      "stdev": 0.014,
+      "min": 0.019,
+      "max": 0.346,
+      "p95": 0.026
+    },
+    "recall": 74.1
+  },
+  "enhanced": {
+    "iterations": 1000,
+    "total_queries": 10,
+    "latency_ms": {
+      "mean": 14.783,
+      "median": 15.032,
+      "stdev": 3.756,
+      "min": 9.489,
+      "max": 23.991,
+      "p95": 22.292
+    },
+    "recall": 100.0
+  },
+  "timestamp": "2026-01-30T10:00:48.244868",
+  "iterations": 100
+}

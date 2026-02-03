@@ -1,0 +1,13 @@
+{
+  "name": "claude-rlm-retrieval",
+  "description": "RLM-inspired persistent retrieval for Claude Code. Deterministic transcript search + indexing helpers.",
+  "version": "3.1.0",
+  "author": {
+    "name": "Vicente Rivera",
+    "email": "vriveras@gmail.com"
+  },
+  "homepage": "https://github.com/vriveras/claude-rlm-retrieval",
+  "repository": "https://github.com/vriveras/claude-rlm-retrieval",
+  "license": "MIT",
+  "keywords": ["memory", "retrieval", "rlm", "persistence", "sessions", "claude-code"]
+}

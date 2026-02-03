@@ -1,0 +1,59 @@
+# Test queries for in-session validation
+# Each line is a query to run
+
+# Project queries
+What is WLXC?
+Tell me about ChessRT
+What's the context-memory skill?
+WorkIQ setup
+Cat-Tic-Toe game
+IDC proposal details
+Alt-Text feature
+
+# Temporal queries
+What did we work on yesterday?
+What happened last week?
+Projects from this week
+What was discussed on January 30?
+
+# People queries
+Conversations with Tucker
+What did Logan say?
+Fei Su 1:1 topics
+Who is Cary?
+
+# Technical queries
+Glicko-2 rating system
+containerd configuration
+MongoDB setup
+WebSocket implementation
+binfmt issues
+
+# Topic queries
+inbox triage results
+calendar conflicts
+Teams notifications
+meeting transcription
+heartbeat checks
+
+# Fuzzy/partial queries
+the container thing
+rating system for chess
+memory skill accuracy
+blog post about memory
+
+# Compound queries
+context-memory skill validation
+real-time chess cooldown
+Windows container sandbox
+session transcript indexing
+
+# Action queries
+What was deployed recently?
+What bugs were fixed?
+What was committed today?
+
+# Cross-session queries
+Previous conversations about testing
+When did we discuss validation?
+History of skill development

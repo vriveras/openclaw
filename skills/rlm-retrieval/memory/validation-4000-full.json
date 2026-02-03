@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-02-02T15:55:51.206350",
+  "total_tests": 4000,
+  "successful": 4000,
+  "failed": 0,
+  "total_time_seconds": 2860.79,
+  "latency_stats": {
+    "mean_ms": 715.19,
+    "median_ms": 769.45,
+    "p95_ms": 1454.24,
+    "p99_ms": 1822.64,
+    "min_ms": 0.67,
+    "max_ms": 2243.66
+  },
+  "by_category": {
+    "vague": {
+      "count": 320,
+      "mean_ms": 244.29,
+      "median_ms": 184.05
+    },
+    "partial": {
+      "count": 240,
+      "mean_ms": 616.01,
+      "median_ms": 637.51
+    },
+    "variation": {
+      "count": 400,
+      "mean_ms": 848.37,
+      "median_ms": 880.66
+    },
+    "technical": {
+      "count": 600,
+      "mean_ms": 842.68,
+      "median_ms": 878.89
+    },
+    "metadata": {
+      "count": 200,
+      "mean_ms": 458.23,
+      "median_ms": 402.34
+    },
+    "project": {
+      "count": 400,
+      "mean_ms": 287.37,
+      "median_ms": 30.03
+    },
+    "adversarial": {
+      "count": 1200,
+      "mean_ms": 902.53,
+      "median_ms": 934.89
+    },
+    "identity": {
+      "count": 200,
+      "mean_ms": 695.32,
+      "median_ms": 704.0
+    },
+    "temporal": {
+      "count": 120,
+      "mean_ms": 308.81,
+      "median_ms": 313.12
+    },
+    "decision": {
+      "count": 320,
+      "mean_ms": 1012.62,
+      "median_ms": 1054.61
+    }
+  }
+}

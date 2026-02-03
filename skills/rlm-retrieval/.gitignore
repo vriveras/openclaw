@@ -1,0 +1,16 @@
+# Private test data (contains conversation-specific queries)
+# Generate your own from your conversation history
+tests/test-cases.json
+tests/test-cases-*.json
+!tests/test-cases-example.json
+tests/baseline-results*.json
+
+# Local session index (generated, contains personal session IDs)
+memory/sessions-index.json
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

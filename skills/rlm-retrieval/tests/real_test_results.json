@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-01-31T15:55:38.024229",
+  "total_cases": 1000,
+  "errors": 0,
+  "has_results": {
+    "passed": 990,
+    "failed": 10
+  },
+  "recall_at_10": {
+    "passed": 99,
+    "failed": 901
+  },
+  "relevance": {
+    "passed": 920,
+    "failed": 80
+  },
+  "by_type": {
+    "people": {
+      "has_results": 411,
+      "recall": 19,
+      "relevance": 411,
+      "total": 411
+    },
+    "project_mention": {
+      "has_results": 132,
+      "recall": 8,
+      "relevance": 109,
+      "total": 132
+    },
+    "tech_terms": {
+      "has_results": 88,
+      "recall": 6,
+      "relevance": 85,
+      "total": 88
+    },
+    "actions": {
+      "has_results": 32,
+      "recall": 20,
+      "relevance": 4,
+      "total": 33
+    },
+    "topics": {
+      "has_results": 307,
+      "recall": 37,
+      "relevance": 306,
+      "total": 308
+    },
+    "dates": {
+      "has_results": 4,
+      "recall": 0,
+      "relevance": 0,
+      "total": 12
+    },
+    "phrases": {
+      "has_results": 6,
+      "recall": 2,
+      "relevance": 3,
+      "total": 6
+    },
+    "decisions": {
+      "has_results": 10,
+      "recall": 7,
+      "relevance": 2,
+      "total": 10
+    }
+  }
+}
