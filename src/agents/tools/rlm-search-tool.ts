@@ -1,6 +1,7 @@
 import { Type } from "@sinclair/typebox";
 import { execFile } from "node:child_process";
 import path from "node:path";
+import { performance } from "node:perf_hooks";
 import { promisify } from "node:util";
 import type { OpenClawConfig } from "../../config/config.js";
 import { resolveAgentWorkspaceDir } from "../agent-scope.js";
@@ -21,6 +22,9 @@ const RlmSearchRefsSchema = Type.Object({
 });
 
 type TemporalSearchJsonResult = {
+  search_path?: "index" | "fallback" | "hybrid";
+  query_time_ms?: number;
+  total_time_ms?: number;
   results?: Array<{
     session?: string;
     file?: string;
@@ -129,13 +133,19 @@ export function createRlmSearchTool(options: {
         return jsonResult({ results: [], disabled: true, error: "rlm_search disabled by config" });
       }
 
+      const toolT0 = performance.now();
       try {
+        const execT0 = performance.now();
         const { stdout } = await execFileAsync("python3", [resolved.scriptPath, "--json", query], {
           timeout: resolved.timeoutMs,
           maxBuffer: 10 * 1024 * 1024,
         });
+        const execMs = performance.now() - execT0;
 
-        const parsed = normalizeResults(parseTemporalSearchJson(String(stdout ?? "")));
+        const parseT0 = performance.now();
+        const parsedJson = parseTemporalSearchJson(String(stdout ?? ""));
+        const parsed = normalizeResults(parsedJson);
+        const parseMs = performance.now() - parseT0;
 
         const limit =
           typeof maxResults === "number" && Number.isFinite(maxResults) && maxResults > 0
@@ -152,7 +162,22 @@ export function createRlmSearchTool(options: {
           sessionId: r.sessionId,
         }));
 
-        return jsonResult({ results, provider: "rlm", model: "temporal_search.py" });
+        const toolMs = performance.now() - toolT0;
+        return jsonResult({
+          results,
+          provider: "rlm",
+          model: "temporal_search.py",
+          meta: {
+            timings: {
+              toolMs,
+              execMs,
+              parseMs,
+            },
+            searchPath: parsedJson.search_path,
+            scriptQueryTimeMs: parsedJson.query_time_ms,
+            scriptTotalTimeMs: parsedJson.total_time_ms,
+          },
+        });
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         return jsonResult({ results: [], disabled: true, error: message });
@@ -196,13 +221,19 @@ export function createRlmSearchRefsTool(options: {
         });
       }
 
+      const toolT0 = performance.now();
       try {
+        const execT0 = performance.now();
         const { stdout } = await execFileAsync("python3", [resolved.scriptPath, "--json", query], {
           timeout: resolved.timeoutMs,
           maxBuffer: 10 * 1024 * 1024,
         });
+        const execMs = performance.now() - execT0;
 
-        const parsed = normalizeResults(parseTemporalSearchJson(String(stdout ?? "")));
+        const parseT0 = performance.now();
+        const parsedJson = parseTemporalSearchJson(String(stdout ?? ""));
+        const parsed = normalizeResults(parsedJson);
+        const parseMs = performance.now() - parseT0;
 
         const limit =
           typeof maxResults === "number" && Number.isFinite(maxResults) && maxResults > 0
@@ -224,7 +255,23 @@ export function createRlmSearchRefsTool(options: {
           sessionId: r.sessionId,
         }));
 
-        return jsonResult({ query, refs, provider: "rlm", model: "temporal_search.py" });
+        const toolMs = performance.now() - toolT0;
+        return jsonResult({
+          query,
+          refs,
+          provider: "rlm",
+          model: "temporal_search.py",
+          meta: {
+            timings: {
+              toolMs,
+              execMs,
+              parseMs,
+            },
+            searchPath: parsedJson.search_path,
+            scriptQueryTimeMs: parsedJson.query_time_ms,
+            scriptTotalTimeMs: parsedJson.total_time_ms,
+          },
+        });
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         return jsonResult({ query, refs: [], disabled: true, error: message });
