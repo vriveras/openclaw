@@ -20,44 +20,49 @@ const RlmSearchRefsSchema = Type.Object({
   previewChars: Type.Optional(Type.Number()),
 });
 
+type TemporalSearchJsonResult = {
+  results?: Array<{
+    session?: string;
+    file?: string;
+    line?: number;
+    role?: "user" | "assistant";
+    text?: string;
+    match_score?: number;
+  }>;
+};
+
 type RlmResult = {
-  date: string;
+  sessionId: string;
+  file: string;
+  line: number;
   role: "user" | "assistant";
   snippet: string;
   score?: number;
 };
 
-function parseTemporalSearchOutput(stdout: string): RlmResult[] {
-  // Match headers like: 🧠 (YYYY-MM-DD) 🤖 or 👤
-  const results: RlmResult[] = [];
-  const lines = stdout.split("\n");
-
-  let current: Partial<RlmResult> | null = null;
-
-  for (const line of lines) {
-    const m = line.match(/🧠 \(([\d-]+)\) (🤖|👤)/);
-    if (m) {
-      if (current?.snippet?.trim()) {
-        results.push(current as RlmResult);
-      }
-      current = {
-        date: m[1],
-        role: m[2] === "🤖" ? "assistant" : "user",
-        snippet: "",
-      };
-      continue;
-    }
-
-    if (current && line.trim() && !line.startsWith("──")) {
-      current.snippet = (current.snippet ?? "") + line + "\n";
-    }
+function parseTemporalSearchJson(stdout: string): TemporalSearchJsonResult {
+  const raw = String(stdout ?? "").trim();
+  if (!raw) {
+    return {};
   }
+  return JSON.parse(raw) as TemporalSearchJsonResult;
+}
 
-  if (current?.snippet?.trim()) {
-    results.push(current as RlmResult);
-  }
-
-  return results;
+function normalizeResults(parsedJson: TemporalSearchJsonResult): RlmResult[] {
+  return (parsedJson.results ?? [])
+    .filter(
+      (r) =>
+        typeof r.session === "string" && typeof r.file === "string" && typeof r.text === "string",
+    )
+    .map((r) => ({
+      sessionId: r.session as string,
+      file: r.file as string,
+      line:
+        typeof r.line === "number" && Number.isFinite(r.line) ? Math.max(1, Math.floor(r.line)) : 1,
+      role: r.role === "user" || r.role === "assistant" ? r.role : "assistant",
+      snippet: r.text as string,
+      score: typeof r.match_score === "number" ? r.match_score : undefined,
+    }));
 }
 
 function makePreview(snippet: string, previewChars: number): string {
@@ -66,6 +71,33 @@ function makePreview(snippet: string, previewChars: number): string {
     return s;
   }
   return s.slice(0, previewChars).trimEnd() + "…";
+}
+
+function resolveScriptPath(
+  cfg: OpenClawConfig,
+  agentId: string,
+): {
+  scriptPath: string;
+  timeoutMs: number;
+  defaultMaxResults: number;
+  disabled: boolean;
+} {
+  const rlmCfg = cfg.memory?.rlm;
+  if (rlmCfg?.enabled === false) {
+    return { scriptPath: "", timeoutMs: 0, defaultMaxResults: 0, disabled: true };
+  }
+
+  const workspaceDir = resolveAgentWorkspaceDir(cfg, agentId);
+  const scriptRel = rlmCfg?.script?.trim() || "skills/rlm-retrieval/scripts/temporal_search.py";
+  const scriptPath = path.isAbsolute(scriptRel) ? scriptRel : path.join(workspaceDir, scriptRel);
+
+  const timeoutMs = typeof rlmCfg?.timeoutMs === "number" ? rlmCfg.timeoutMs : 30_000;
+  const defaultMaxResults =
+    typeof rlmCfg?.defaultMaxResults === "number" && Number.isFinite(rlmCfg.defaultMaxResults)
+      ? rlmCfg.defaultMaxResults
+      : 10;
+
+  return { scriptPath, timeoutMs, defaultMaxResults, disabled: false };
 }
 
 export function createRlmSearchTool(options: {
@@ -92,51 +124,35 @@ export function createRlmSearchTool(options: {
       const query = readStringParam(params, "query", { required: true });
       const maxResults = readNumberParam(params, "maxResults", { integer: true });
 
-      const rlmCfg = cfg.memory?.rlm;
-      if (rlmCfg?.enabled === false) {
+      const resolved = resolveScriptPath(cfg, agentId);
+      if (resolved.disabled) {
         return jsonResult({ results: [], disabled: true, error: "rlm_search disabled by config" });
       }
 
-      const workspaceDir = resolveAgentWorkspaceDir(cfg, agentId);
-      const scriptRel = rlmCfg?.script?.trim() || "skills/rlm-retrieval/scripts/temporal_search.py";
-      const scriptPath = path.isAbsolute(scriptRel)
-        ? scriptRel
-        : path.join(workspaceDir, scriptRel);
-
-      const timeoutMs = typeof rlmCfg?.timeoutMs === "number" ? rlmCfg.timeoutMs : 30_000;
-
       try {
-        const { stdout } = await execFileAsync("python3", [scriptPath, query], {
-          timeout: timeoutMs,
+        const { stdout } = await execFileAsync("python3", [resolved.scriptPath, "--json", query], {
+          timeout: resolved.timeoutMs,
           maxBuffer: 10 * 1024 * 1024,
         });
 
-        const parsed = parseTemporalSearchOutput(String(stdout ?? ""));
-
-        const defaultMax =
-          typeof rlmCfg?.defaultMaxResults === "number" && Number.isFinite(rlmCfg.defaultMaxResults)
-            ? rlmCfg.defaultMaxResults
-            : 10;
+        const parsed = normalizeResults(parseTemporalSearchJson(String(stdout ?? "")));
 
         const limit =
           typeof maxResults === "number" && Number.isFinite(maxResults) && maxResults > 0
             ? maxResults
-            : defaultMax;
+            : resolved.defaultMaxResults;
 
         const results = parsed.slice(0, limit).map((r, idx) => ({
-          path: `memory/transcripts/${r.date}.md`,
-          startLine: 0,
-          endLine: 0,
+          path: `sessions/${r.file}`,
+          startLine: r.line,
+          endLine: r.line,
           score: typeof r.score === "number" ? r.score : 0.55 - idx * 0.001,
-          snippet: `🔍 ${r.snippet.trim()}`,
+          snippet: `🔍 ${r.snippet.trim()}\n\nSource: sessions/${r.file}#L${r.line}`,
           source: "sessions" as const,
+          sessionId: r.sessionId,
         }));
 
-        return jsonResult({
-          results,
-          provider: "rlm",
-          model: "temporal_search.py",
-        });
+        return jsonResult({ results, provider: "rlm", model: "temporal_search.py" });
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         return jsonResult({ results: [], disabled: true, error: message });
@@ -170,8 +186,8 @@ export function createRlmSearchRefsTool(options: {
       const maxResults = readNumberParam(params, "maxResults", { integer: true });
       const previewChars = readNumberParam(params, "previewChars", { integer: true });
 
-      const rlmCfg = cfg.memory?.rlm;
-      if (rlmCfg?.enabled === false) {
+      const resolved = resolveScriptPath(cfg, agentId);
+      if (resolved.disabled) {
         return jsonResult({
           query,
           refs: [],
@@ -180,51 +196,35 @@ export function createRlmSearchRefsTool(options: {
         });
       }
 
-      const workspaceDir = resolveAgentWorkspaceDir(cfg, agentId);
-      const scriptRel = rlmCfg?.script?.trim() || "skills/rlm-retrieval/scripts/temporal_search.py";
-      const scriptPath = path.isAbsolute(scriptRel)
-        ? scriptRel
-        : path.join(workspaceDir, scriptRel);
-
-      const timeoutMs = typeof rlmCfg?.timeoutMs === "number" ? rlmCfg.timeoutMs : 30_000;
-
       try {
-        const { stdout } = await execFileAsync("python3", [scriptPath, query], {
-          timeout: timeoutMs,
+        const { stdout } = await execFileAsync("python3", [resolved.scriptPath, "--json", query], {
+          timeout: resolved.timeoutMs,
           maxBuffer: 10 * 1024 * 1024,
         });
 
-        const parsed = parseTemporalSearchOutput(String(stdout ?? ""));
-
-        const defaultMax =
-          typeof rlmCfg?.defaultMaxResults === "number" && Number.isFinite(rlmCfg.defaultMaxResults)
-            ? rlmCfg.defaultMaxResults
-            : 10;
+        const parsed = normalizeResults(parseTemporalSearchJson(String(stdout ?? "")));
 
         const limit =
           typeof maxResults === "number" && Number.isFinite(maxResults) && maxResults > 0
             ? maxResults
-            : defaultMax;
+            : resolved.defaultMaxResults;
+
         const previewLimit =
           typeof previewChars === "number" && Number.isFinite(previewChars) && previewChars > 0
             ? previewChars
             : 200;
 
         const refs = parsed.slice(0, limit).map((r, idx) => ({
-          path: `memory/transcripts/${r.date}.md`,
-          startLine: 0,
-          endLine: 0,
+          path: `sessions/${r.file}`,
+          startLine: r.line,
+          endLine: r.line,
           score: typeof r.score === "number" ? r.score : 0.55 - idx * 0.001,
           source: "sessions" as const,
           preview: `🔍 ${makePreview(r.snippet, previewLimit)}`,
+          sessionId: r.sessionId,
         }));
 
-        return jsonResult({
-          query,
-          refs,
-          provider: "rlm",
-          model: "temporal_search.py",
-        });
+        return jsonResult({ query, refs, provider: "rlm", model: "temporal_search.py" });
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         return jsonResult({ query, refs: [], disabled: true, error: message });
