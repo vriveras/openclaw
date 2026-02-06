@@ -60,7 +60,7 @@ openclaw devices approve <requestId>
 openclaw devices reject <requestId>
 ```
 
-### Where the state lives
+### Node pairing state storage
 
 Stored under `~/.openclaw/devices/`:
 
@@ -80,6 +80,7 @@ Stored under `~/.openclaw/devices/`:
   - Telegram: [Telegram](/channels/telegram)
   - WhatsApp: [WhatsApp](/channels/whatsapp)
   - Signal: [Signal](/channels/signal)
-  - iMessage: [iMessage](/channels/imessage)
+  - BlueBubbles (iMessage): [BlueBubbles](/channels/bluebubbles)
+  - iMessage (legacy): [iMessage](/channels/imessage)
   - Discord: [Discord](/channels/discord)
   - Slack: [Slack](/channels/slack)

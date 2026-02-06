@@ -24,6 +24,7 @@ export const HeartbeatSchema = z
     includeReasoning: z.boolean().optional(),
     target: z.string().optional(),
     to: z.string().optional(),
+    accountId: z.string().optional(),
     prompt: z.string().optional(),
     ackMaxChars: z.number().int().nonnegative().optional(),
   })
@@ -191,6 +192,7 @@ export const ToolsWebFetchSchema = z
   .object({
     enabled: z.boolean().optional(),
     maxChars: z.number().int().positive().optional(),
+    maxCharsCap: z.number().int().positive().optional(),
     timeoutSeconds: z.number().int().positive().optional(),
     cacheTtlMinutes: z.number().nonnegative().optional(),
     maxRedirects: z.number().int().nonnegative().optional(),
@@ -441,6 +443,7 @@ export const AgentEntrySchema = z
     workspace: z.string().optional(),
     agentDir: z.string().optional(),
     model: AgentModelSchema.optional(),
+    skills: z.array(z.string()).optional(),
     memorySearch: MemorySearchSchema,
     humanDelay: HumanDelaySchema.optional(),
     heartbeat: HeartbeatSchema,
@@ -460,6 +463,7 @@ export const AgentEntrySchema = z
               .strict(),
           ])
           .optional(),
+        thinking: z.string().optional(),
       })
       .strict()
       .optional(),
