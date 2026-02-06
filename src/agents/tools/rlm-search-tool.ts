@@ -92,26 +92,36 @@ export function createRlmSearchTool(options: {
       const query = readStringParam(params, "query", { required: true });
       const maxResults = readNumberParam(params, "maxResults", { integer: true });
 
+      const rlmCfg = cfg.memory?.rlm;
+      if (rlmCfg?.enabled === false) {
+        return jsonResult({ results: [], disabled: true, error: "rlm_search disabled by config" });
+      }
+
       const workspaceDir = resolveAgentWorkspaceDir(cfg, agentId);
-      const scriptPath = path.join(
-        workspaceDir,
-        "skills",
-        "rlm-retrieval",
-        "scripts",
-        "temporal_search.py",
-      );
+      const scriptRel = rlmCfg?.script?.trim() || "skills/rlm-retrieval/scripts/temporal_search.py";
+      const scriptPath = path.isAbsolute(scriptRel)
+        ? scriptRel
+        : path.join(workspaceDir, scriptRel);
+
+      const timeoutMs = typeof rlmCfg?.timeoutMs === "number" ? rlmCfg.timeoutMs : 30_000;
 
       try {
         const { stdout } = await execFileAsync("python3", [scriptPath, query], {
-          timeout: 30_000,
+          timeout: timeoutMs,
           maxBuffer: 10 * 1024 * 1024,
         });
 
         const parsed = parseTemporalSearchOutput(String(stdout ?? ""));
+
+        const defaultMax =
+          typeof rlmCfg?.defaultMaxResults === "number" && Number.isFinite(rlmCfg.defaultMaxResults)
+            ? rlmCfg.defaultMaxResults
+            : 10;
+
         const limit =
           typeof maxResults === "number" && Number.isFinite(maxResults) && maxResults > 0
             ? maxResults
-            : 10;
+            : defaultMax;
 
         const results = parsed.slice(0, limit).map((r, idx) => ({
           path: `memory/transcripts/${r.date}.md`,
@@ -160,26 +170,41 @@ export function createRlmSearchRefsTool(options: {
       const maxResults = readNumberParam(params, "maxResults", { integer: true });
       const previewChars = readNumberParam(params, "previewChars", { integer: true });
 
+      const rlmCfg = cfg.memory?.rlm;
+      if (rlmCfg?.enabled === false) {
+        return jsonResult({
+          query,
+          refs: [],
+          disabled: true,
+          error: "rlm_search_refs disabled by config",
+        });
+      }
+
       const workspaceDir = resolveAgentWorkspaceDir(cfg, agentId);
-      const scriptPath = path.join(
-        workspaceDir,
-        "skills",
-        "rlm-retrieval",
-        "scripts",
-        "temporal_search.py",
-      );
+      const scriptRel = rlmCfg?.script?.trim() || "skills/rlm-retrieval/scripts/temporal_search.py";
+      const scriptPath = path.isAbsolute(scriptRel)
+        ? scriptRel
+        : path.join(workspaceDir, scriptRel);
+
+      const timeoutMs = typeof rlmCfg?.timeoutMs === "number" ? rlmCfg.timeoutMs : 30_000;
 
       try {
         const { stdout } = await execFileAsync("python3", [scriptPath, query], {
-          timeout: 30_000,
+          timeout: timeoutMs,
           maxBuffer: 10 * 1024 * 1024,
         });
 
         const parsed = parseTemporalSearchOutput(String(stdout ?? ""));
+
+        const defaultMax =
+          typeof rlmCfg?.defaultMaxResults === "number" && Number.isFinite(rlmCfg.defaultMaxResults)
+            ? rlmCfg.defaultMaxResults
+            : 10;
+
         const limit =
           typeof maxResults === "number" && Number.isFinite(maxResults) && maxResults > 0
             ? maxResults
-            : 10;
+            : defaultMax;
         const previewLimit =
           typeof previewChars === "number" && Number.isFinite(previewChars) && previewChars > 0
             ? previewChars
