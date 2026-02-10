@@ -1,0 +1,11 @@
+# Local state files (generated, contain personal context)
+memory/
+context-state.json
+sessions-index.json
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

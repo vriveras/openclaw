@@ -1,0 +1,38 @@
+{
+  "sessions": 10,
+  "messages": 220,
+  "categories": {
+    "partial_matching": {
+      "description": "Single-word queries that should match compound terms",
+      "tests": 5,
+      "passed": 5,
+      "failed": []
+    },
+    "temporal_filtering": {
+      "description": "Time-relative queries",
+      "tests": 4,
+      "passed": 4,
+      "failed": []
+    },
+    "adversarial": {
+      "description": "Topics never discussed (should NOT match)",
+      "tests": 6,
+      "passed": 6,
+      "failed": []
+    },
+    "compound_terms": {
+      "description": "CamelCase and compound word matching",
+      "tests": 3,
+      "passed": 3,
+      "failed": []
+    },
+    "fact_retrieval": {
+      "description": "Specific facts from conversations",
+      "tests": 3,
+      "passed": 3,
+      "failed": []
+    }
+  },
+  "total_tests": 21,
+  "total_passed": 21
+}

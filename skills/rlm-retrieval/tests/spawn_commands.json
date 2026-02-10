@@ -1,0 +1,552 @@
+[
+  {
+    "query": "What is WLXC?",
+    "label": "skill-test-001",
+    "task": "Use the context-memory skill to answer: \"What is WLXC?\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Tell me about ChessRT",
+    "label": "skill-test-002",
+    "task": "Use the context-memory skill to answer: \"Tell me about ChessRT\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "context-memory skill details",
+    "label": "skill-test-003",
+    "task": "Use the context-memory skill to answer: \"context-memory skill details\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "WorkIQ integration",
+    "label": "skill-test-004",
+    "task": "Use the context-memory skill to answer: \"WorkIQ integration\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Cat-Tic-Toe game",
+    "label": "skill-test-005",
+    "task": "Use the context-memory skill to answer: \"Cat-Tic-Toe game\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "IDC proposal",
+    "label": "skill-test-006",
+    "task": "Use the context-memory skill to answer: \"IDC proposal\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Alt-Text feature",
+    "label": "skill-test-007",
+    "task": "Use the context-memory skill to answer: \"Alt-Text feature\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "OpenClaw configuration",
+    "label": "skill-test-008",
+    "task": "Use the context-memory skill to answer: \"OpenClaw configuration\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "blog post we wrote",
+    "label": "skill-test-009",
+    "task": "Use the context-memory skill to answer: \"blog post we wrote\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "personal blog site",
+    "label": "skill-test-010",
+    "task": "Use the context-memory skill to answer: \"personal blog site\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "native gateway project",
+    "label": "skill-test-011",
+    "task": "Use the context-memory skill to answer: \"native gateway project\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "skill automation work",
+    "label": "skill-test-012",
+    "task": "Use the context-memory skill to answer: \"skill automation work\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "meeting transcription setup",
+    "label": "skill-test-013",
+    "task": "Use the context-memory skill to answer: \"meeting transcription setup\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Himalaya email",
+    "label": "skill-test-014",
+    "task": "Use the context-memory skill to answer: \"Himalaya email\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "qwen-tts voice",
+    "label": "skill-test-015",
+    "task": "Use the context-memory skill to answer: \"qwen-tts voice\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "gsd workflow",
+    "label": "skill-test-016",
+    "task": "Use the context-memory skill to answer: \"gsd workflow\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "spec-planner skill",
+    "label": "skill-test-017",
+    "task": "Use the context-memory skill to answer: \"spec-planner skill\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "terminal relay usage",
+    "label": "skill-test-018",
+    "task": "Use the context-memory skill to answer: \"terminal relay usage\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "BlueBubbles plugin",
+    "label": "skill-test-019",
+    "task": "Use the context-memory skill to answer: \"BlueBubbles plugin\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "mcporter MCP",
+    "label": "skill-test-020",
+    "task": "Use the context-memory skill to answer: \"mcporter MCP\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "What did we work on yesterday?",
+    "label": "skill-test-021",
+    "task": "Use the context-memory skill to answer: \"What did we work on yesterday?\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "projects this week",
+    "label": "skill-test-022",
+    "task": "Use the context-memory skill to answer: \"projects this week\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "last week summary",
+    "label": "skill-test-023",
+    "task": "Use the context-memory skill to answer: \"last week summary\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "January 30 work",
+    "label": "skill-test-024",
+    "task": "Use the context-memory skill to answer: \"January 30 work\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "today's progress",
+    "label": "skill-test-025",
+    "task": "Use the context-memory skill to answer: \"today's progress\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "recent conversations",
+    "label": "skill-test-026",
+    "task": "Use the context-memory skill to answer: \"recent conversations\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "what happened Monday",
+    "label": "skill-test-027",
+    "task": "Use the context-memory skill to answer: \"what happened Monday\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Tuesday discussions",
+    "label": "skill-test-028",
+    "task": "Use the context-memory skill to answer: \"Tuesday discussions\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "this morning's tasks",
+    "label": "skill-test-029",
+    "task": "Use the context-memory skill to answer: \"this morning's tasks\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "overnight changes",
+    "label": "skill-test-030",
+    "task": "Use the context-memory skill to answer: \"overnight changes\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "weekend work",
+    "label": "skill-test-031",
+    "task": "Use the context-memory skill to answer: \"weekend work\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "last 3 days",
+    "label": "skill-test-032",
+    "task": "Use the context-memory skill to answer: \"last 3 days\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "recent commits",
+    "label": "skill-test-033",
+    "task": "Use the context-memory skill to answer: \"recent commits\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "yesterday's meetings",
+    "label": "skill-test-034",
+    "task": "Use the context-memory skill to answer: \"yesterday's meetings\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "earlier today",
+    "label": "skill-test-035",
+    "task": "Use the context-memory skill to answer: \"earlier today\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Tucker conversations",
+    "label": "skill-test-036",
+    "task": "Use the context-memory skill to answer: \"Tucker conversations\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Logan discussions",
+    "label": "skill-test-037",
+    "task": "Use the context-memory skill to answer: \"Logan discussions\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Fei Su 1:1",
+    "label": "skill-test-038",
+    "task": "Use the context-memory skill to answer: \"Fei Su 1:1\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Cary messages",
+    "label": "skill-test-039",
+    "task": "Use the context-memory skill to answer: \"Cary messages\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Gabriel chat",
+    "label": "skill-test-040",
+    "task": "Use the context-memory skill to answer: \"Gabriel chat\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "team discussions",
+    "label": "skill-test-041",
+    "task": "Use the context-memory skill to answer: \"team discussions\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "direct report updates",
+    "label": "skill-test-042",
+    "task": "Use the context-memory skill to answer: \"direct report updates\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "manager feedback",
+    "label": "skill-test-043",
+    "task": "Use the context-memory skill to answer: \"manager feedback\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "who mentioned ratings",
+    "label": "skill-test-044",
+    "task": "Use the context-memory skill to answer: \"who mentioned ratings\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "who worked on containers",
+    "label": "skill-test-045",
+    "task": "Use the context-memory skill to answer: \"who worked on containers\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "conversations with family",
+    "label": "skill-test-046",
+    "task": "Use the context-memory skill to answer: \"conversations with family\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Angela updates",
+    "label": "skill-test-047",
+    "task": "Use the context-memory skill to answer: \"Angela updates\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Chris discussions",
+    "label": "skill-test-048",
+    "task": "Use the context-memory skill to answer: \"Chris discussions\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Austin work",
+    "label": "skill-test-049",
+    "task": "Use the context-memory skill to answer: \"Austin work\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Mark feedback",
+    "label": "skill-test-050",
+    "task": "Use the context-memory skill to answer: \"Mark feedback\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Glicko-2 rating",
+    "label": "skill-test-051",
+    "task": "Use the context-memory skill to answer: \"Glicko-2 rating\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "containerd setup",
+    "label": "skill-test-052",
+    "task": "Use the context-memory skill to answer: \"containerd setup\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "MongoDB config",
+    "label": "skill-test-053",
+    "task": "Use the context-memory skill to answer: \"MongoDB config\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "WebSocket code",
+    "label": "skill-test-054",
+    "task": "Use the context-memory skill to answer: \"WebSocket code\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "binfmt fix",
+    "label": "skill-test-055",
+    "task": "Use the context-memory skill to answer: \"binfmt fix\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "WSL configuration",
+    "label": "skill-test-056",
+    "task": "Use the context-memory skill to answer: \"WSL configuration\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Windows interop",
+    "label": "skill-test-057",
+    "task": "Use the context-memory skill to answer: \"Windows interop\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "tmux sessions",
+    "label": "skill-test-058",
+    "task": "Use the context-memory skill to answer: \"tmux sessions\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Python dependencies",
+    "label": "skill-test-059",
+    "task": "Use the context-memory skill to answer: \"Python dependencies\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Node.js setup",
+    "label": "skill-test-060",
+    "task": "Use the context-memory skill to answer: \"Node.js setup\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "TypeScript errors",
+    "label": "skill-test-061",
+    "task": "Use the context-memory skill to answer: \"TypeScript errors\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "React components",
+    "label": "skill-test-062",
+    "task": "Use the context-memory skill to answer: \"React components\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "API endpoints",
+    "label": "skill-test-063",
+    "task": "Use the context-memory skill to answer: \"API endpoints\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "REST vs gRPC",
+    "label": "skill-test-064",
+    "task": "Use the context-memory skill to answer: \"REST vs gRPC\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Docker containers",
+    "label": "skill-test-065",
+    "task": "Use the context-memory skill to answer: \"Docker containers\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Redis cache",
+    "label": "skill-test-066",
+    "task": "Use the context-memory skill to answer: \"Redis cache\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "PostgreSQL queries",
+    "label": "skill-test-067",
+    "task": "Use the context-memory skill to answer: \"PostgreSQL queries\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "JSON parsing",
+    "label": "skill-test-068",
+    "task": "Use the context-memory skill to answer: \"JSON parsing\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "YAML config",
+    "label": "skill-test-069",
+    "task": "Use the context-memory skill to answer: \"YAML config\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Markdown formatting",
+    "label": "skill-test-070",
+    "task": "Use the context-memory skill to answer: \"Markdown formatting\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "git commits",
+    "label": "skill-test-071",
+    "task": "Use the context-memory skill to answer: \"git commits\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "GitHub PRs",
+    "label": "skill-test-072",
+    "task": "Use the context-memory skill to answer: \"GitHub PRs\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "CI/CD pipeline",
+    "label": "skill-test-073",
+    "task": "Use the context-memory skill to answer: \"CI/CD pipeline\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "test coverage",
+    "label": "skill-test-074",
+    "task": "Use the context-memory skill to answer: \"test coverage\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "deployment",
+    "label": "skill-test-075",
+    "task": "Use the context-memory skill to answer: \"deployment\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "inbox triage",
+    "label": "skill-test-076",
+    "task": "Use the context-memory skill to answer: \"inbox triage\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "Teams notifications",
+    "label": "skill-test-077",
+    "task": "Use the context-memory skill to answer: \"Teams notifications\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "calendar conflicts",
+    "label": "skill-test-078",
+    "task": "Use the context-memory skill to answer: \"calendar conflicts\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "email setup",
+    "label": "skill-test-079",
+    "task": "Use the context-memory skill to answer: \"email setup\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "heartbeat checks",
+    "label": "skill-test-080",
+    "task": "Use the context-memory skill to answer: \"heartbeat checks\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "cron jobs",
+    "label": "skill-test-081",
+    "task": "Use the context-memory skill to answer: \"cron jobs\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "session indexing",
+    "label": "skill-test-082",
+    "task": "Use the context-memory skill to answer: \"session indexing\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "memory search",
+    "label": "skill-test-083",
+    "task": "Use the context-memory skill to answer: \"memory search\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "skill validation",
+    "label": "skill-test-084",
+    "task": "Use the context-memory skill to answer: \"skill validation\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "accuracy metrics",
+    "label": "skill-test-085",
+    "task": "Use the context-memory skill to answer: \"accuracy metrics\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "test results",
+    "label": "skill-test-086",
+    "task": "Use the context-memory skill to answer: \"test results\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "blog writing",
+    "label": "skill-test-087",
+    "task": "Use the context-memory skill to answer: \"blog writing\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "documentation updates",
+    "label": "skill-test-088",
+    "task": "Use the context-memory skill to answer: \"documentation updates\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "code review",
+    "label": "skill-test-089",
+    "task": "Use the context-memory skill to answer: \"code review\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "bug fixes",
+    "label": "skill-test-090",
+    "task": "Use the context-memory skill to answer: \"bug fixes\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "feature requests",
+    "label": "skill-test-091",
+    "task": "Use the context-memory skill to answer: \"feature requests\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "performance optimization",
+    "label": "skill-test-092",
+    "task": "Use the context-memory skill to answer: \"performance optimization\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "error handling",
+    "label": "skill-test-093",
+    "task": "Use the context-memory skill to answer: \"error handling\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "logging setup",
+    "label": "skill-test-094",
+    "task": "Use the context-memory skill to answer: \"logging setup\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "monitoring",
+    "label": "skill-test-095",
+    "task": "Use the context-memory skill to answer: \"monitoring\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "the container thing",
+    "label": "skill-test-096",
+    "task": "Use the context-memory skill to answer: \"the container thing\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "rating system",
+    "label": "skill-test-097",
+    "task": "Use the context-memory skill to answer: \"rating system\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "memory accuracy",
+    "label": "skill-test-098",
+    "task": "Use the context-memory skill to answer: \"memory accuracy\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "that blog post",
+    "label": "skill-test-099",
+    "task": "Use the context-memory skill to answer: \"that blog post\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "the chess app",
+    "label": "skill-test-100",
+    "task": "Use the context-memory skill to answer: \"the chess app\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "voice synthesis",
+    "label": "skill-test-101",
+    "task": "Use the context-memory skill to answer: \"voice synthesis\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "email client",
+    "label": "skill-test-102",
+    "task": "Use the context-memory skill to answer: \"email client\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "calendar thing",
+    "label": "skill-test-103",
+    "task": "Use the context-memory skill to answer: \"calendar thing\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "teams stuff",
+    "label": "skill-test-104",
+    "task": "Use the context-memory skill to answer: \"teams stuff\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "the skill we built",
+    "label": "skill-test-105",
+    "task": "Use the context-memory skill to answer: \"the skill we built\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "testing approach",
+    "label": "skill-test-106",
+    "task": "Use the context-memory skill to answer: \"testing approach\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "validation numbers",
+    "label": "skill-test-107",
+    "task": "Use the context-memory skill to answer: \"validation numbers\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "search functionality",
+    "label": "skill-test-108",
+    "task": "Use the context-memory skill to answer: \"search functionality\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "matching algorithm",
+    "label": "skill-test-109",
+    "task": "Use the context-memory skill to answer: \"matching algorithm\". Search memory and report what you found. Note if the skill triggered successfully."
+  },
+  {
+    "query": "indexing process",
+    "label": "skill-test-110",
+    "task": "Use the context-memory skill to answer: \"indexing process\". Search memory and report what you found. Note if the skill triggered successfully."
+  }
+]

@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "description": "Example test cases for context memory validation. Generate your own with generate-2000-tests.py",
+    "note": "These are sanitized examples. Real test cases should reference your actual conversation history.",
+    "categories": {
+      "adversarial": "Queries about things never discussed (should NOT match)",
+      "technical": "Specific implementation details",
+      "partial": "Partial word matches (e.g., 'Glicko' matching 'Glicko-2')",
+      "temporal": "Time-relative queries ('yesterday', 'last week')",
+      "variation": "Same concept, different phrasing",
+      "decision": "Past choices and reasoning",
+      "vague": "Ambiguous queries needing interpretation",
+      "identity": "People and contacts",
+      "metadata": "System/skill information"
+    }
+  },
+  "testCases": [
+    {
+      "id": "ex001",
+      "category": "technical",
+      "query": "What database are we using?",
+      "expectedKeywords": ["postgres", "postgresql", "database"],
+      "shouldMatch": true
+    },
+    {
+      "id": "ex002",
+      "category": "adversarial",
+      "query": "What's our MongoDB configuration?",
+      "expectedKeywords": [],
+      "shouldMatch": false,
+      "note": "We never discussed MongoDB - should return no match"
+    },
+    {
+      "id": "ex003",
+      "category": "partial",
+      "query": "Glicko",
+      "expectedKeywords": ["glicko", "rating"],
+      "shouldMatch": true,
+      "note": "Should match 'Glicko-2 rating system' via substring"
+    },
+    {
+      "id": "ex004",
+      "category": "variation",
+      "query": "auth approach",
+      "expectedKeywords": ["oauth", "authentication"],
+      "shouldMatch": true,
+      "note": "Should match via concept expansion (auth → oauth)"
+    },
+    {
+      "id": "ex005",
+      "category": "temporal",
+      "query": "What did we discuss yesterday?",
+      "expectedKeywords": [],
+      "shouldMatch": true,
+      "note": "Should filter to yesterday's sessions only"
+    },
+    {
+      "id": "ex006",
+      "category": "decision",
+      "query": "Why did we choose that approach?",
+      "expectedKeywords": ["decided", "chose", "because"],
+      "shouldMatch": true
+    },
+    {
+      "id": "ex007",
+      "category": "vague",
+      "query": "the container thing",
+      "expectedKeywords": ["container", "docker", "runtime"],
+      "shouldMatch": true
+    },
+    {
+      "id": "ex008",
+      "category": "partial",
+      "query": "ReadMessage",
+      "expectedKeywords": ["message", "read"],
+      "shouldMatch": true,
+      "note": "Should match 'ReadMessageItem' via compound splitting"
+    },
+    {
+      "id": "ex009",
+      "category": "technical",
+      "query": "postgres config",
+      "expectedKeywords": ["postgresql", "database"],
+      "shouldMatch": true,
+      "note": "Should match 'PostgreSQL' via fuzzy matching"
+    },
+    {
+      "id": "ex010",
+      "category": "adversarial",
+      "query": "What's our Kubernetes deployment?",
+      "expectedKeywords": [],
+      "shouldMatch": false,
+      "note": "Never discussed Kubernetes"
+    }
+  ]
+}

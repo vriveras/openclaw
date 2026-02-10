@@ -1,0 +1,4211 @@
+{
+  "version": "1.0",
+  "created": "2026-02-02T13:34:20.143169",
+  "updated": "2026-02-02T13:34:20.669390",
+  "totalMessages": 106,
+  "totalTokens": 827,
+  "sessions": {
+    "test-session-latency": {
+      "firstIndexed": "2026-02-02T13:34:20.143515",
+      "lastMessageIndex": 99,
+      "messageCount": 100,
+      "tokenCount": 800,
+      "lastIndexed": "2026-02-02T13:34:20.144378"
+    },
+    "test-session-no-reindex": {
+      "firstIndexed": "2026-02-02T13:34:20.147535",
+      "lastMessageIndex": 1,
+      "messageCount": 2,
+      "tokenCount": 11,
+      "lastIndexed": "2026-02-02T13:34:20.147565"
+    },
+    "test-session-incremental": {
+      "firstIndexed": "2026-02-02T13:34:20.666244",
+      "lastMessageIndex": 3,
+      "messageCount": 4,
+      "tokenCount": 16,
+      "lastIndexed": "2026-02-02T13:34:20.669389"
+    }
+  },
+  "index": {
+    "test": [
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.141742"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.141759"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.141765"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.141768"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 4,
+        "timestamp": "2026-02-02T13:34:20.141771"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 5,
+        "timestamp": "2026-02-02T13:34:20.141773"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 6,
+        "timestamp": "2026-02-02T13:34:20.141775"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 7,
+        "timestamp": "2026-02-02T13:34:20.141778"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 8,
+        "timestamp": "2026-02-02T13:34:20.141780"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 9,
+        "timestamp": "2026-02-02T13:34:20.141787"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 10,
+        "timestamp": "2026-02-02T13:34:20.141789"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 11,
+        "timestamp": "2026-02-02T13:34:20.141792"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 12,
+        "timestamp": "2026-02-02T13:34:20.141794"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 13,
+        "timestamp": "2026-02-02T13:34:20.141796"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 14,
+        "timestamp": "2026-02-02T13:34:20.141798"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 15,
+        "timestamp": "2026-02-02T13:34:20.141801"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 16,
+        "timestamp": "2026-02-02T13:34:20.141803"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 17,
+        "timestamp": "2026-02-02T13:34:20.141805"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 18,
+        "timestamp": "2026-02-02T13:34:20.141808"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 19,
+        "timestamp": "2026-02-02T13:34:20.141810"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 20,
+        "timestamp": "2026-02-02T13:34:20.141813"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 21,
+        "timestamp": "2026-02-02T13:34:20.141815"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 22,
+        "timestamp": "2026-02-02T13:34:20.141818"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 23,
+        "timestamp": "2026-02-02T13:34:20.141820"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 24,
+        "timestamp": "2026-02-02T13:34:20.141823"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 25,
+        "timestamp": "2026-02-02T13:34:20.141827"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 26,
+        "timestamp": "2026-02-02T13:34:20.141830"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 27,
+        "timestamp": "2026-02-02T13:34:20.141832"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 28,
+        "timestamp": "2026-02-02T13:34:20.141834"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 29,
+        "timestamp": "2026-02-02T13:34:20.141837"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 30,
+        "timestamp": "2026-02-02T13:34:20.141839"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 31,
+        "timestamp": "2026-02-02T13:34:20.141841"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 32,
+        "timestamp": "2026-02-02T13:34:20.141844"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 33,
+        "timestamp": "2026-02-02T13:34:20.141846"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 34,
+        "timestamp": "2026-02-02T13:34:20.141849"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 35,
+        "timestamp": "2026-02-02T13:34:20.141851"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 36,
+        "timestamp": "2026-02-02T13:34:20.141853"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 37,
+        "timestamp": "2026-02-02T13:34:20.141856"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 38,
+        "timestamp": "2026-02-02T13:34:20.141858"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 39,
+        "timestamp": "2026-02-02T13:34:20.141861"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 40,
+        "timestamp": "2026-02-02T13:34:20.141863"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 41,
+        "timestamp": "2026-02-02T13:34:20.141868"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 42,
+        "timestamp": "2026-02-02T13:34:20.141870"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 43,
+        "timestamp": "2026-02-02T13:34:20.141872"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 44,
+        "timestamp": "2026-02-02T13:34:20.141874"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 45,
+        "timestamp": "2026-02-02T13:34:20.141877"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 46,
+        "timestamp": "2026-02-02T13:34:20.141893"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 47,
+        "timestamp": "2026-02-02T13:34:20.141896"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 48,
+        "timestamp": "2026-02-02T13:34:20.141898"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 49,
+        "timestamp": "2026-02-02T13:34:20.141901"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 50,
+        "timestamp": "2026-02-02T13:34:20.141903"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 51,
+        "timestamp": "2026-02-02T13:34:20.141905"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 52,
+        "timestamp": "2026-02-02T13:34:20.141908"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 53,
+        "timestamp": "2026-02-02T13:34:20.141910"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 54,
+        "timestamp": "2026-02-02T13:34:20.141912"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 55,
+        "timestamp": "2026-02-02T13:34:20.141915"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 56,
+        "timestamp": "2026-02-02T13:34:20.141917"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 57,
+        "timestamp": "2026-02-02T13:34:20.141919"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 58,
+        "timestamp": "2026-02-02T13:34:20.141922"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 59,
+        "timestamp": "2026-02-02T13:34:20.141924"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 60,
+        "timestamp": "2026-02-02T13:34:20.141927"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 61,
+        "timestamp": "2026-02-02T13:34:20.141929"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 62,
+        "timestamp": "2026-02-02T13:34:20.141931"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 63,
+        "timestamp": "2026-02-02T13:34:20.141934"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 64,
+        "timestamp": "2026-02-02T13:34:20.141936"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 65,
+        "timestamp": "2026-02-02T13:34:20.141938"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 66,
+        "timestamp": "2026-02-02T13:34:20.141941"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 67,
+        "timestamp": "2026-02-02T13:34:20.141943"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 68,
+        "timestamp": "2026-02-02T13:34:20.141945"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 69,
+        "timestamp": "2026-02-02T13:34:20.141948"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 70,
+        "timestamp": "2026-02-02T13:34:20.141950"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 71,
+        "timestamp": "2026-02-02T13:34:20.141952"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 72,
+        "timestamp": "2026-02-02T13:34:20.141955"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 73,
+        "timestamp": "2026-02-02T13:34:20.141957"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 74,
+        "timestamp": "2026-02-02T13:34:20.141959"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 75,
+        "timestamp": "2026-02-02T13:34:20.141962"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 76,
+        "timestamp": "2026-02-02T13:34:20.141964"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 77,
+        "timestamp": "2026-02-02T13:34:20.141966"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 78,
+        "timestamp": "2026-02-02T13:34:20.141968"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 79,
+        "timestamp": "2026-02-02T13:34:20.141971"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 80,
+        "timestamp": "2026-02-02T13:34:20.141973"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 81,
+        "timestamp": "2026-02-02T13:34:20.141975"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 82,
+        "timestamp": "2026-02-02T13:34:20.141978"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 83,
+        "timestamp": "2026-02-02T13:34:20.141980"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 84,
+        "timestamp": "2026-02-02T13:34:20.141983"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 85,
+        "timestamp": "2026-02-02T13:34:20.141985"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 86,
+        "timestamp": "2026-02-02T13:34:20.141987"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 87,
+        "timestamp": "2026-02-02T13:34:20.141989"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 88,
+        "timestamp": "2026-02-02T13:34:20.141991"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 89,
+        "timestamp": "2026-02-02T13:34:20.141994"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 90,
+        "timestamp": "2026-02-02T13:34:20.141996"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 91,
+        "timestamp": "2026-02-02T13:34:20.142010"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 92,
+        "timestamp": "2026-02-02T13:34:20.142012"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 93,
+        "timestamp": "2026-02-02T13:34:20.142015"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 94,
+        "timestamp": "2026-02-02T13:34:20.142017"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 95,
+        "timestamp": "2026-02-02T13:34:20.142019"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 96,
+        "timestamp": "2026-02-02T13:34:20.142022"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 97,
+        "timestamp": "2026-02-02T13:34:20.142024"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 98,
+        "timestamp": "2026-02-02T13:34:20.142026"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 99,
+        "timestamp": "2026-02-02T13:34:20.142029"
+      }
+    ],
+    "message": [
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.141742"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.141759"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.141765"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.141768"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 4,
+        "timestamp": "2026-02-02T13:34:20.141771"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 5,
+        "timestamp": "2026-02-02T13:34:20.141773"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 6,
+        "timestamp": "2026-02-02T13:34:20.141775"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 7,
+        "timestamp": "2026-02-02T13:34:20.141778"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 8,
+        "timestamp": "2026-02-02T13:34:20.141780"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 9,
+        "timestamp": "2026-02-02T13:34:20.141787"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 10,
+        "timestamp": "2026-02-02T13:34:20.141789"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 11,
+        "timestamp": "2026-02-02T13:34:20.141792"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 12,
+        "timestamp": "2026-02-02T13:34:20.141794"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 13,
+        "timestamp": "2026-02-02T13:34:20.141796"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 14,
+        "timestamp": "2026-02-02T13:34:20.141798"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 15,
+        "timestamp": "2026-02-02T13:34:20.141801"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 16,
+        "timestamp": "2026-02-02T13:34:20.141803"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 17,
+        "timestamp": "2026-02-02T13:34:20.141805"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 18,
+        "timestamp": "2026-02-02T13:34:20.141808"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 19,
+        "timestamp": "2026-02-02T13:34:20.141810"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 20,
+        "timestamp": "2026-02-02T13:34:20.141813"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 21,
+        "timestamp": "2026-02-02T13:34:20.141815"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 22,
+        "timestamp": "2026-02-02T13:34:20.141818"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 23,
+        "timestamp": "2026-02-02T13:34:20.141820"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 24,
+        "timestamp": "2026-02-02T13:34:20.141823"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 25,
+        "timestamp": "2026-02-02T13:34:20.141827"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 26,
+        "timestamp": "2026-02-02T13:34:20.141830"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 27,
+        "timestamp": "2026-02-02T13:34:20.141832"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 28,
+        "timestamp": "2026-02-02T13:34:20.141834"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 29,
+        "timestamp": "2026-02-02T13:34:20.141837"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 30,
+        "timestamp": "2026-02-02T13:34:20.141839"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 31,
+        "timestamp": "2026-02-02T13:34:20.141841"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 32,
+        "timestamp": "2026-02-02T13:34:20.141844"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 33,
+        "timestamp": "2026-02-02T13:34:20.141846"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 34,
+        "timestamp": "2026-02-02T13:34:20.141849"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 35,
+        "timestamp": "2026-02-02T13:34:20.141851"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 36,
+        "timestamp": "2026-02-02T13:34:20.141853"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 37,
+        "timestamp": "2026-02-02T13:34:20.141856"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 38,
+        "timestamp": "2026-02-02T13:34:20.141858"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 39,
+        "timestamp": "2026-02-02T13:34:20.141861"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 40,
+        "timestamp": "2026-02-02T13:34:20.141863"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 41,
+        "timestamp": "2026-02-02T13:34:20.141868"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 42,
+        "timestamp": "2026-02-02T13:34:20.141870"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 43,
+        "timestamp": "2026-02-02T13:34:20.141872"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 44,
+        "timestamp": "2026-02-02T13:34:20.141874"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 45,
+        "timestamp": "2026-02-02T13:34:20.141877"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 46,
+        "timestamp": "2026-02-02T13:34:20.141893"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 47,
+        "timestamp": "2026-02-02T13:34:20.141896"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 48,
+        "timestamp": "2026-02-02T13:34:20.141898"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 49,
+        "timestamp": "2026-02-02T13:34:20.141901"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 50,
+        "timestamp": "2026-02-02T13:34:20.141903"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 51,
+        "timestamp": "2026-02-02T13:34:20.141905"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 52,
+        "timestamp": "2026-02-02T13:34:20.141908"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 53,
+        "timestamp": "2026-02-02T13:34:20.141910"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 54,
+        "timestamp": "2026-02-02T13:34:20.141912"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 55,
+        "timestamp": "2026-02-02T13:34:20.141915"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 56,
+        "timestamp": "2026-02-02T13:34:20.141917"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 57,
+        "timestamp": "2026-02-02T13:34:20.141919"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 58,
+        "timestamp": "2026-02-02T13:34:20.141922"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 59,
+        "timestamp": "2026-02-02T13:34:20.141924"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 60,
+        "timestamp": "2026-02-02T13:34:20.141927"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 61,
+        "timestamp": "2026-02-02T13:34:20.141929"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 62,
+        "timestamp": "2026-02-02T13:34:20.141931"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 63,
+        "timestamp": "2026-02-02T13:34:20.141934"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 64,
+        "timestamp": "2026-02-02T13:34:20.141936"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 65,
+        "timestamp": "2026-02-02T13:34:20.141938"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 66,
+        "timestamp": "2026-02-02T13:34:20.141941"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 67,
+        "timestamp": "2026-02-02T13:34:20.141943"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 68,
+        "timestamp": "2026-02-02T13:34:20.141945"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 69,
+        "timestamp": "2026-02-02T13:34:20.141948"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 70,
+        "timestamp": "2026-02-02T13:34:20.141950"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 71,
+        "timestamp": "2026-02-02T13:34:20.141952"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 72,
+        "timestamp": "2026-02-02T13:34:20.141955"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 73,
+        "timestamp": "2026-02-02T13:34:20.141957"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 74,
+        "timestamp": "2026-02-02T13:34:20.141959"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 75,
+        "timestamp": "2026-02-02T13:34:20.141962"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 76,
+        "timestamp": "2026-02-02T13:34:20.141964"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 77,
+        "timestamp": "2026-02-02T13:34:20.141966"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 78,
+        "timestamp": "2026-02-02T13:34:20.141968"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 79,
+        "timestamp": "2026-02-02T13:34:20.141971"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 80,
+        "timestamp": "2026-02-02T13:34:20.141973"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 81,
+        "timestamp": "2026-02-02T13:34:20.141975"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 82,
+        "timestamp": "2026-02-02T13:34:20.141978"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 83,
+        "timestamp": "2026-02-02T13:34:20.141980"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 84,
+        "timestamp": "2026-02-02T13:34:20.141983"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 85,
+        "timestamp": "2026-02-02T13:34:20.141985"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 86,
+        "timestamp": "2026-02-02T13:34:20.141987"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 87,
+        "timestamp": "2026-02-02T13:34:20.141989"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 88,
+        "timestamp": "2026-02-02T13:34:20.141991"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 89,
+        "timestamp": "2026-02-02T13:34:20.141994"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 90,
+        "timestamp": "2026-02-02T13:34:20.141996"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 91,
+        "timestamp": "2026-02-02T13:34:20.142010"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 92,
+        "timestamp": "2026-02-02T13:34:20.142012"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 93,
+        "timestamp": "2026-02-02T13:34:20.142015"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 94,
+        "timestamp": "2026-02-02T13:34:20.142017"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 95,
+        "timestamp": "2026-02-02T13:34:20.142019"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 96,
+        "timestamp": "2026-02-02T13:34:20.142022"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 97,
+        "timestamp": "2026-02-02T13:34:20.142024"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 98,
+        "timestamp": "2026-02-02T13:34:20.142026"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 99,
+        "timestamp": "2026-02-02T13:34:20.142029"
+      },
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.147051"
+      },
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.147063"
+      },
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.665556"
+      },
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.665583"
+      },
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.668900"
+      },
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.668911"
+      }
+    ],
+    "about": [
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.141742"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.141759"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.141765"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.141768"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 4,
+        "timestamp": "2026-02-02T13:34:20.141771"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 5,
+        "timestamp": "2026-02-02T13:34:20.141773"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 6,
+        "timestamp": "2026-02-02T13:34:20.141775"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 7,
+        "timestamp": "2026-02-02T13:34:20.141778"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 8,
+        "timestamp": "2026-02-02T13:34:20.141780"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 9,
+        "timestamp": "2026-02-02T13:34:20.141787"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 10,
+        "timestamp": "2026-02-02T13:34:20.141789"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 11,
+        "timestamp": "2026-02-02T13:34:20.141792"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 12,
+        "timestamp": "2026-02-02T13:34:20.141794"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 13,
+        "timestamp": "2026-02-02T13:34:20.141796"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 14,
+        "timestamp": "2026-02-02T13:34:20.141798"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 15,
+        "timestamp": "2026-02-02T13:34:20.141801"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 16,
+        "timestamp": "2026-02-02T13:34:20.141803"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 17,
+        "timestamp": "2026-02-02T13:34:20.141805"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 18,
+        "timestamp": "2026-02-02T13:34:20.141808"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 19,
+        "timestamp": "2026-02-02T13:34:20.141810"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 20,
+        "timestamp": "2026-02-02T13:34:20.141813"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 21,
+        "timestamp": "2026-02-02T13:34:20.141815"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 22,
+        "timestamp": "2026-02-02T13:34:20.141818"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 23,
+        "timestamp": "2026-02-02T13:34:20.141820"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 24,
+        "timestamp": "2026-02-02T13:34:20.141823"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 25,
+        "timestamp": "2026-02-02T13:34:20.141827"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 26,
+        "timestamp": "2026-02-02T13:34:20.141830"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 27,
+        "timestamp": "2026-02-02T13:34:20.141832"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 28,
+        "timestamp": "2026-02-02T13:34:20.141834"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 29,
+        "timestamp": "2026-02-02T13:34:20.141837"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 30,
+        "timestamp": "2026-02-02T13:34:20.141839"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 31,
+        "timestamp": "2026-02-02T13:34:20.141841"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 32,
+        "timestamp": "2026-02-02T13:34:20.141844"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 33,
+        "timestamp": "2026-02-02T13:34:20.141846"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 34,
+        "timestamp": "2026-02-02T13:34:20.141849"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 35,
+        "timestamp": "2026-02-02T13:34:20.141851"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 36,
+        "timestamp": "2026-02-02T13:34:20.141853"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 37,
+        "timestamp": "2026-02-02T13:34:20.141856"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 38,
+        "timestamp": "2026-02-02T13:34:20.141858"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 39,
+        "timestamp": "2026-02-02T13:34:20.141861"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 40,
+        "timestamp": "2026-02-02T13:34:20.141863"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 41,
+        "timestamp": "2026-02-02T13:34:20.141868"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 42,
+        "timestamp": "2026-02-02T13:34:20.141870"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 43,
+        "timestamp": "2026-02-02T13:34:20.141872"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 44,
+        "timestamp": "2026-02-02T13:34:20.141874"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 45,
+        "timestamp": "2026-02-02T13:34:20.141877"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 46,
+        "timestamp": "2026-02-02T13:34:20.141893"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 47,
+        "timestamp": "2026-02-02T13:34:20.141896"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 48,
+        "timestamp": "2026-02-02T13:34:20.141898"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 49,
+        "timestamp": "2026-02-02T13:34:20.141901"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 50,
+        "timestamp": "2026-02-02T13:34:20.141903"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 51,
+        "timestamp": "2026-02-02T13:34:20.141905"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 52,
+        "timestamp": "2026-02-02T13:34:20.141908"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 53,
+        "timestamp": "2026-02-02T13:34:20.141910"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 54,
+        "timestamp": "2026-02-02T13:34:20.141912"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 55,
+        "timestamp": "2026-02-02T13:34:20.141915"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 56,
+        "timestamp": "2026-02-02T13:34:20.141917"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 57,
+        "timestamp": "2026-02-02T13:34:20.141919"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 58,
+        "timestamp": "2026-02-02T13:34:20.141922"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 59,
+        "timestamp": "2026-02-02T13:34:20.141924"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 60,
+        "timestamp": "2026-02-02T13:34:20.141927"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 61,
+        "timestamp": "2026-02-02T13:34:20.141929"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 62,
+        "timestamp": "2026-02-02T13:34:20.141931"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 63,
+        "timestamp": "2026-02-02T13:34:20.141934"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 64,
+        "timestamp": "2026-02-02T13:34:20.141936"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 65,
+        "timestamp": "2026-02-02T13:34:20.141938"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 66,
+        "timestamp": "2026-02-02T13:34:20.141941"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 67,
+        "timestamp": "2026-02-02T13:34:20.141943"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 68,
+        "timestamp": "2026-02-02T13:34:20.141945"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 69,
+        "timestamp": "2026-02-02T13:34:20.141948"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 70,
+        "timestamp": "2026-02-02T13:34:20.141950"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 71,
+        "timestamp": "2026-02-02T13:34:20.141952"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 72,
+        "timestamp": "2026-02-02T13:34:20.141955"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 73,
+        "timestamp": "2026-02-02T13:34:20.141957"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 74,
+        "timestamp": "2026-02-02T13:34:20.141959"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 75,
+        "timestamp": "2026-02-02T13:34:20.141962"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 76,
+        "timestamp": "2026-02-02T13:34:20.141964"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 77,
+        "timestamp": "2026-02-02T13:34:20.141966"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 78,
+        "timestamp": "2026-02-02T13:34:20.141968"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 79,
+        "timestamp": "2026-02-02T13:34:20.141971"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 80,
+        "timestamp": "2026-02-02T13:34:20.141973"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 81,
+        "timestamp": "2026-02-02T13:34:20.141975"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 82,
+        "timestamp": "2026-02-02T13:34:20.141978"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 83,
+        "timestamp": "2026-02-02T13:34:20.141980"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 84,
+        "timestamp": "2026-02-02T13:34:20.141983"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 85,
+        "timestamp": "2026-02-02T13:34:20.141985"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 86,
+        "timestamp": "2026-02-02T13:34:20.141987"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 87,
+        "timestamp": "2026-02-02T13:34:20.141989"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 88,
+        "timestamp": "2026-02-02T13:34:20.141991"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 89,
+        "timestamp": "2026-02-02T13:34:20.141994"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 90,
+        "timestamp": "2026-02-02T13:34:20.141996"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 91,
+        "timestamp": "2026-02-02T13:34:20.142010"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 92,
+        "timestamp": "2026-02-02T13:34:20.142012"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 93,
+        "timestamp": "2026-02-02T13:34:20.142015"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 94,
+        "timestamp": "2026-02-02T13:34:20.142017"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 95,
+        "timestamp": "2026-02-02T13:34:20.142019"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 96,
+        "timestamp": "2026-02-02T13:34:20.142022"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 97,
+        "timestamp": "2026-02-02T13:34:20.142024"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 98,
+        "timestamp": "2026-02-02T13:34:20.142026"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 99,
+        "timestamp": "2026-02-02T13:34:20.142029"
+      },
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.147051"
+      },
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.147063"
+      },
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.665556"
+      },
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.665583"
+      },
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.668900"
+      },
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.668911"
+      }
+    ],
+    "python": [
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.141742"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.141759"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.141765"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.141768"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 4,
+        "timestamp": "2026-02-02T13:34:20.141771"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 5,
+        "timestamp": "2026-02-02T13:34:20.141773"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 6,
+        "timestamp": "2026-02-02T13:34:20.141775"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 7,
+        "timestamp": "2026-02-02T13:34:20.141778"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 8,
+        "timestamp": "2026-02-02T13:34:20.141780"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 9,
+        "timestamp": "2026-02-02T13:34:20.141787"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 10,
+        "timestamp": "2026-02-02T13:34:20.141789"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 11,
+        "timestamp": "2026-02-02T13:34:20.141792"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 12,
+        "timestamp": "2026-02-02T13:34:20.141794"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 13,
+        "timestamp": "2026-02-02T13:34:20.141796"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 14,
+        "timestamp": "2026-02-02T13:34:20.141798"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 15,
+        "timestamp": "2026-02-02T13:34:20.141801"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 16,
+        "timestamp": "2026-02-02T13:34:20.141803"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 17,
+        "timestamp": "2026-02-02T13:34:20.141805"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 18,
+        "timestamp": "2026-02-02T13:34:20.141808"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 19,
+        "timestamp": "2026-02-02T13:34:20.141810"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 20,
+        "timestamp": "2026-02-02T13:34:20.141813"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 21,
+        "timestamp": "2026-02-02T13:34:20.141815"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 22,
+        "timestamp": "2026-02-02T13:34:20.141818"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 23,
+        "timestamp": "2026-02-02T13:34:20.141820"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 24,
+        "timestamp": "2026-02-02T13:34:20.141823"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 25,
+        "timestamp": "2026-02-02T13:34:20.141827"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 26,
+        "timestamp": "2026-02-02T13:34:20.141830"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 27,
+        "timestamp": "2026-02-02T13:34:20.141832"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 28,
+        "timestamp": "2026-02-02T13:34:20.141834"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 29,
+        "timestamp": "2026-02-02T13:34:20.141837"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 30,
+        "timestamp": "2026-02-02T13:34:20.141839"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 31,
+        "timestamp": "2026-02-02T13:34:20.141841"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 32,
+        "timestamp": "2026-02-02T13:34:20.141844"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 33,
+        "timestamp": "2026-02-02T13:34:20.141846"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 34,
+        "timestamp": "2026-02-02T13:34:20.141849"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 35,
+        "timestamp": "2026-02-02T13:34:20.141851"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 36,
+        "timestamp": "2026-02-02T13:34:20.141853"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 37,
+        "timestamp": "2026-02-02T13:34:20.141856"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 38,
+        "timestamp": "2026-02-02T13:34:20.141858"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 39,
+        "timestamp": "2026-02-02T13:34:20.141861"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 40,
+        "timestamp": "2026-02-02T13:34:20.141863"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 41,
+        "timestamp": "2026-02-02T13:34:20.141868"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 42,
+        "timestamp": "2026-02-02T13:34:20.141870"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 43,
+        "timestamp": "2026-02-02T13:34:20.141872"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 44,
+        "timestamp": "2026-02-02T13:34:20.141874"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 45,
+        "timestamp": "2026-02-02T13:34:20.141877"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 46,
+        "timestamp": "2026-02-02T13:34:20.141893"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 47,
+        "timestamp": "2026-02-02T13:34:20.141896"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 48,
+        "timestamp": "2026-02-02T13:34:20.141898"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 49,
+        "timestamp": "2026-02-02T13:34:20.141901"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 50,
+        "timestamp": "2026-02-02T13:34:20.141903"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 51,
+        "timestamp": "2026-02-02T13:34:20.141905"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 52,
+        "timestamp": "2026-02-02T13:34:20.141908"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 53,
+        "timestamp": "2026-02-02T13:34:20.141910"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 54,
+        "timestamp": "2026-02-02T13:34:20.141912"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 55,
+        "timestamp": "2026-02-02T13:34:20.141915"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 56,
+        "timestamp": "2026-02-02T13:34:20.141917"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 57,
+        "timestamp": "2026-02-02T13:34:20.141919"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 58,
+        "timestamp": "2026-02-02T13:34:20.141922"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 59,
+        "timestamp": "2026-02-02T13:34:20.141924"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 60,
+        "timestamp": "2026-02-02T13:34:20.141927"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 61,
+        "timestamp": "2026-02-02T13:34:20.141929"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 62,
+        "timestamp": "2026-02-02T13:34:20.141931"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 63,
+        "timestamp": "2026-02-02T13:34:20.141934"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 64,
+        "timestamp": "2026-02-02T13:34:20.141936"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 65,
+        "timestamp": "2026-02-02T13:34:20.141938"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 66,
+        "timestamp": "2026-02-02T13:34:20.141941"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 67,
+        "timestamp": "2026-02-02T13:34:20.141943"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 68,
+        "timestamp": "2026-02-02T13:34:20.141945"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 69,
+        "timestamp": "2026-02-02T13:34:20.141948"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 70,
+        "timestamp": "2026-02-02T13:34:20.141950"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 71,
+        "timestamp": "2026-02-02T13:34:20.141952"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 72,
+        "timestamp": "2026-02-02T13:34:20.141955"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 73,
+        "timestamp": "2026-02-02T13:34:20.141957"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 74,
+        "timestamp": "2026-02-02T13:34:20.141959"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 75,
+        "timestamp": "2026-02-02T13:34:20.141962"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 76,
+        "timestamp": "2026-02-02T13:34:20.141964"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 77,
+        "timestamp": "2026-02-02T13:34:20.141966"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 78,
+        "timestamp": "2026-02-02T13:34:20.141968"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 79,
+        "timestamp": "2026-02-02T13:34:20.141971"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 80,
+        "timestamp": "2026-02-02T13:34:20.141973"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 81,
+        "timestamp": "2026-02-02T13:34:20.141975"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 82,
+        "timestamp": "2026-02-02T13:34:20.141978"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 83,
+        "timestamp": "2026-02-02T13:34:20.141980"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 84,
+        "timestamp": "2026-02-02T13:34:20.141983"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 85,
+        "timestamp": "2026-02-02T13:34:20.141985"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 86,
+        "timestamp": "2026-02-02T13:34:20.141987"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 87,
+        "timestamp": "2026-02-02T13:34:20.141989"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 88,
+        "timestamp": "2026-02-02T13:34:20.141991"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 89,
+        "timestamp": "2026-02-02T13:34:20.141994"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 90,
+        "timestamp": "2026-02-02T13:34:20.141996"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 91,
+        "timestamp": "2026-02-02T13:34:20.142010"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 92,
+        "timestamp": "2026-02-02T13:34:20.142012"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 93,
+        "timestamp": "2026-02-02T13:34:20.142015"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 94,
+        "timestamp": "2026-02-02T13:34:20.142017"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 95,
+        "timestamp": "2026-02-02T13:34:20.142019"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 96,
+        "timestamp": "2026-02-02T13:34:20.142022"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 97,
+        "timestamp": "2026-02-02T13:34:20.142024"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 98,
+        "timestamp": "2026-02-02T13:34:20.142026"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 99,
+        "timestamp": "2026-02-02T13:34:20.142029"
+      }
+    ],
+    "programming": [
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.141742"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.141759"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.141765"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.141768"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 4,
+        "timestamp": "2026-02-02T13:34:20.141771"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 5,
+        "timestamp": "2026-02-02T13:34:20.141773"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 6,
+        "timestamp": "2026-02-02T13:34:20.141775"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 7,
+        "timestamp": "2026-02-02T13:34:20.141778"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 8,
+        "timestamp": "2026-02-02T13:34:20.141780"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 9,
+        "timestamp": "2026-02-02T13:34:20.141787"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 10,
+        "timestamp": "2026-02-02T13:34:20.141789"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 11,
+        "timestamp": "2026-02-02T13:34:20.141792"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 12,
+        "timestamp": "2026-02-02T13:34:20.141794"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 13,
+        "timestamp": "2026-02-02T13:34:20.141796"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 14,
+        "timestamp": "2026-02-02T13:34:20.141798"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 15,
+        "timestamp": "2026-02-02T13:34:20.141801"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 16,
+        "timestamp": "2026-02-02T13:34:20.141803"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 17,
+        "timestamp": "2026-02-02T13:34:20.141805"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 18,
+        "timestamp": "2026-02-02T13:34:20.141808"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 19,
+        "timestamp": "2026-02-02T13:34:20.141810"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 20,
+        "timestamp": "2026-02-02T13:34:20.141813"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 21,
+        "timestamp": "2026-02-02T13:34:20.141815"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 22,
+        "timestamp": "2026-02-02T13:34:20.141818"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 23,
+        "timestamp": "2026-02-02T13:34:20.141820"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 24,
+        "timestamp": "2026-02-02T13:34:20.141823"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 25,
+        "timestamp": "2026-02-02T13:34:20.141827"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 26,
+        "timestamp": "2026-02-02T13:34:20.141830"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 27,
+        "timestamp": "2026-02-02T13:34:20.141832"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 28,
+        "timestamp": "2026-02-02T13:34:20.141834"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 29,
+        "timestamp": "2026-02-02T13:34:20.141837"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 30,
+        "timestamp": "2026-02-02T13:34:20.141839"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 31,
+        "timestamp": "2026-02-02T13:34:20.141841"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 32,
+        "timestamp": "2026-02-02T13:34:20.141844"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 33,
+        "timestamp": "2026-02-02T13:34:20.141846"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 34,
+        "timestamp": "2026-02-02T13:34:20.141849"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 35,
+        "timestamp": "2026-02-02T13:34:20.141851"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 36,
+        "timestamp": "2026-02-02T13:34:20.141853"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 37,
+        "timestamp": "2026-02-02T13:34:20.141856"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 38,
+        "timestamp": "2026-02-02T13:34:20.141858"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 39,
+        "timestamp": "2026-02-02T13:34:20.141861"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 40,
+        "timestamp": "2026-02-02T13:34:20.141863"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 41,
+        "timestamp": "2026-02-02T13:34:20.141868"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 42,
+        "timestamp": "2026-02-02T13:34:20.141870"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 43,
+        "timestamp": "2026-02-02T13:34:20.141872"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 44,
+        "timestamp": "2026-02-02T13:34:20.141874"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 45,
+        "timestamp": "2026-02-02T13:34:20.141877"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 46,
+        "timestamp": "2026-02-02T13:34:20.141893"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 47,
+        "timestamp": "2026-02-02T13:34:20.141896"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 48,
+        "timestamp": "2026-02-02T13:34:20.141898"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 49,
+        "timestamp": "2026-02-02T13:34:20.141901"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 50,
+        "timestamp": "2026-02-02T13:34:20.141903"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 51,
+        "timestamp": "2026-02-02T13:34:20.141905"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 52,
+        "timestamp": "2026-02-02T13:34:20.141908"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 53,
+        "timestamp": "2026-02-02T13:34:20.141910"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 54,
+        "timestamp": "2026-02-02T13:34:20.141912"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 55,
+        "timestamp": "2026-02-02T13:34:20.141915"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 56,
+        "timestamp": "2026-02-02T13:34:20.141917"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 57,
+        "timestamp": "2026-02-02T13:34:20.141919"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 58,
+        "timestamp": "2026-02-02T13:34:20.141922"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 59,
+        "timestamp": "2026-02-02T13:34:20.141924"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 60,
+        "timestamp": "2026-02-02T13:34:20.141927"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 61,
+        "timestamp": "2026-02-02T13:34:20.141929"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 62,
+        "timestamp": "2026-02-02T13:34:20.141931"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 63,
+        "timestamp": "2026-02-02T13:34:20.141934"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 64,
+        "timestamp": "2026-02-02T13:34:20.141936"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 65,
+        "timestamp": "2026-02-02T13:34:20.141938"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 66,
+        "timestamp": "2026-02-02T13:34:20.141941"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 67,
+        "timestamp": "2026-02-02T13:34:20.141943"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 68,
+        "timestamp": "2026-02-02T13:34:20.141945"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 69,
+        "timestamp": "2026-02-02T13:34:20.141948"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 70,
+        "timestamp": "2026-02-02T13:34:20.141950"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 71,
+        "timestamp": "2026-02-02T13:34:20.141952"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 72,
+        "timestamp": "2026-02-02T13:34:20.141955"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 73,
+        "timestamp": "2026-02-02T13:34:20.141957"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 74,
+        "timestamp": "2026-02-02T13:34:20.141959"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 75,
+        "timestamp": "2026-02-02T13:34:20.141962"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 76,
+        "timestamp": "2026-02-02T13:34:20.141964"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 77,
+        "timestamp": "2026-02-02T13:34:20.141966"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 78,
+        "timestamp": "2026-02-02T13:34:20.141968"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 79,
+        "timestamp": "2026-02-02T13:34:20.141971"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 80,
+        "timestamp": "2026-02-02T13:34:20.141973"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 81,
+        "timestamp": "2026-02-02T13:34:20.141975"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 82,
+        "timestamp": "2026-02-02T13:34:20.141978"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 83,
+        "timestamp": "2026-02-02T13:34:20.141980"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 84,
+        "timestamp": "2026-02-02T13:34:20.141983"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 85,
+        "timestamp": "2026-02-02T13:34:20.141985"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 86,
+        "timestamp": "2026-02-02T13:34:20.141987"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 87,
+        "timestamp": "2026-02-02T13:34:20.141989"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 88,
+        "timestamp": "2026-02-02T13:34:20.141991"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 89,
+        "timestamp": "2026-02-02T13:34:20.141994"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 90,
+        "timestamp": "2026-02-02T13:34:20.141996"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 91,
+        "timestamp": "2026-02-02T13:34:20.142010"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 92,
+        "timestamp": "2026-02-02T13:34:20.142012"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 93,
+        "timestamp": "2026-02-02T13:34:20.142015"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 94,
+        "timestamp": "2026-02-02T13:34:20.142017"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 95,
+        "timestamp": "2026-02-02T13:34:20.142019"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 96,
+        "timestamp": "2026-02-02T13:34:20.142022"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 97,
+        "timestamp": "2026-02-02T13:34:20.142024"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 98,
+        "timestamp": "2026-02-02T13:34:20.142026"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 99,
+        "timestamp": "2026-02-02T13:34:20.142029"
+      }
+    ],
+    "and": [
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.141742"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.141759"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.141765"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.141768"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 4,
+        "timestamp": "2026-02-02T13:34:20.141771"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 5,
+        "timestamp": "2026-02-02T13:34:20.141773"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 6,
+        "timestamp": "2026-02-02T13:34:20.141775"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 7,
+        "timestamp": "2026-02-02T13:34:20.141778"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 8,
+        "timestamp": "2026-02-02T13:34:20.141780"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 9,
+        "timestamp": "2026-02-02T13:34:20.141787"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 10,
+        "timestamp": "2026-02-02T13:34:20.141789"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 11,
+        "timestamp": "2026-02-02T13:34:20.141792"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 12,
+        "timestamp": "2026-02-02T13:34:20.141794"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 13,
+        "timestamp": "2026-02-02T13:34:20.141796"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 14,
+        "timestamp": "2026-02-02T13:34:20.141798"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 15,
+        "timestamp": "2026-02-02T13:34:20.141801"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 16,
+        "timestamp": "2026-02-02T13:34:20.141803"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 17,
+        "timestamp": "2026-02-02T13:34:20.141805"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 18,
+        "timestamp": "2026-02-02T13:34:20.141808"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 19,
+        "timestamp": "2026-02-02T13:34:20.141810"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 20,
+        "timestamp": "2026-02-02T13:34:20.141813"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 21,
+        "timestamp": "2026-02-02T13:34:20.141815"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 22,
+        "timestamp": "2026-02-02T13:34:20.141818"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 23,
+        "timestamp": "2026-02-02T13:34:20.141820"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 24,
+        "timestamp": "2026-02-02T13:34:20.141823"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 25,
+        "timestamp": "2026-02-02T13:34:20.141827"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 26,
+        "timestamp": "2026-02-02T13:34:20.141830"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 27,
+        "timestamp": "2026-02-02T13:34:20.141832"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 28,
+        "timestamp": "2026-02-02T13:34:20.141834"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 29,
+        "timestamp": "2026-02-02T13:34:20.141837"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 30,
+        "timestamp": "2026-02-02T13:34:20.141839"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 31,
+        "timestamp": "2026-02-02T13:34:20.141841"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 32,
+        "timestamp": "2026-02-02T13:34:20.141844"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 33,
+        "timestamp": "2026-02-02T13:34:20.141846"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 34,
+        "timestamp": "2026-02-02T13:34:20.141849"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 35,
+        "timestamp": "2026-02-02T13:34:20.141851"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 36,
+        "timestamp": "2026-02-02T13:34:20.141853"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 37,
+        "timestamp": "2026-02-02T13:34:20.141856"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 38,
+        "timestamp": "2026-02-02T13:34:20.141858"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 39,
+        "timestamp": "2026-02-02T13:34:20.141861"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 40,
+        "timestamp": "2026-02-02T13:34:20.141863"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 41,
+        "timestamp": "2026-02-02T13:34:20.141868"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 42,
+        "timestamp": "2026-02-02T13:34:20.141870"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 43,
+        "timestamp": "2026-02-02T13:34:20.141872"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 44,
+        "timestamp": "2026-02-02T13:34:20.141874"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 45,
+        "timestamp": "2026-02-02T13:34:20.141877"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 46,
+        "timestamp": "2026-02-02T13:34:20.141893"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 47,
+        "timestamp": "2026-02-02T13:34:20.141896"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 48,
+        "timestamp": "2026-02-02T13:34:20.141898"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 49,
+        "timestamp": "2026-02-02T13:34:20.141901"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 50,
+        "timestamp": "2026-02-02T13:34:20.141903"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 51,
+        "timestamp": "2026-02-02T13:34:20.141905"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 52,
+        "timestamp": "2026-02-02T13:34:20.141908"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 53,
+        "timestamp": "2026-02-02T13:34:20.141910"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 54,
+        "timestamp": "2026-02-02T13:34:20.141912"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 55,
+        "timestamp": "2026-02-02T13:34:20.141915"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 56,
+        "timestamp": "2026-02-02T13:34:20.141917"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 57,
+        "timestamp": "2026-02-02T13:34:20.141919"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 58,
+        "timestamp": "2026-02-02T13:34:20.141922"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 59,
+        "timestamp": "2026-02-02T13:34:20.141924"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 60,
+        "timestamp": "2026-02-02T13:34:20.141927"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 61,
+        "timestamp": "2026-02-02T13:34:20.141929"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 62,
+        "timestamp": "2026-02-02T13:34:20.141931"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 63,
+        "timestamp": "2026-02-02T13:34:20.141934"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 64,
+        "timestamp": "2026-02-02T13:34:20.141936"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 65,
+        "timestamp": "2026-02-02T13:34:20.141938"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 66,
+        "timestamp": "2026-02-02T13:34:20.141941"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 67,
+        "timestamp": "2026-02-02T13:34:20.141943"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 68,
+        "timestamp": "2026-02-02T13:34:20.141945"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 69,
+        "timestamp": "2026-02-02T13:34:20.141948"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 70,
+        "timestamp": "2026-02-02T13:34:20.141950"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 71,
+        "timestamp": "2026-02-02T13:34:20.141952"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 72,
+        "timestamp": "2026-02-02T13:34:20.141955"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 73,
+        "timestamp": "2026-02-02T13:34:20.141957"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 74,
+        "timestamp": "2026-02-02T13:34:20.141959"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 75,
+        "timestamp": "2026-02-02T13:34:20.141962"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 76,
+        "timestamp": "2026-02-02T13:34:20.141964"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 77,
+        "timestamp": "2026-02-02T13:34:20.141966"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 78,
+        "timestamp": "2026-02-02T13:34:20.141968"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 79,
+        "timestamp": "2026-02-02T13:34:20.141971"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 80,
+        "timestamp": "2026-02-02T13:34:20.141973"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 81,
+        "timestamp": "2026-02-02T13:34:20.141975"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 82,
+        "timestamp": "2026-02-02T13:34:20.141978"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 83,
+        "timestamp": "2026-02-02T13:34:20.141980"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 84,
+        "timestamp": "2026-02-02T13:34:20.141983"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 85,
+        "timestamp": "2026-02-02T13:34:20.141985"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 86,
+        "timestamp": "2026-02-02T13:34:20.141987"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 87,
+        "timestamp": "2026-02-02T13:34:20.141989"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 88,
+        "timestamp": "2026-02-02T13:34:20.141991"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 89,
+        "timestamp": "2026-02-02T13:34:20.141994"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 90,
+        "timestamp": "2026-02-02T13:34:20.141996"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 91,
+        "timestamp": "2026-02-02T13:34:20.142010"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 92,
+        "timestamp": "2026-02-02T13:34:20.142012"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 93,
+        "timestamp": "2026-02-02T13:34:20.142015"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 94,
+        "timestamp": "2026-02-02T13:34:20.142017"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 95,
+        "timestamp": "2026-02-02T13:34:20.142019"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 96,
+        "timestamp": "2026-02-02T13:34:20.142022"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 97,
+        "timestamp": "2026-02-02T13:34:20.142024"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 98,
+        "timestamp": "2026-02-02T13:34:20.142026"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 99,
+        "timestamp": "2026-02-02T13:34:20.142029"
+      },
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.147063"
+      }
+    ],
+    "api": [
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.141742"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.141759"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.141765"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.141768"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 4,
+        "timestamp": "2026-02-02T13:34:20.141771"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 5,
+        "timestamp": "2026-02-02T13:34:20.141773"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 6,
+        "timestamp": "2026-02-02T13:34:20.141775"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 7,
+        "timestamp": "2026-02-02T13:34:20.141778"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 8,
+        "timestamp": "2026-02-02T13:34:20.141780"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 9,
+        "timestamp": "2026-02-02T13:34:20.141787"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 10,
+        "timestamp": "2026-02-02T13:34:20.141789"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 11,
+        "timestamp": "2026-02-02T13:34:20.141792"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 12,
+        "timestamp": "2026-02-02T13:34:20.141794"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 13,
+        "timestamp": "2026-02-02T13:34:20.141796"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 14,
+        "timestamp": "2026-02-02T13:34:20.141798"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 15,
+        "timestamp": "2026-02-02T13:34:20.141801"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 16,
+        "timestamp": "2026-02-02T13:34:20.141803"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 17,
+        "timestamp": "2026-02-02T13:34:20.141805"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 18,
+        "timestamp": "2026-02-02T13:34:20.141808"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 19,
+        "timestamp": "2026-02-02T13:34:20.141810"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 20,
+        "timestamp": "2026-02-02T13:34:20.141813"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 21,
+        "timestamp": "2026-02-02T13:34:20.141815"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 22,
+        "timestamp": "2026-02-02T13:34:20.141818"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 23,
+        "timestamp": "2026-02-02T13:34:20.141820"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 24,
+        "timestamp": "2026-02-02T13:34:20.141823"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 25,
+        "timestamp": "2026-02-02T13:34:20.141827"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 26,
+        "timestamp": "2026-02-02T13:34:20.141830"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 27,
+        "timestamp": "2026-02-02T13:34:20.141832"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 28,
+        "timestamp": "2026-02-02T13:34:20.141834"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 29,
+        "timestamp": "2026-02-02T13:34:20.141837"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 30,
+        "timestamp": "2026-02-02T13:34:20.141839"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 31,
+        "timestamp": "2026-02-02T13:34:20.141841"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 32,
+        "timestamp": "2026-02-02T13:34:20.141844"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 33,
+        "timestamp": "2026-02-02T13:34:20.141846"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 34,
+        "timestamp": "2026-02-02T13:34:20.141849"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 35,
+        "timestamp": "2026-02-02T13:34:20.141851"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 36,
+        "timestamp": "2026-02-02T13:34:20.141853"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 37,
+        "timestamp": "2026-02-02T13:34:20.141856"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 38,
+        "timestamp": "2026-02-02T13:34:20.141858"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 39,
+        "timestamp": "2026-02-02T13:34:20.141861"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 40,
+        "timestamp": "2026-02-02T13:34:20.141863"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 41,
+        "timestamp": "2026-02-02T13:34:20.141868"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 42,
+        "timestamp": "2026-02-02T13:34:20.141870"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 43,
+        "timestamp": "2026-02-02T13:34:20.141872"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 44,
+        "timestamp": "2026-02-02T13:34:20.141874"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 45,
+        "timestamp": "2026-02-02T13:34:20.141877"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 46,
+        "timestamp": "2026-02-02T13:34:20.141893"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 47,
+        "timestamp": "2026-02-02T13:34:20.141896"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 48,
+        "timestamp": "2026-02-02T13:34:20.141898"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 49,
+        "timestamp": "2026-02-02T13:34:20.141901"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 50,
+        "timestamp": "2026-02-02T13:34:20.141903"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 51,
+        "timestamp": "2026-02-02T13:34:20.141905"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 52,
+        "timestamp": "2026-02-02T13:34:20.141908"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 53,
+        "timestamp": "2026-02-02T13:34:20.141910"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 54,
+        "timestamp": "2026-02-02T13:34:20.141912"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 55,
+        "timestamp": "2026-02-02T13:34:20.141915"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 56,
+        "timestamp": "2026-02-02T13:34:20.141917"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 57,
+        "timestamp": "2026-02-02T13:34:20.141919"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 58,
+        "timestamp": "2026-02-02T13:34:20.141922"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 59,
+        "timestamp": "2026-02-02T13:34:20.141924"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 60,
+        "timestamp": "2026-02-02T13:34:20.141927"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 61,
+        "timestamp": "2026-02-02T13:34:20.141929"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 62,
+        "timestamp": "2026-02-02T13:34:20.141931"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 63,
+        "timestamp": "2026-02-02T13:34:20.141934"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 64,
+        "timestamp": "2026-02-02T13:34:20.141936"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 65,
+        "timestamp": "2026-02-02T13:34:20.141938"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 66,
+        "timestamp": "2026-02-02T13:34:20.141941"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 67,
+        "timestamp": "2026-02-02T13:34:20.141943"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 68,
+        "timestamp": "2026-02-02T13:34:20.141945"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 69,
+        "timestamp": "2026-02-02T13:34:20.141948"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 70,
+        "timestamp": "2026-02-02T13:34:20.141950"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 71,
+        "timestamp": "2026-02-02T13:34:20.141952"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 72,
+        "timestamp": "2026-02-02T13:34:20.141955"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 73,
+        "timestamp": "2026-02-02T13:34:20.141957"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 74,
+        "timestamp": "2026-02-02T13:34:20.141959"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 75,
+        "timestamp": "2026-02-02T13:34:20.141962"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 76,
+        "timestamp": "2026-02-02T13:34:20.141964"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 77,
+        "timestamp": "2026-02-02T13:34:20.141966"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 78,
+        "timestamp": "2026-02-02T13:34:20.141968"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 79,
+        "timestamp": "2026-02-02T13:34:20.141971"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 80,
+        "timestamp": "2026-02-02T13:34:20.141973"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 81,
+        "timestamp": "2026-02-02T13:34:20.141975"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 82,
+        "timestamp": "2026-02-02T13:34:20.141978"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 83,
+        "timestamp": "2026-02-02T13:34:20.141980"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 84,
+        "timestamp": "2026-02-02T13:34:20.141983"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 85,
+        "timestamp": "2026-02-02T13:34:20.141985"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 86,
+        "timestamp": "2026-02-02T13:34:20.141987"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 87,
+        "timestamp": "2026-02-02T13:34:20.141989"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 88,
+        "timestamp": "2026-02-02T13:34:20.141991"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 89,
+        "timestamp": "2026-02-02T13:34:20.141994"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 90,
+        "timestamp": "2026-02-02T13:34:20.141996"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 91,
+        "timestamp": "2026-02-02T13:34:20.142010"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 92,
+        "timestamp": "2026-02-02T13:34:20.142012"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 93,
+        "timestamp": "2026-02-02T13:34:20.142015"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 94,
+        "timestamp": "2026-02-02T13:34:20.142017"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 95,
+        "timestamp": "2026-02-02T13:34:20.142019"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 96,
+        "timestamp": "2026-02-02T13:34:20.142022"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 97,
+        "timestamp": "2026-02-02T13:34:20.142024"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 98,
+        "timestamp": "2026-02-02T13:34:20.142026"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 99,
+        "timestamp": "2026-02-02T13:34:20.142029"
+      }
+    ],
+    "design": [
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.141742"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.141759"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.141765"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.141768"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 4,
+        "timestamp": "2026-02-02T13:34:20.141771"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 5,
+        "timestamp": "2026-02-02T13:34:20.141773"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 6,
+        "timestamp": "2026-02-02T13:34:20.141775"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 7,
+        "timestamp": "2026-02-02T13:34:20.141778"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 8,
+        "timestamp": "2026-02-02T13:34:20.141780"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 9,
+        "timestamp": "2026-02-02T13:34:20.141787"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 10,
+        "timestamp": "2026-02-02T13:34:20.141789"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 11,
+        "timestamp": "2026-02-02T13:34:20.141792"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 12,
+        "timestamp": "2026-02-02T13:34:20.141794"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 13,
+        "timestamp": "2026-02-02T13:34:20.141796"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 14,
+        "timestamp": "2026-02-02T13:34:20.141798"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 15,
+        "timestamp": "2026-02-02T13:34:20.141801"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 16,
+        "timestamp": "2026-02-02T13:34:20.141803"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 17,
+        "timestamp": "2026-02-02T13:34:20.141805"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 18,
+        "timestamp": "2026-02-02T13:34:20.141808"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 19,
+        "timestamp": "2026-02-02T13:34:20.141810"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 20,
+        "timestamp": "2026-02-02T13:34:20.141813"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 21,
+        "timestamp": "2026-02-02T13:34:20.141815"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 22,
+        "timestamp": "2026-02-02T13:34:20.141818"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 23,
+        "timestamp": "2026-02-02T13:34:20.141820"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 24,
+        "timestamp": "2026-02-02T13:34:20.141823"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 25,
+        "timestamp": "2026-02-02T13:34:20.141827"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 26,
+        "timestamp": "2026-02-02T13:34:20.141830"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 27,
+        "timestamp": "2026-02-02T13:34:20.141832"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 28,
+        "timestamp": "2026-02-02T13:34:20.141834"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 29,
+        "timestamp": "2026-02-02T13:34:20.141837"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 30,
+        "timestamp": "2026-02-02T13:34:20.141839"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 31,
+        "timestamp": "2026-02-02T13:34:20.141841"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 32,
+        "timestamp": "2026-02-02T13:34:20.141844"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 33,
+        "timestamp": "2026-02-02T13:34:20.141846"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 34,
+        "timestamp": "2026-02-02T13:34:20.141849"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 35,
+        "timestamp": "2026-02-02T13:34:20.141851"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 36,
+        "timestamp": "2026-02-02T13:34:20.141853"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 37,
+        "timestamp": "2026-02-02T13:34:20.141856"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 38,
+        "timestamp": "2026-02-02T13:34:20.141858"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 39,
+        "timestamp": "2026-02-02T13:34:20.141861"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 40,
+        "timestamp": "2026-02-02T13:34:20.141863"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 41,
+        "timestamp": "2026-02-02T13:34:20.141868"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 42,
+        "timestamp": "2026-02-02T13:34:20.141870"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 43,
+        "timestamp": "2026-02-02T13:34:20.141872"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 44,
+        "timestamp": "2026-02-02T13:34:20.141874"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 45,
+        "timestamp": "2026-02-02T13:34:20.141877"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 46,
+        "timestamp": "2026-02-02T13:34:20.141893"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 47,
+        "timestamp": "2026-02-02T13:34:20.141896"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 48,
+        "timestamp": "2026-02-02T13:34:20.141898"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 49,
+        "timestamp": "2026-02-02T13:34:20.141901"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 50,
+        "timestamp": "2026-02-02T13:34:20.141903"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 51,
+        "timestamp": "2026-02-02T13:34:20.141905"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 52,
+        "timestamp": "2026-02-02T13:34:20.141908"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 53,
+        "timestamp": "2026-02-02T13:34:20.141910"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 54,
+        "timestamp": "2026-02-02T13:34:20.141912"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 55,
+        "timestamp": "2026-02-02T13:34:20.141915"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 56,
+        "timestamp": "2026-02-02T13:34:20.141917"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 57,
+        "timestamp": "2026-02-02T13:34:20.141919"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 58,
+        "timestamp": "2026-02-02T13:34:20.141922"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 59,
+        "timestamp": "2026-02-02T13:34:20.141924"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 60,
+        "timestamp": "2026-02-02T13:34:20.141927"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 61,
+        "timestamp": "2026-02-02T13:34:20.141929"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 62,
+        "timestamp": "2026-02-02T13:34:20.141931"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 63,
+        "timestamp": "2026-02-02T13:34:20.141934"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 64,
+        "timestamp": "2026-02-02T13:34:20.141936"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 65,
+        "timestamp": "2026-02-02T13:34:20.141938"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 66,
+        "timestamp": "2026-02-02T13:34:20.141941"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 67,
+        "timestamp": "2026-02-02T13:34:20.141943"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 68,
+        "timestamp": "2026-02-02T13:34:20.141945"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 69,
+        "timestamp": "2026-02-02T13:34:20.141948"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 70,
+        "timestamp": "2026-02-02T13:34:20.141950"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 71,
+        "timestamp": "2026-02-02T13:34:20.141952"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 72,
+        "timestamp": "2026-02-02T13:34:20.141955"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 73,
+        "timestamp": "2026-02-02T13:34:20.141957"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 74,
+        "timestamp": "2026-02-02T13:34:20.141959"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 75,
+        "timestamp": "2026-02-02T13:34:20.141962"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 76,
+        "timestamp": "2026-02-02T13:34:20.141964"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 77,
+        "timestamp": "2026-02-02T13:34:20.141966"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 78,
+        "timestamp": "2026-02-02T13:34:20.141968"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 79,
+        "timestamp": "2026-02-02T13:34:20.141971"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 80,
+        "timestamp": "2026-02-02T13:34:20.141973"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 81,
+        "timestamp": "2026-02-02T13:34:20.141975"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 82,
+        "timestamp": "2026-02-02T13:34:20.141978"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 83,
+        "timestamp": "2026-02-02T13:34:20.141980"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 84,
+        "timestamp": "2026-02-02T13:34:20.141983"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 85,
+        "timestamp": "2026-02-02T13:34:20.141985"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 86,
+        "timestamp": "2026-02-02T13:34:20.141987"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 87,
+        "timestamp": "2026-02-02T13:34:20.141989"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 88,
+        "timestamp": "2026-02-02T13:34:20.141991"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 89,
+        "timestamp": "2026-02-02T13:34:20.141994"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 90,
+        "timestamp": "2026-02-02T13:34:20.141996"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 91,
+        "timestamp": "2026-02-02T13:34:20.142010"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 92,
+        "timestamp": "2026-02-02T13:34:20.142012"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 93,
+        "timestamp": "2026-02-02T13:34:20.142015"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 94,
+        "timestamp": "2026-02-02T13:34:20.142017"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 95,
+        "timestamp": "2026-02-02T13:34:20.142019"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 96,
+        "timestamp": "2026-02-02T13:34:20.142022"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 97,
+        "timestamp": "2026-02-02T13:34:20.142024"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 98,
+        "timestamp": "2026-02-02T13:34:20.142026"
+      },
+      {
+        "session_id": "test-session-latency",
+        "message_idx": 99,
+        "timestamp": "2026-02-02T13:34:20.142029"
+      }
+    ],
+    "first": [
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.147051"
+      }
+    ],
+    "wlxc": [
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.147051"
+      }
+    ],
+    "containers": [
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.147051"
+      }
+    ],
+    "second": [
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.147063"
+      }
+    ],
+    "docker": [
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.147063"
+      }
+    ],
+    "kubernetes": [
+      {
+        "session_id": "test-session-no-reindex",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.147063"
+      }
+    ],
+    "phase": [
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.665556"
+      }
+    ],
+    "implementation": [
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 0,
+        "timestamp": "2026-02-02T13:34:20.665556"
+      }
+    ],
+    "incremental": [
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.665583"
+      }
+    ],
+    "indexing": [
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 1,
+        "timestamp": "2026-02-02T13:34:20.665583"
+      }
+    ],
+    "hook": [
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.668900"
+      }
+    ],
+    "handlers": [
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 2,
+        "timestamp": "2026-02-02T13:34:20.668900"
+      }
+    ],
+    "debounce": [
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.668911"
+      }
+    ],
+    "logic": [
+      {
+        "session_id": "test-session-incremental",
+        "message_idx": 3,
+        "timestamp": "2026-02-02T13:34:20.668911"
+      }
+    ]
+  }
+}
