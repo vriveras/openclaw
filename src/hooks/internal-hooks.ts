@@ -111,6 +111,15 @@ export interface InternalHookEvent {
   timestamp: Date;
   /** Messages to send back to the user (hooks can push to this array) */
   messages: string[];
+  /**
+   * Context to inject into the agent's conversation before processing.
+   * Hooks can push to this array to provide additional context deterministically.
+   * Injected as system messages prepended to the conversation.
+   */
+  injectedContext?: Array<{
+    role: "system";
+    content: string;
+  }>;
 }
 
 export type InternalHookHandler = (event: InternalHookEvent) => Promise<void> | void;
@@ -192,15 +201,16 @@ export function getRegisteredEventKeys(): string[] {
  * but don't prevent other handlers from running.
  *
  * @param event - The event to trigger
+ * @returns The event with any injected context populated by handlers
  */
-export async function triggerInternalHook(event: InternalHookEvent): Promise<void> {
+export async function triggerInternalHook(event: InternalHookEvent): Promise<InternalHookEvent> {
   const typeHandlers = handlers.get(event.type) ?? [];
   const specificHandlers = handlers.get(`${event.type}:${event.action}`) ?? [];
 
   const allHandlers = [...typeHandlers, ...specificHandlers];
 
   if (allHandlers.length === 0) {
-    return;
+    return event;
   }
 
   for (const handler of allHandlers) {
@@ -213,6 +223,8 @@ export async function triggerInternalHook(event: InternalHookEvent): Promise<voi
       );
     }
   }
+
+  return event;
 }
 
 /**

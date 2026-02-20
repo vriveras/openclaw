@@ -53,6 +53,14 @@ export type GetReplyOptions = {
   hasRepliedRef?: { value: boolean };
   /** Override agent timeout in seconds (0 = no timeout). Threads through to resolveAgentTimeoutMs. */
   timeoutOverrideSeconds?: number;
+  /**
+   * Context injected by hooks (e.g., rlm-query-augment) to prepend to the conversation.
+   * Deterministically added before agent sees the message — no LLM action required.
+   */
+  injectedContext?: Array<{
+    role: "system";
+    content: string;
+  }>;
 };
 
 export type ReplyPayload = {

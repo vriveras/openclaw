@@ -200,30 +200,36 @@ export async function dispatchReplyFromConfig(params: {
   }
 
   // Bridge to internal hooks (HOOK.md discovery system) - refs #8807
+  let injectedContext: Array<{ role: "system"; content: string }> | undefined;
   if (sessionKey) {
-    void triggerInternalHook(
-      createInternalHookEvent("message", "received", sessionKey, {
-        from: ctx.From ?? "",
-        content,
-        timestamp,
-        channelId,
-        accountId: ctx.AccountId,
-        conversationId,
-        messageId: messageIdForHook,
-        metadata: {
-          to: ctx.To,
-          provider: ctx.Provider,
-          surface: ctx.Surface,
-          threadId: ctx.MessageThreadId,
-          senderId: ctx.SenderId,
-          senderName: ctx.SenderName,
-          senderUsername: ctx.SenderUsername,
-          senderE164: ctx.SenderE164,
-        },
-      }),
-    ).catch((err) => {
+    try {
+      const hookEvent = await triggerInternalHook(
+        createInternalHookEvent("message", "received", sessionKey, {
+          from: ctx.From ?? "",
+          content,
+          timestamp,
+          channelId,
+          accountId: ctx.AccountId,
+          conversationId,
+          messageId: messageIdForHook,
+          cfg,
+          agentId: resolveSessionAgentId({ sessionKey, config: cfg }),
+          metadata: {
+            to: ctx.To,
+            provider: ctx.Provider,
+            surface: ctx.Surface,
+            threadId: ctx.MessageThreadId,
+            senderId: ctx.SenderId,
+            senderName: ctx.SenderName,
+            senderUsername: ctx.SenderUsername,
+            senderE164: ctx.SenderE164,
+          },
+        }),
+      );
+      injectedContext = hookEvent.injectedContext;
+    } catch (err) {
       logVerbose(`dispatch-from-config: message_received internal hook failed: ${String(err)}`);
-    });
+    }
   }
 
   // Check if we should route replies to originating channel instead of dispatcher.
@@ -339,6 +345,7 @@ export async function dispatchReplyFromConfig(params: {
       ctx,
       {
         ...params.replyOptions,
+        injectedContext,
         onToolResult: (payload: ReplyPayload) => {
           const run = async () => {
             const ttsPayload = await maybeApplyTtsToPayload({

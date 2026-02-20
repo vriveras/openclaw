@@ -288,6 +288,12 @@ export async function runPreparedReply(
   let prefixedCommandBody = mediaNote
     ? [mediaNote, mediaReplyHint, prefixedBody ?? ""].filter(Boolean).join("\n").trim()
     : prefixedBody;
+
+  // Inject context from hooks (e.g., rlm-query-augment) deterministically
+  if (opts?.injectedContext && opts.injectedContext.length > 0) {
+    const injectedText = opts.injectedContext.map((ctx) => ctx.content).join("\n\n");
+    prefixedCommandBody = `[Auto-retrieved context from previous conversations]\n\n${injectedText}\n\n---\n\n${prefixedCommandBody}`;
+  }
   if (!resolvedThinkLevel && prefixedCommandBody) {
     const parts = prefixedCommandBody.split(/\s+/);
     const maybeLevel = normalizeThinkLevel(parts[0]);

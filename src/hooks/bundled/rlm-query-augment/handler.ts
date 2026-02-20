@@ -195,9 +195,13 @@ const queryAugmentHook: InternalHookHandler = async (event) => {
   const results = await runContextSearch(query, cfg, agentId, 5);
 
   if (results.length > 0) {
-    // Format and inject context
+    // Format and inject context into the event (deterministic, not LLM-dependent)
     const formatted = formatResults(results, query);
-    context.injectedContext = formatted;
+    event.injectedContext = event.injectedContext ?? [];
+    event.injectedContext.push({
+      role: "system",
+      content: formatted,
+    });
 
     // Log for debugging
     console.log(`[rlm-query-augment] Injected ${results.length} results for: "${query}"`);
