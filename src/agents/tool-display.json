@@ -294,6 +294,16 @@
       "title": "Memory Get",
       "detailKeys": ["path", "from", "lines"]
     },
+    "memory_search_refs": {
+      "emoji": "🧠",
+      "title": "Memory Search (Refs)",
+      "detailKeys": ["query"]
+    },
+    "memory_expand": {
+      "emoji": "📌",
+      "title": "Memory Expand",
+      "detailKeys": ["refs"]
+    },
     "web_search": {
       "emoji": "🔎",
       "title": "Web Search",

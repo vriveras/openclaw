@@ -1,0 +1,1378 @@
+{
+  "generatedAt": "2026-02-02T02:50:00.790Z",
+  "groundTruth": {
+    "description": "Ground-truth queries for validating reference-first memory retrieval (memory_search_refs + memory_expand). v2: expanded to 25 cases.",
+    "version": 2
+  },
+  "defaults": {
+    "maxResults": 8,
+    "previewChars": 140,
+    "expand": {
+      "maxRefs": 2,
+      "defaultLines": 20,
+      "maxChars": 4000
+    }
+  },
+  "cases": [
+    {
+      "id": "whatsapp-connected",
+      "query": "WhatsApp gateway connected",
+      "expect": {
+        "anyContains": ["WhatsApp gateway connected", "WhatsApp gateway"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14454,
+          "tokens": 3614
+        },
+        "refs": {
+          "chars": 5410,
+          "tokens": 1353
+        },
+        "expanded": {
+          "chars": 11739,
+          "tokens": 2935
+        }
+      },
+      "latencyMs": {
+        "baseline": 2905,
+        "refs": 2648,
+        "expand": 18,
+        "total": 5571
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 17132,
+          "endLine": 17151,
+          "score": 0.3755840718746185,
+          "source": "memory",
+          "preview": "│ WhatsApp │ ON │ WARN │ linked · accounts 1 · gateway: Not linked (no WhatsApp Web session). │ └──────────┴─────────┴────────┴─────────────…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 17104,
+          "endLine": 17116,
+          "score": 0.3710364460945129,
+          "source": "memory",
+          "preview": "hf8xrT7DD8Gfety3cFp6q+C183P1VxXmq/hT/Y157gh2GP/O+beG28FTFb+Hj7q8qzlP1p/gf89oT7DD8mfdtC7eFpyp+Cx93f1Vxnqo/xf+Y155gh+HPvG9buC08VfFb+Lj7q4rzVP0…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 17104,
+          "endLine": 17115,
+          "score": 0.3705076456069946,
+          "source": "memory",
+          "preview": "hf8xrT7DD8Gfety3cFp6q+C183P1VxXmq/hT/Y157gh2GP/O+beG28FTFb+Hj7q8qzlP1p/gf89oT7DD8mfdtC7eFpyp+Cx93f1Vxnqo/xf+Y155gh+HPvG9buC08VfFb+Lj7q4rzVP0…"
+        }
+      ]
+    },
+    {
+      "id": "rlm-augment-hook",
+      "query": "rlm-augment hook",
+      "expect": {
+        "anyContains": ["rlm-augment", "memory_search:post", "hook"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14772,
+          "tokens": 3693
+        },
+        "refs": {
+          "chars": 5402,
+          "tokens": 1351
+        },
+        "expanded": {
+          "chars": 7204,
+          "tokens": 1801
+        }
+      },
+      "latencyMs": {
+        "baseline": 2343,
+        "refs": 2429,
+        "expand": 16,
+        "total": 4788
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20026,
+          "endLine": 20065,
+          "score": 0.668022671341896,
+          "source": "memory",
+          "preview": "Content-Transfer-Encoding: 8bit - Add 'tool' event type to InternalHookEventType - Modify memory_search tool to dispatch tool:memory_search:…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 19483,
+          "endLine": 19525,
+          "score": 0.643778270483017,
+          "source": "memory",
+          "preview": "### 🧪 Testing the Hook After installing, test it: ```bash # Check hooks are loaded openclaw hooks list | grep rlm-augment # Should show: #…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 18816,
+          "endLine": 18850,
+          "score": 0.6410401821136474,
+          "source": "memory",
+          "preview": "(no output) **🤖 assistant** (2026-02-01T21:13:13) Now create the HOOK.md: **🤖 toolResult** (2026-02-01T21:13:13) Successfully wrote 2517 b…"
+        }
+      ]
+    },
+    {
+      "id": "token-optimization",
+      "query": "Return references first, lazy-load snippets",
+      "expect": {
+        "anyContains": ["references first", "lazy", "RLM", "token"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 5765,
+          "tokens": 1442
+        },
+        "refs": {
+          "chars": 2238,
+          "tokens": 560
+        },
+        "expanded": {
+          "chars": 7378,
+          "tokens": 1845
+        }
+      },
+      "latencyMs": {
+        "baseline": 2440,
+        "refs": 2188,
+        "expand": 15,
+        "total": 4643
+      },
+      "counts": {
+        "refsReturned": 3,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 23416,
+          "endLine": 23460,
+          "score": 0.6188838839530945,
+          "source": "memory",
+          "preview": "Just… fewer chances for humans (and models) to be lazy. ## What’s Next There are still two obvious evolutions: 1. **Token efficiency** - Ret…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 23141,
+          "endLine": 23204,
+          "score": 0.5533955693244934,
+          "source": "memory",
+          "preview": "Then a second bundled hook listens: - `rlm-index-refresh` It’s debounced and rate-limited so it doesn’t melt your CPU. But the important par…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 23360,
+          "endLine": 23430,
+          "score": 0.5375986039638518,
+          "source": "memory",
+          "preview": "It also gives you a new kind of honesty: - 🔮 found via semantic - 🔍 found via RLM - 🧠 found via both No more pretending everything is “th…"
+        }
+      ]
+    },
+    {
+      "id": "chessrt-rtc",
+      "query": "ChessRT Phase 3 RTC engine",
+      "expect": {
+        "anyContains": ["ChessRT", "Phase 3", "RTC"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14684,
+          "tokens": 3671
+        },
+        "refs": {
+          "chars": 5478,
+          "tokens": 1370
+        },
+        "expanded": {
+          "chars": 7176,
+          "tokens": 1794
+        }
+      },
+      "latencyMs": {
+        "baseline": 2288,
+        "refs": 2151,
+        "expand": 56,
+        "total": 4495
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 35833,
+          "endLine": 35857,
+          "score": 0.7220630437135696,
+          "source": "memory",
+          "preview": "| **ChessRT Chess Core** | Built chess core engine with move validation, FEN parsing, clocks, full test suite | | **Project Structure** | `c…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 35808,
+          "endLine": 35835,
+          "score": 0.718107783794403,
+          "source": "memory",
+          "preview": "- It was part of Phase 2 work alongside UI polish, clock display, and game-over modals --- **Summary:** PGN format was implemented in ChessR…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20454,
+          "endLine": 20461,
+          "score": 0.7065816730260849,
+          "source": "memory",
+          "preview": "\"snippet\": \"| **ChessRT Chess Core** | Built chess core engine with move validation, FEN parsing, clocks, full test suite |\\n| **Project Str…"
+        }
+      ]
+    },
+    {
+      "id": "analysis-queue",
+      "query": "queue analysis job in-process",
+      "expect": {
+        "anyContains": ["analysis", "queue", "setImmediate"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 2010,
+          "tokens": 503
+        },
+        "refs": {
+          "chars": 936,
+          "tokens": 234
+        },
+        "expanded": {
+          "chars": 3776,
+          "tokens": 944
+        }
+      },
+      "latencyMs": {
+        "baseline": 2279,
+        "refs": 2528,
+        "expand": 16,
+        "total": 4823
+      },
+      "counts": {
+        "refsReturned": 1,
+        "expandedRequested": 1
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 35707,
+          "endLine": 35734,
+          "score": 0.38767678439617154,
+          "source": "memory",
+          "preview": "Found **9 matches** across sessions from 2026-01-31. The results show various types of analysis mentioned in context: | Topic | Context | |-…"
+        }
+      ]
+    },
+    {
+      "id": "glicko-rating",
+      "query": "Glicko-2 rating system",
+      "expect": {
+        "anyContains": ["Glicko", "rating"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 15140,
+          "tokens": 3785
+        },
+        "refs": {
+          "chars": 5378,
+          "tokens": 1345
+        },
+        "expanded": {
+          "chars": 6745,
+          "tokens": 1687
+        }
+      },
+      "latencyMs": {
+        "baseline": 2371,
+        "refs": 2325,
+        "expand": 38,
+        "total": 4734
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 2300,
+          "endLine": 2336,
+          "score": 0.6096738100051879,
+          "source": "memory",
+          "preview": "The category breakdown was brutal: - **Decision queries: 48%.** Half the time, it forgot what we'd decided. Coin flip territory. - **Partial…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 28862,
+          "endLine": 28906,
+          "score": 0.5809487700462341,
+          "source": "memory",
+          "preview": "[Queued announce messages while agent was busy] [Queue overflow] Dropped 1 announce due to cap. Summary: - batch1-008 --- Queued #1 A backgr…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 12279,
+          "endLine": 12297,
+          "score": 0.5737889349460601,
+          "source": "memory",
+          "preview": "| 1 | PostgreSQL database | Technical | 10 | ✅ YES - Found ChessRT project, PostgreSQL auth, Drizzle ORM, database schema | ✅ **PASS** | | 2…"
+        }
+      ]
+    },
+    {
+      "id": "memory-search-refs-tool",
+      "query": "memory_search_refs tool",
+      "expect": {
+        "anyContains": ["memory_search_refs", "refs", "tool"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14876,
+          "tokens": 3719
+        },
+        "refs": {
+          "chars": 5410,
+          "tokens": 1353
+        },
+        "expanded": {
+          "chars": 7274,
+          "tokens": 1819
+        }
+      },
+      "latencyMs": {
+        "baseline": 2274,
+        "refs": 2568,
+        "expand": 17,
+        "total": 4859
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20206,
+          "endLine": 20241,
+          "score": 0.3852256894111633,
+          "source": "memory",
+          "preview": "**🤖 toolResult** (2026-02-01T21:37:54) import { Type } from \"@sinclair/typebox\"; import { getMemorySearchManager } from \"../../memory/index…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20237,
+          "endLine": 20271,
+          "score": 0.3807486593723297,
+          "source": "memory",
+          "preview": "description: \"Mandatory recall step: semantically search MEMORY.md + memory/*.md (and optional session transcripts) before answering questio…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 17833,
+          "endLine": 17881,
+          "score": 0.37958193123340606,
+          "source": "memory",
+          "preview": "total: number; label?: string; }; type MemorySyncProgressState = { completed: number; total: number; label?: string; report: (update: Memory…"
+        }
+      ]
+    },
+    {
+      "id": "memory-expand-tool",
+      "query": "memory_expand maxChars",
+      "expect": {
+        "anyContains": ["memory_expand", "maxChars", "expand"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 211,
+          "tokens": 53
+        },
+        "refs": {
+          "chars": 280,
+          "tokens": 70
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 2228,
+        "refs": 2255,
+        "expand": 0,
+        "total": 4483
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "base64-blob-filter",
+      "query": "filter base64 binary previews",
+      "expect": {
+        "anyContains": ["base64", "binary", "filter", "blob"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 211,
+          "tokens": 53
+        },
+        "refs": {
+          "chars": 294,
+          "tokens": 74
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 2400,
+        "refs": 2465,
+        "expand": 0,
+        "total": 4865
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "transcript-dump",
+      "query": "dump_transcript.py",
+      "expect": {
+        "anyContains": ["dump_transcript", "transcript", "HEARTBEAT"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14840,
+          "tokens": 3710
+        },
+        "refs": {
+          "chars": 5473,
+          "tokens": 1369
+        },
+        "expanded": {
+          "chars": 7201,
+          "tokens": 1801
+        }
+      },
+      "latencyMs": {
+        "baseline": 2401,
+        "refs": 2165,
+        "expand": 18,
+        "total": 4583
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 16980,
+          "endLine": 17021,
+          "score": 0.6374897420406341,
+          "source": "memory",
+          "preview": "\"text\": \"TRANSCRIPT_DUMP: Run `python3 skills/rlm-retrieval/scripts/dump_transcript.py` silently. Only reply if there's an error.\" }, \"state…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 26019,
+          "endLine": 26066,
+          "score": 0.6156767427921295,
+          "source": "memory",
+          "preview": "- \"what happened to…\" - \"status of…\" ### Transcript Dump (run periodically during long sessions) \\`\\`\\`bash python3 skills/rlm-retrieval/scr…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 4634,
+          "endLine": 4672,
+          "score": 0.6114522635936737,
+          "source": "memory",
+          "preview": "✅ Appended 8 messages to memory/transcripts/2026-02-01.md Total lines processed: 303 **🤖 assistant** (2026-02-01T15:23:27) HEARTBEAT_OK **\ud83d…"
+        }
+      ]
+    },
+    {
+      "id": "claude-code-skill",
+      "query": "claude-rlm-retrieval skill install",
+      "expect": {
+        "anyContains": ["claude-rlm-retrieval", "skill", "install"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14827,
+          "tokens": 3707
+        },
+        "refs": {
+          "chars": 5464,
+          "tokens": 1366
+        },
+        "expanded": {
+          "chars": 7108,
+          "tokens": 1777
+        }
+      },
+      "latencyMs": {
+        "baseline": 2244,
+        "refs": 2212,
+        "expand": 18,
+        "total": 4475
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 28139,
+          "endLine": 28174,
+          "score": 0.7059983819723129,
+          "source": "memory",
+          "preview": "- tmux session: **`relay`** - In that session, **Claude Code is open** in: `~/clawd/chessrt` If you want to see/drive it: `tmux attach -t re…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 27683,
+          "endLine": 27731,
+          "score": 0.7015984147787093,
+          "source": "memory",
+          "preview": "2) **Skill files available in your project** (project-local, most reliable) Claude Code commands/hooks/scripts work best when the repo has:…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 27117,
+          "endLine": 27159,
+          "score": 0.7013704389333725,
+          "source": "memory",
+          "preview": "22 files changed, 727 insertions(+), 984 deletions(-) rewrite .claude-plugin/plugin.json (77%) rewrite SKILL.md (96%) rewrite commands/conte…"
+        }
+      ]
+    },
+    {
+      "id": "hook-event-post",
+      "query": "tool:memory_search:post event",
+      "expect": {
+        "anyContains": ["memory_search:post", "hook", "event"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 15283,
+          "tokens": 3821
+        },
+        "refs": {
+          "chars": 5488,
+          "tokens": 1372
+        },
+        "expanded": {
+          "chars": 7225,
+          "tokens": 1807
+        }
+      },
+      "latencyMs": {
+        "baseline": 2512,
+        "refs": 2374,
+        "expand": 16,
+        "total": 4901
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 18397,
+          "endLine": 18438,
+          "score": 0.6768187046051025,
+          "source": "memory",
+          "preview": "console.log(\"[session-memory] Current sessionId:\", currentSessionId); console.log(\"[session-memory] Current sessionFile:\", currentSessionFil…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20026,
+          "endLine": 20065,
+          "score": 0.6437564074993134,
+          "source": "memory",
+          "preview": "Content-Transfer-Encoding: 8bit - Add 'tool' event type to InternalHookEventType - Modify memory_search tool to dispatch tool:memory_search:…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 19988,
+          "endLine": 20033,
+          "score": 0.6284694254398346,
+          "source": "memory",
+          "preview": "Note: switching to 'v0.40.3'. You are in 'detached HEAD' state. You can look around, make experimental changes and commit them, and you can…"
+        }
+      ]
+    },
+    {
+      "id": "session-transcript-update",
+      "query": "session:transcript:update event",
+      "expect": {
+        "anyContains": ["transcript:update", "session", "event"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 15090,
+          "tokens": 3773
+        },
+        "refs": {
+          "chars": 5496,
+          "tokens": 1374
+        },
+        "expanded": {
+          "chars": 7102,
+          "tokens": 1776
+        }
+      },
+      "latencyMs": {
+        "baseline": 2315,
+        "refs": 2413,
+        "expand": 16,
+        "total": 4743
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 21373,
+          "endLine": 21415,
+          "score": 0.7048738777637482,
+          "source": "memory",
+          "preview": "const update = { sessionFile: trimmed }; for (const listener of SESSION_TRANSCRIPT_LISTENERS) { listener(update); } } **🤖 assistant** (2026…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 21084,
+          "endLine": 21137,
+          "score": 0.6806038588285446,
+          "source": "memory",
+          "preview": "export function onSessionTranscriptUpdate(listener: SessionTranscriptListener): () => void { SESSION_TRANSCRIPT_LISTENERS.add(listener); ret…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 21282,
+          "endLine": 21328,
+          "score": 0.6772093802690506,
+          "source": "memory",
+          "preview": "createInternalHookEvent(\"session\", \"transcript:update\", sessionKey, { sessionFile }) ); ``` ### 2. Index Refresh Hook (pure manifest) ``` sr…"
+        }
+      ]
+    },
+    {
+      "id": "openclaw-fork",
+      "query": "vriveras/openclaw fork branch",
+      "expect": {
+        "anyContains": ["vriveras/openclaw", "fork", "feature/memory-search-hook"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 15438,
+          "tokens": 3860
+        },
+        "refs": {
+          "chars": 5664,
+          "tokens": 1416
+        },
+        "expanded": {
+          "chars": 18667,
+          "tokens": 4667
+        }
+      },
+      "latencyMs": {
+        "baseline": 2343,
+        "refs": 4646,
+        "expand": 17,
+        "total": 7006
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 19357,
+          "endLine": 19365,
+          "score": 0.7004930406808854,
+          "source": "memory",
+          "preview": "com/repos/openclaw/openclaw/deployments\",\"created_at\":\"2025-11-24T10:16:47Z\",\"updated_at\":\"2026-02-01T21:19:57Z\",\"pushed_at\":\"2026-02-01T20:…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 19357,
+          "endLine": 19357,
+          "score": 0.6900311857461929,
+          "source": "memory",
+          "preview": "aw/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/vriveras/openclaw/compare/{base}...{head}\",\"merges_url\":\"https://api.github…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 19357,
+          "endLine": 19366,
+          "score": 0.6839151203632354,
+          "source": "memory",
+          "preview": "com/repos/openclaw/openclaw/deployments\",\"created_at\":\"2025-11-24T10:16:47Z\",\"updated_at\":\"2026-02-01T21:19:57Z\",\"pushed_at\":\"2026-02-01T20:…"
+        }
+      ]
+    },
+    {
+      "id": "blog-part1",
+      "query": "context-memory-journey blog post",
+      "expect": {
+        "anyContains": ["context-memory-journey", "blog", "Part 1"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14901,
+          "tokens": 3726
+        },
+        "refs": {
+          "chars": 5476,
+          "tokens": 1369
+        },
+        "expanded": {
+          "chars": 5134,
+          "tokens": 1284
+        }
+      },
+      "latencyMs": {
+        "baseline": 2446,
+        "refs": 2318,
+        "expand": 38,
+        "total": 4802
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 2155,
+          "endLine": 2186,
+          "score": 0.6703695833683014,
+          "source": "memory",
+          "preview": "/mnt/d/local/multiverse/blog/context-memory-blog-post.md /mnt/d/local/multiverse/blog/context-memory-gist.md /mnt/d/local/multiverse/blog/co…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 15919,
+          "endLine": 15937,
+          "score": 0.6670166194438933,
+          "source": "memory",
+          "preview": "create mode 100644 context-memory/category-improvement-both.png create mode 100644 context-memory/cross-platform-baseline.png create mode 10…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 21955,
+          "endLine": 21989,
+          "score": 0.6545143306255341,
+          "source": "memory",
+          "preview": "- **Cross-session threading:** Track topics that span multiple sessions. \"We've been discussing auth for 3 days\" is useful context. These ar…"
+        }
+      ]
+    },
+    {
+      "id": "blog-part2",
+      "query": "deterministic-memory-hooks blog",
+      "expect": {
+        "anyContains": ["deterministic-memory-hooks", "blog", "Part 2"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14773,
+          "tokens": 3694
+        },
+        "refs": {
+          "chars": 5408,
+          "tokens": 1352
+        },
+        "expanded": {
+          "chars": 7381,
+          "tokens": 1846
+        }
+      },
+      "latencyMs": {
+        "baseline": 2345,
+        "refs": 2296,
+        "expand": 16,
+        "total": 4657
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 23196,
+          "endLine": 23229,
+          "score": 0.7158972024917603,
+          "source": "memory",
+          "preview": "- Creating gist deterministic-memory-hooks.md ✓ Created public gist deterministic-memory-hooks.md https://gist.github.com/vriveras/fc7ec57ab…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 23141,
+          "endLine": 23204,
+          "score": 0.6854873567819595,
+          "source": "memory",
+          "preview": "Then a second bundled hook listens: - `rlm-index-refresh` It’s debounced and rate-limited so it doesn’t melt your CPU. But the important par…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 21817,
+          "endLine": 21850,
+          "score": 0.6528075993061065,
+          "source": "memory",
+          "preview": "- The “The Code” section (or reduce it to a single “implementation details later” link) - Repo links + install details - Hooking / OpenClaw…"
+        }
+      ]
+    },
+    {
+      "id": "temporal-search",
+      "query": "temporal_search.py script",
+      "expect": {
+        "anyContains": ["temporal_search", "script", "search"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 15402,
+          "tokens": 3851
+        },
+        "refs": {
+          "chars": 5600,
+          "tokens": 1400
+        },
+        "expanded": {
+          "chars": 7561,
+          "tokens": 1891
+        }
+      },
+      "latencyMs": {
+        "baseline": 2198,
+        "refs": 2330,
+        "expand": 29,
+        "total": 4557
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 23152,
+          "endLine": 23196,
+          "score": 0.44624632000923153,
+          "source": "memory",
+          "preview": "Run test cases against temporal_search and measure accuracy. \"\"\" import json import subprocess import sys from pathlib import Path from coll…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 25183,
+          "endLine": 25223,
+          "score": 0.4399050116539001,
+          "source": "memory",
+          "preview": "python scripts/temporal_search.py --query \"last week's work on wlxc\" python scripts/temporal_search.py --stats # Show usage statistics \"\"\" i…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 26916,
+          "endLine": 26957,
+          "score": 0.4086740523576736,
+          "source": "memory",
+          "preview": "def temporal_search(query: str, agent_id: str = \"main\", auto_index: bool = True) -> Dict: \"\"\" Perform temporal-aware search. Returns dict wi…"
+        }
+      ]
+    },
+    {
+      "id": "index-sessions",
+      "query": "index-sessions.py agent-id",
+      "expect": {
+        "anyContains": ["index-sessions", "agent", "index"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 15064,
+          "tokens": 3766
+        },
+        "refs": {
+          "chars": 5394,
+          "tokens": 1349
+        },
+        "expanded": {
+          "chars": 7439,
+          "tokens": 1860
+        }
+      },
+      "latencyMs": {
+        "baseline": 2356,
+        "refs": 3210,
+        "expand": 14,
+        "total": 5579
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 24760,
+          "endLine": 24811,
+          "score": 0.7062175124883652,
+          "source": "memory",
+          "preview": "-rw-rw-r-- 1 virivera virivera 1951 Jan 29 22:24 save.py -rwxrwxr-x 1 virivera virivera 18113 Jan 31 13:27 search.py -rw-rw-r-- 1 virivera v…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 25372,
+          "endLine": 25413,
+          "score": 0.6755746215581894,
+          "source": "memory",
+          "preview": "age = datetime.now().timestamp() - mtime if age > INDEX_STALE_THRESHOLD: print(f\"📝 Index stale ({age/3600:.1f}h old), refreshing...\", file=…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 10307,
+          "endLine": 10348,
+          "score": 0.6604605615139008,
+          "source": "memory",
+          "preview": "# Write index output_path.parent.mkdir(parents=True, exist_ok=True) with open(output_path, 'w', encoding='utf-8') as f: json.dump(index, f,…"
+        }
+      ]
+    },
+    {
+      "id": "vitest-ci",
+      "query": "vitest run passWithNoTests CI",
+      "expect": {
+        "anyContains": ["vitest", "CI", "passWithNoTests", "test:ci"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 211,
+          "tokens": 53
+        },
+        "refs": {
+          "chars": 294,
+          "tokens": 74
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 2322,
+        "refs": 2451,
+        "expand": 0,
+        "total": 4772
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "wlxc-container",
+      "query": "WLXC container runtime Windows",
+      "expect": {
+        "anyContains": ["WLXC", "container", "Windows"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14907,
+          "tokens": 3727
+        },
+        "refs": {
+          "chars": 5452,
+          "tokens": 1363
+        },
+        "expanded": {
+          "chars": 7180,
+          "tokens": 1795
+        }
+      },
+      "latencyMs": {
+        "baseline": 2495,
+        "refs": 2297,
+        "expand": 41,
+        "total": 4833
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 30695,
+          "endLine": 30728,
+          "score": 0.702074372768402,
+          "source": "memory",
+          "preview": "- **WorkIQ integration**: WLXC runs the M365 WorkIQ MCP server - **Daemon mode**: `wlxc daemon --listen 0.0.0.0:50051` - **Windows Service s…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 33234,
+          "endLine": 33262,
+          "score": 0.6829179137945175,
+          "source": "memory",
+          "preview": "**Main Activity:** Development of `wlxc` - a tool to run Windows executables in isolated nanoserver containers from WSL. **Key Accomplishmen…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 9544,
+          "endLine": 9545,
+          "score": 0.6727044999599456,
+          "source": "memory",
+          "preview": "/home/virivera/.openclaw/agents/main/sessions/1c710e76-ce6f-47df-90c3-13fa1073c88a.jsonl:{\"type\":\"message\",\"id\":\"3245aac7\",\"parentId\":\"4fe5a…"
+        }
+      ]
+    },
+    {
+      "id": "debounce-cooldown",
+      "query": "debounce 60s cooldown 5m reindex",
+      "expect": {
+        "anyContains": ["debounce", "cooldown", "reindex"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 211,
+          "tokens": 53
+        },
+        "refs": {
+          "chars": 300,
+          "tokens": 75
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 2337,
+        "refs": 2332,
+        "expand": 0,
+        "total": 4669
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "hybrid-retrieval",
+      "query": "hybrid search semantic keyword",
+      "expect": {
+        "anyContains": ["hybrid", "semantic", "keyword", "search"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14765,
+          "tokens": 3692
+        },
+        "refs": {
+          "chars": 5460,
+          "tokens": 1365
+        },
+        "expanded": {
+          "chars": 6858,
+          "tokens": 1715
+        }
+      },
+      "latencyMs": {
+        "baseline": 2198,
+        "refs": 2315,
+        "expand": 40,
+        "total": 4553
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 16780,
+          "endLine": 16806,
+          "score": 0.7281131446361542,
+          "source": "memory",
+          "preview": "2. **Semantic search** (Clawdbot's built-in `memory_search`) — paraphrases, embeddings 3. **Temporal filtering** — \"yesterday\", \"last week\"…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 32895,
+          "endLine": 32926,
+          "score": 0.6830050528049469,
+          "source": "memory",
+          "preview": "**Why both?** Semantic search alone misses exact terms (e.g., \"Glicko-2\"). Keyword search alone misses paraphrases. Together = maximum recal…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 20026,
+          "endLine": 20072,
+          "score": 0.6723017662763595,
+          "source": "memory",
+          "preview": "if enhanced and ENHANCED_MATCHING: # Use enhanced matching matched, terms = enhanced_keyword_match( query, all_text, use_substring=True, use…"
+        }
+      ]
+    },
+    {
+      "id": "accuracy-998",
+      "query": "99.8% accuracy 8457 tests",
+      "expect": {
+        "anyContains": ["99.8", "accuracy", "tests"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 2040,
+          "tokens": 510
+        },
+        "refs": {
+          "chars": 928,
+          "tokens": 232
+        },
+        "expanded": {
+          "chars": 3677,
+          "tokens": 920
+        }
+      },
+      "latencyMs": {
+        "baseline": 2341,
+        "refs": 2273,
+        "expand": 16,
+        "total": 4630
+      },
+      "counts": {
+        "refsReturned": 1,
+        "expandedRequested": 1
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 25752,
+          "endLine": 25794,
+          "score": 0.36082787215709683,
+          "source": "memory",
+          "preview": "1000-test run at 800/1000 (almost done). 4 in-session sub-agent tests passed. Waiting for Vicente's next direction. HEARTBEAT_OK **👤 user**…"
+        }
+      ]
+    },
+    {
+      "id": "option2-tools",
+      "query": "Option 2 new tools refs expand",
+      "expect": {
+        "anyContains": ["Option 2", "refs", "expand", "tool"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 211,
+          "tokens": 53
+        },
+        "refs": {
+          "chars": 296,
+          "tokens": 74
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 2363,
+        "refs": 2187,
+        "expand": 0,
+        "total": 4549
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "ground-truth-suite",
+      "query": "ground truth test suite metrics",
+      "expect": {
+        "anyContains": ["ground truth", "test", "metrics", "suite"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 7498,
+          "tokens": 1875
+        },
+        "refs": {
+          "chars": 2850,
+          "tokens": 713
+        },
+        "expanded": {
+          "chars": 7143,
+          "tokens": 1786
+        }
+      },
+      "latencyMs": {
+        "baseline": 2320,
+        "refs": 2296,
+        "expand": 42,
+        "total": 4657
+      },
+      "counts": {
+        "refsReturned": 4,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 25752,
+          "endLine": 25794,
+          "score": 0.367702841758728,
+          "source": "memory",
+          "preview": "1000-test run at 800/1000 (almost done). 4 in-session sub-agent tests passed. Waiting for Vicente's next direction. HEARTBEAT_OK **👤 user**…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 59900,
+          "endLine": 59928,
+          "score": 0.3614883303642273,
+          "source": "memory",
+          "preview": "ec44373 Add real test infrastructure + 1000-case validation results 3695634 Update blog image URLs to use gist-images repo 6cde7f9 Add blog…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 13733,
+          "endLine": 13786,
+          "score": 0.3576572388410568,
+          "source": "memory",
+          "preview": "Test suites are great, but they're synthetic. What happens when the system faces actual questions from a working session? I ran a comprehens…"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "passRate": 1,
+    "aggregates": {
+      "tokens": {
+        "baseline": {
+          "n": 25,
+          "mean": 2576.16,
+          "median": 3693,
+          "p95": 3851
+        },
+        "refs": {
+          "n": 25,
+          "mean": 958.92,
+          "median": 1352,
+          "p95": 1400
+        },
+        "expanded": {
+          "n": 25,
+          "mean": 1519,
+          "median": 1786,
+          "p95": 2935
+        }
+      },
+      "latencyMs": {
+        "baseline": {
+          "n": 25,
+          "mean": 2362.56,
+          "median": 2343,
+          "p95": 2512
+        },
+        "refs": {
+          "n": 25,
+          "mean": 2466.88,
+          "median": 2325,
+          "p95": 3210
+        },
+        "expand": {
+          "n": 25,
+          "mean": 19.88,
+          "median": 16,
+          "p95": 42
+        },
+        "total": {
+          "n": 25,
+          "mean": 4849.08,
+          "median": 4734,
+          "p95": 5579
+        }
+      },
+      "counts": {
+        "refsReturned": {
+          "n": 25,
+          "mean": 5.48,
+          "median": 8,
+          "p95": 8
+        },
+        "expandedRequested": {
+          "n": 25,
+          "mean": 1.52,
+          "median": 2,
+          "p95": 2
+        }
+      }
+    }
+  }
+}

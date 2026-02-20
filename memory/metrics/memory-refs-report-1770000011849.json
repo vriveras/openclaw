@@ -1,0 +1,289 @@
+{
+  "generatedAt": "2026-02-02T02:40:11.816Z",
+  "groundTruth": {
+    "description": "Ground-truth queries for validating reference-first memory retrieval (memory_search_refs + memory_expand).",
+    "version": 1
+  },
+  "defaults": {
+    "maxResults": 8,
+    "previewChars": 140,
+    "expand": {
+      "maxRefs": 2,
+      "defaultLines": 20,
+      "maxChars": 4000
+    }
+  },
+  "cases": [
+    {
+      "id": "whatsapp-connected",
+      "query": "WhatsApp gateway connected",
+      "expect": {
+        "anyContains": ["WhatsApp gateway connected", "WhatsApp gateway"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": false,
+      "sizes": {
+        "baseline": {
+          "chars": 1075,
+          "tokens": 269
+        },
+        "refs": {
+          "chars": 1069,
+          "tokens": 268
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 23,
+        "refs": 1,
+        "expand": 0,
+        "total": 24
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "rlm-augment-hook",
+      "query": "rlm-augment",
+      "expect": {
+        "anyContains": ["rlm-augment", "memory_search:post", "memory_search_refs:post"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": false,
+      "sizes": {
+        "baseline": {
+          "chars": 1075,
+          "tokens": 269
+        },
+        "refs": {
+          "chars": 1069,
+          "tokens": 268
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 2,
+        "refs": 1,
+        "expand": 0,
+        "total": 3
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "token-optimization",
+      "query": "Return references first, lazy-load snippets",
+      "expect": {
+        "anyContains": ["references first", "lazy-load", "RLM"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": false,
+      "sizes": {
+        "baseline": {
+          "chars": 1075,
+          "tokens": 269
+        },
+        "refs": {
+          "chars": 1069,
+          "tokens": 268
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 1,
+        "refs": 1,
+        "expand": 0,
+        "total": 1
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "chessrt",
+      "query": "ChessRT Phase 3 RTC engine",
+      "expect": {
+        "anyContains": ["ChessRT", "Phase 3", "RTC"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": false,
+      "sizes": {
+        "baseline": {
+          "chars": 1075,
+          "tokens": 269
+        },
+        "refs": {
+          "chars": 1069,
+          "tokens": 268
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 1,
+        "refs": 1,
+        "expand": 0,
+        "total": 1
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "analysis-queue",
+      "query": "queue analysis job",
+      "expect": {
+        "anyContains": ["Queue analysis job", "analysis", "queued"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": false,
+      "sizes": {
+        "baseline": {
+          "chars": 1075,
+          "tokens": 269
+        },
+        "refs": {
+          "chars": 1069,
+          "tokens": 268
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 1,
+        "refs": 0,
+        "expand": 0,
+        "total": 1
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    },
+    {
+      "id": "glicko",
+      "query": "Glicko-2",
+      "expect": {
+        "anyContains": ["Glicko", "Glicko-2"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": false,
+      "sizes": {
+        "baseline": {
+          "chars": 1075,
+          "tokens": 269
+        },
+        "refs": {
+          "chars": 1069,
+          "tokens": 268
+        },
+        "expanded": {
+          "chars": 178,
+          "tokens": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": 1,
+        "refs": 1,
+        "expand": 0,
+        "total": 1
+      },
+      "counts": {
+        "refsReturned": 0,
+        "expandedRequested": 0
+      },
+      "topRefs": []
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 0,
+    "passRate": 0,
+    "aggregates": {
+      "tokens": {
+        "baseline": {
+          "n": 6,
+          "mean": 269,
+          "median": 269,
+          "p95": 269
+        },
+        "refs": {
+          "n": 6,
+          "mean": 268,
+          "median": 268,
+          "p95": 268
+        },
+        "expanded": {
+          "n": 6,
+          "mean": 45,
+          "median": 45,
+          "p95": 45
+        }
+      },
+      "latencyMs": {
+        "baseline": {
+          "n": 6,
+          "mean": 4.833333333333333,
+          "median": 1,
+          "p95": 23
+        },
+        "refs": {
+          "n": 6,
+          "mean": 0.8333333333333334,
+          "median": 1,
+          "p95": 1
+        },
+        "expand": {
+          "n": 6,
+          "mean": 0,
+          "median": 0,
+          "p95": 0
+        },
+        "total": {
+          "n": 6,
+          "mean": 5.166666666666667,
+          "median": 1,
+          "p95": 24
+        }
+      },
+      "counts": {
+        "refsReturned": {
+          "n": 6,
+          "mean": 0,
+          "median": 0,
+          "p95": 0
+        },
+        "expandedRequested": {
+          "n": 6,
+          "mean": 0,
+          "median": 0,
+          "p95": 0
+        }
+      }
+    }
+  }
+}

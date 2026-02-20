@@ -1,0 +1,423 @@
+{
+  "generatedAt": "2026-02-02T02:48:43.322Z",
+  "groundTruth": {
+    "description": "Ground-truth queries for validating reference-first memory retrieval (memory_search_refs + memory_expand).",
+    "version": 1
+  },
+  "defaults": {
+    "maxResults": 8,
+    "previewChars": 140,
+    "expand": {
+      "maxRefs": 2,
+      "defaultLines": 20,
+      "maxChars": 4000
+    }
+  },
+  "cases": [
+    {
+      "id": "whatsapp-connected",
+      "query": "WhatsApp gateway connected",
+      "expect": {
+        "anyContains": ["WhatsApp gateway connected", "WhatsApp gateway"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14454,
+          "tokens": 3614
+        },
+        "refs": {
+          "chars": 5404,
+          "tokens": 1351
+        },
+        "expanded": {
+          "chars": 11739,
+          "tokens": 2935
+        }
+      },
+      "latencyMs": {
+        "baseline": 3982,
+        "refs": 2402,
+        "expand": 20,
+        "total": 6404
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 17132,
+          "endLine": 17151,
+          "score": 0.3756224781274795,
+          "source": "memory",
+          "preview": "│ WhatsApp │ ON │ WARN │ linked · accounts 1 · gateway: Not linked (no WhatsApp Web session). │ └──────────┴─────────┴────────┴─────────────…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 17104,
+          "endLine": 17116,
+          "score": 0.3710983633995056,
+          "source": "memory",
+          "preview": "hf8xrT7DD8Gfety3cFp6q+C183P1VxXmq/hT/Y157gh2GP/O+beG28FTFb+Hj7q8qzlP1p/gf89oT7DD8mfdtC7eFpyp+Cx93f1Vxnqo/xf+Y155gh+HPvG9buC08VfFb+Lj7q4rzVP0…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 17104,
+          "endLine": 17115,
+          "score": 0.37057125270366664,
+          "source": "memory",
+          "preview": "hf8xrT7DD8Gfety3cFp6q+C183P1VxXmq/hT/Y157gh2GP/O+beG28FTFb+Hj7q8qzlP1p/gf89oT7DD8mfdtC7eFpyp+Cx93f1Vxnqo/xf+Y155gh+HPvG9buC08VfFb+Lj7q4rzVP0…"
+        }
+      ]
+    },
+    {
+      "id": "rlm-augment-hook",
+      "query": "rlm-augment",
+      "expect": {
+        "anyContains": ["rlm-augment", "memory_search:post", "memory_search_refs:post"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14768,
+          "tokens": 3692
+        },
+        "refs": {
+          "chars": 5360,
+          "tokens": 1340
+        },
+        "expanded": {
+          "chars": 7293,
+          "tokens": 1824
+        }
+      },
+      "latencyMs": {
+        "baseline": 2337,
+        "refs": 2273,
+        "expand": 17,
+        "total": 4626
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20026,
+          "endLine": 20065,
+          "score": 0.5986262857913971,
+          "source": "memory",
+          "preview": "Content-Transfer-Encoding: 8bit - Add 'tool' event type to InternalHookEventType - Modify memory_search tool to dispatch tool:memory_search:…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20331,
+          "endLine": 20388,
+          "score": 0.5742235243320465,
+          "source": "memory",
+          "preview": "**🤖 assistant** (2026-02-01T21:41:06) Excellent question! **Yes, absolutely** - and this is exactly what the RLM paper advocates for. ## Cu…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20375,
+          "endLine": 20427,
+          "score": 0.5704627573490142,
+          "source": "memory",
+          "preview": "2. Track which results you actually reference in your response 3. Expand only those ### Option 3: Smart Chunking Instead of 700-char fixed s…"
+        }
+      ]
+    },
+    {
+      "id": "token-optimization",
+      "query": "Return references first, lazy-load snippets",
+      "expect": {
+        "anyContains": ["references first", "lazy-load", "RLM"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 5765,
+          "tokens": 1442
+        },
+        "refs": {
+          "chars": 2238,
+          "tokens": 560
+        },
+        "expanded": {
+          "chars": 7378,
+          "tokens": 1845
+        }
+      },
+      "latencyMs": {
+        "baseline": 2343,
+        "refs": 2502,
+        "expand": 16,
+        "total": 4861
+      },
+      "counts": {
+        "refsReturned": 3,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 23416,
+          "endLine": 23460,
+          "score": 0.6188838839530945,
+          "source": "memory",
+          "preview": "Just… fewer chances for humans (and models) to be lazy. ## What’s Next There are still two obvious evolutions: 1. **Token efficiency** - Ret…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 23141,
+          "endLine": 23204,
+          "score": 0.5533955693244934,
+          "source": "memory",
+          "preview": "Then a second bundled hook listens: - `rlm-index-refresh` It’s debounced and rate-limited so it doesn’t melt your CPU. But the important par…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 23360,
+          "endLine": 23430,
+          "score": 0.5375986039638518,
+          "source": "memory",
+          "preview": "It also gives you a new kind of honesty: - 🔮 found via semantic - 🔍 found via RLM - 🧠 found via both No more pretending everything is “th…"
+        }
+      ]
+    },
+    {
+      "id": "chessrt",
+      "query": "ChessRT Phase 3 RTC engine",
+      "expect": {
+        "anyContains": ["ChessRT", "Phase 3", "RTC"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 14684,
+          "tokens": 3671
+        },
+        "refs": {
+          "chars": 5478,
+          "tokens": 1370
+        },
+        "expanded": {
+          "chars": 7176,
+          "tokens": 1794
+        }
+      },
+      "latencyMs": {
+        "baseline": 2452,
+        "refs": 2500,
+        "expand": 56,
+        "total": 5008
+      },
+      "counts": {
+        "refsReturned": 8,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 35833,
+          "endLine": 35857,
+          "score": 0.7220630437135696,
+          "source": "memory",
+          "preview": "| **ChessRT Chess Core** | Built chess core engine with move validation, FEN parsing, clocks, full test suite | | **Project Structure** | `c…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 35808,
+          "endLine": 35835,
+          "score": 0.718107783794403,
+          "source": "memory",
+          "preview": "- It was part of Phase 2 work alongside UI polish, clock display, and game-over modals --- **Summary:** PGN format was implemented in ChessR…"
+        },
+        {
+          "path": "memory/transcripts/2026-02-01.md",
+          "startLine": 20454,
+          "endLine": 20461,
+          "score": 0.7065816730260849,
+          "source": "memory",
+          "preview": "\"snippet\": \"| **ChessRT Chess Core** | Built chess core engine with move validation, FEN parsing, clocks, full test suite |\\n| **Project Str…"
+        }
+      ]
+    },
+    {
+      "id": "analysis-queue",
+      "query": "queue analysis job",
+      "expect": {
+        "anyContains": ["Queue analysis job", "analysis", "queued"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 2012,
+          "tokens": 503
+        },
+        "refs": {
+          "chars": 914,
+          "tokens": 229
+        },
+        "expanded": {
+          "chars": 3776,
+          "tokens": 944
+        }
+      },
+      "latencyMs": {
+        "baseline": 2391,
+        "refs": 2215,
+        "expand": 18,
+        "total": 4623
+      },
+      "counts": {
+        "refsReturned": 1,
+        "expandedRequested": 1
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 35707,
+          "endLine": 35734,
+          "score": 0.37728368937969203,
+          "source": "memory",
+          "preview": "Found **9 matches** across sessions from 2026-01-31. The results show various types of analysis mentioned in context: | Topic | Context | |-…"
+        }
+      ]
+    },
+    {
+      "id": "glicko",
+      "query": "Glicko-2",
+      "expect": {
+        "anyContains": ["Glicko", "Glicko-2"],
+        "pathsLike": ["memory/transcripts/"]
+      },
+      "ok": true,
+      "sizes": {
+        "baseline": {
+          "chars": 13062,
+          "tokens": 3266
+        },
+        "refs": {
+          "chars": 4760,
+          "tokens": 1190
+        },
+        "expanded": {
+          "chars": 7001,
+          "tokens": 1751
+        }
+      },
+      "latencyMs": {
+        "baseline": 2637,
+        "refs": 2387,
+        "expand": 39,
+        "total": 5063
+      },
+      "counts": {
+        "refsReturned": 7,
+        "expandedRequested": 2
+      },
+      "topRefs": [
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 15089,
+          "endLine": 15133,
+          "score": 0.6179297149181366,
+          "source": "memory",
+          "preview": "Enhanced matching available: YES Content length: 470 chars Glicko matched: True Terms: ['glicko', 'rating', 'chess'] **🤖 assistant** (2026-…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 28862,
+          "endLine": 28906,
+          "score": 0.5617466866970062,
+          "source": "memory",
+          "preview": "[Queued announce messages while agent was busy] [Queue overflow] Dropped 1 announce due to cap. Summary: - batch1-008 --- Queued #1 A backgr…"
+        },
+        {
+          "path": "memory/transcripts/2026-01-31.md",
+          "startLine": 49211,
+          "endLine": 49264,
+          "score": 0.5564026892185211,
+          "source": "memory",
+          "preview": "## Enhanced Matching (v2.0) The skill uses four matching strategies that combine for 99.8% accuracy: ### 1. Substring Matching Query word co…"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "passRate": 1,
+    "aggregates": {
+      "tokens": {
+        "baseline": {
+          "n": 6,
+          "mean": 2698,
+          "median": 3440,
+          "p95": 3692
+        },
+        "refs": {
+          "n": 6,
+          "mean": 1006.6666666666666,
+          "median": 1265,
+          "p95": 1370
+        },
+        "expanded": {
+          "n": 6,
+          "mean": 1848.8333333333333,
+          "median": 1809,
+          "p95": 2935
+        }
+      },
+      "latencyMs": {
+        "baseline": {
+          "n": 6,
+          "mean": 2690.3333333333335,
+          "median": 2421.5,
+          "p95": 3982
+        },
+        "refs": {
+          "n": 6,
+          "mean": 2379.8333333333335,
+          "median": 2394.5,
+          "p95": 2502
+        },
+        "expand": {
+          "n": 6,
+          "mean": 27.666666666666668,
+          "median": 19,
+          "p95": 56
+        },
+        "total": {
+          "n": 6,
+          "mean": 5097.5,
+          "median": 4934.5,
+          "p95": 6404
+        }
+      },
+      "counts": {
+        "refsReturned": {
+          "n": 6,
+          "mean": 5.833333333333333,
+          "median": 7.5,
+          "p95": 8
+        },
+        "expandedRequested": {
+          "n": 6,
+          "mean": 1.8333333333333333,
+          "median": 2,
+          "p95": 2
+        }
+      }
+    }
+  }
+}

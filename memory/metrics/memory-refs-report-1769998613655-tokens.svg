@@ -1,0 +1,49 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='520' viewBox='0 0 1400 520'>
+<rect x='0' y='0' width='100%' height='100%' fill='#0b1220' />
+<text x='80' y='32' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='20' font-weight='600'>Token Cost: baseline vs refs-first vs expansion</text>
+<line x1='80' y1='60' x2='80' y2='380' stroke='#94a3b8' stroke-width='2' />
+<line x1='80' y1='380' x2='1360' y2='380' stroke='#94a3b8' stroke-width='2' />
+<text x='16' y='220.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='14' transform='rotate(-90 16 220.0)'>Approx tokens (chars/4)</text>
+<line x1='74' y1='380.0' x2='80' y2='380.0' stroke='#94a3b8' />
+<text x='70' y='384.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>0</text>
+<line x1='74' y1='316.0' x2='80' y2='316.0' stroke='#94a3b8' />
+<text x='70' y='320.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>812</text>
+<line x1='74' y1='252.0' x2='80' y2='252.0' stroke='#94a3b8' />
+<text x='70' y='256.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>1624</text>
+<line x1='74' y1='188.0' x2='80' y2='188.0' stroke='#94a3b8' />
+<text x='70' y='192.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>2436</text>
+<line x1='74' y1='124.00000000000003' x2='80' y2='124.00000000000003' stroke='#94a3b8' />
+<text x='70' y='128.00000000000003' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>3248</text>
+<line x1='74' y1='60.00000000000006' x2='80' y2='60.00000000000006' stroke='#94a3b8' />
+<text x='70' y='64.00000000000006' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>4061</text>
+<text x='186.66666666666669' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 186.66666666666669 402)'>whatsapp-connected</text>
+<rect x='106.66666666666667' y='95.23687580025609' width='42.66666666666667' height='284.7631241997439' fill='#60a5fa' />
+<rect x='160.0' y='273.5487048163105' width='42.66666666666667' height='106.45129518368952' fill='#a78bfa' />
+<rect x='213.33333333333334' y='148.73830394957156' width='42.66666666666667' height='231.26169605042844' fill='#34d399' />
+<text x='400.00000000000006' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 400.00000000000006 402)'>rlm-augment-hook</text>
+<rect x='320.00000000000006' y='89.09090909090912' width='42.66666666666667' height='290.9090909090909' fill='#60a5fa' />
+<rect x='373.33333333333337' y='274.41544371121836' width='42.66666666666667' height='105.58455628878164' fill='#a78bfa' />
+<rect x='426.66666666666674' y='236.27893233527038' width='42.66666666666667' height='143.72106766472962' fill='#34d399' />
+<text x='613.3333333333334' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 613.3333333333334 402)'>token-optimization</text>
+<rect x='533.3333333333334' y='266.37841032207234' width='42.66666666666667' height='113.62158967792766' fill='#60a5fa' />
+<rect x='586.6666666666667' y='335.8751108046883' width='42.66666666666667' height='44.12488919531171' fill='#a78bfa' />
+<rect x='640.0' y='234.62424899044618' width='42.66666666666667' height='145.37575100955382' fill='#34d399' />
+<text x='826.6666666666666' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 826.6666666666666 402)'>chessrt</text>
+<rect x='746.6666666666666' y='90.74559243573327' width='42.66666666666667' height='289.2544075642667' fill='#60a5fa' />
+<rect x='800.0' y='272.05161036146956' width='42.66666666666667' height='107.94838963853044' fill='#a78bfa' />
+<rect x='853.3333333333334' y='238.6427656850192' width='42.66666666666667' height='141.3572343149808' fill='#34d399' />
+<text x='1040.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1040.0 402)'>analysis-queue</text>
+<rect x='960.0' y='340.36639416921105' width='42.66666666666667' height='39.63360583078895' fill='#60a5fa' />
+<rect x='1013.3333333333334' y='361.9560720969172' width='42.66666666666667' height='18.043927903082817' fill='#a78bfa' />
+<rect x='1066.6666666666667' y='305.6180439279031' width='42.66666666666667' height='74.3819560720969' fill='#34d399' />
+<text x='1253.3333333333335' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1253.3333333333335 402)'>glicko</text>
+<rect x='1173.3333333333335' y='122.65734265734267' width='42.66666666666667' height='257.34265734265733' fill='#60a5fa' />
+<rect x='1226.6666666666667' y='286.2346104599626' width='42.66666666666667' height='93.7653895400374' fill='#a78bfa' />
+<rect x='1280.0' y='242.03092681965921' width='42.66666666666667' height='137.96907318034079' fill='#34d399' />
+<rect x='80' y='460' width='14' height='14' fill='#60a5fa' />
+<text x='100' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>baseline (memory_search)</text>
+<rect x='340' y='460' width='14' height='14' fill='#a78bfa' />
+<text x='360' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>refs (memory_search_refs)</text>
+<rect x='600' y='460' width='14' height='14' fill='#34d399' />
+<text x='620' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>expand(top2) (memory_expand)</text>
+</svg>

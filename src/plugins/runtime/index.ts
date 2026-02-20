@@ -1,6 +1,9 @@
 import { createRequire } from "node:module";
+import type { PluginRuntime } from "./types.js";
 import { resolveEffectiveMessagesConfig, resolveHumanDelayConfig } from "../../agents/identity.js";
+import { createMemoryExpandTool } from "../../agents/tools/memory-tool.expand.js";
 import { createMemoryGetTool, createMemorySearchTool } from "../../agents/tools/memory-tool.js";
+import { createMemorySearchRefsTool } from "../../agents/tools/memory-tool.refs.js";
 import { handleSlackAction } from "../../agents/tools/slack-actions.js";
 import {
   chunkByNewline,
@@ -138,7 +141,6 @@ import {
 } from "../../web/auth-store.js";
 import { loadWebMedia } from "../../web/media.js";
 import { formatNativeDependencyHint } from "./native-deps.js";
-import type { PluginRuntime } from "./types.js";
 
 let cachedVersion: string | null = null;
 
@@ -332,6 +334,13 @@ function createRuntimeChannel(): PluginRuntime["channel"] {
       recordSessionMetaFromInbound,
       recordInboundSession,
       updateLastRoute,
+    },
+    tools: {
+      createMemoryGetTool,
+      createMemorySearchTool,
+      createMemorySearchRefsTool,
+      createMemoryExpandTool,
+      registerMemoryCli,
     },
     mentions: {
       buildMentionRegexes,

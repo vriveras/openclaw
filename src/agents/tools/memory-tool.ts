@@ -1,13 +1,14 @@
 import { Type } from "@sinclair/typebox";
 import type { OpenClawConfig } from "../../config/config.js";
 import type { MemoryCitationsMode } from "../../config/types.memory.js";
+import type { MemorySearchResult } from "../../memory/types.js";
+import type { AnyAgentTool } from "./common.js";
+import { createInternalHookEvent, triggerInternalHook } from "../../hooks/internal-hooks.js";
 import { resolveMemoryBackendConfig } from "../../memory/backend-config.js";
 import { getMemorySearchManager } from "../../memory/index.js";
-import type { MemorySearchResult } from "../../memory/types.js";
 import { parseAgentSessionKey } from "../../routing/session-key.js";
 import { resolveSessionAgentId } from "../agent-scope.js";
 import { resolveMemorySearchConfig } from "../memory-search.js";
-import type { AnyAgentTool } from "./common.js";
 import { jsonResult, readNumberParam, readStringParam } from "./common.js";
 
 const MemorySearchSchema = Type.Object({
@@ -82,8 +83,29 @@ export function createMemorySearchTool(options: {
             ? clampResultsByInjectedChars(decorated, resolved.qmd?.limits.maxInjectedChars)
             : decorated;
         const searchMode = (status.custom as { searchMode?: string } | undefined)?.searchMode;
+
+        // Dispatch hook event to allow skills to augment results
+        const hookEvent = createInternalHookEvent(
+          "tool",
+          "memory_search:post",
+          options.agentSessionKey ?? "",
+          {
+            query,
+            results,
+            provider: status.provider,
+            model: status.model,
+            cfg,
+            agentId,
+          },
+        );
+        await triggerInternalHook(hookEvent);
+
+        // Check if hooks added augmented results
+        const augmentedResults = hookEvent.context.augmentedResults as typeof results | undefined;
+        const finalResults = augmentedResults ?? results;
+
         return jsonResult({
-          results,
+          results: finalResults,
           provider: status.provider,
           model: status.model,
           fallback: status.fallback,

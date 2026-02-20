@@ -1,0 +1,140 @@
+{
+  "description": "Ground-truth queries for validating reference-first memory retrieval (memory_search_refs + memory_expand). v2: expanded to 25 cases.",
+  "version": 2,
+  "defaults": {
+    "maxResults": 8,
+    "previewChars": 140,
+    "expand": {
+      "maxRefs": 2,
+      "defaultLines": 20,
+      "maxChars": 4000
+    }
+  },
+  "cases": [
+    {
+      "id": "whatsapp-connected",
+      "query": "WhatsApp gateway connected",
+      "expect": { "anyContains": ["WhatsApp gateway connected", "WhatsApp gateway"] }
+    },
+    {
+      "id": "rlm-augment-hook",
+      "query": "rlm-augment hook",
+      "expect": { "anyContains": ["rlm-augment", "memory_search:post", "hook"] }
+    },
+    {
+      "id": "token-optimization",
+      "query": "Return references first, lazy-load snippets",
+      "expect": { "anyContains": ["references first", "lazy", "RLM", "token"] }
+    },
+    {
+      "id": "chessrt-rtc",
+      "query": "ChessRT Phase 3 RTC engine",
+      "expect": { "anyContains": ["ChessRT", "Phase 3", "RTC"] }
+    },
+    {
+      "id": "analysis-queue",
+      "query": "queue analysis job in-process",
+      "expect": { "anyContains": ["analysis", "queue", "setImmediate"] }
+    },
+    {
+      "id": "glicko-rating",
+      "query": "Glicko-2 rating system",
+      "expect": { "anyContains": ["Glicko", "rating"] }
+    },
+    {
+      "id": "memory-search-refs-tool",
+      "query": "memory_search_refs tool",
+      "expect": { "anyContains": ["memory_search_refs", "refs", "tool"] }
+    },
+    {
+      "id": "memory-expand-tool",
+      "query": "memory_expand maxChars",
+      "expect": { "anyContains": ["memory_expand", "maxChars", "expand"] }
+    },
+    {
+      "id": "base64-blob-filter",
+      "query": "filter base64 binary previews",
+      "expect": { "anyContains": ["base64", "binary", "filter", "blob"] }
+    },
+    {
+      "id": "transcript-dump",
+      "query": "dump_transcript.py",
+      "expect": { "anyContains": ["dump_transcript", "transcript", "HEARTBEAT"] }
+    },
+    {
+      "id": "claude-code-skill",
+      "query": "claude-rlm-retrieval skill install",
+      "expect": { "anyContains": ["claude-rlm-retrieval", "skill", "install"] }
+    },
+    {
+      "id": "hook-event-post",
+      "query": "tool:memory_search:post event",
+      "expect": { "anyContains": ["memory_search:post", "hook", "event"] }
+    },
+    {
+      "id": "session-transcript-update",
+      "query": "session:transcript:update event",
+      "expect": { "anyContains": ["transcript:update", "session", "event"] }
+    },
+    {
+      "id": "openclaw-fork",
+      "query": "vriveras/openclaw fork branch",
+      "expect": { "anyContains": ["vriveras/openclaw", "fork", "feature/memory-search-hook"] }
+    },
+    {
+      "id": "blog-part1",
+      "query": "context-memory-journey blog post",
+      "expect": { "anyContains": ["context-memory-journey", "blog", "Part 1"] }
+    },
+    {
+      "id": "blog-part2",
+      "query": "deterministic-memory-hooks blog",
+      "expect": { "anyContains": ["deterministic-memory-hooks", "blog", "Part 2"] }
+    },
+    {
+      "id": "temporal-search",
+      "query": "temporal_search.py script",
+      "expect": { "anyContains": ["temporal_search", "script", "search"] }
+    },
+    {
+      "id": "index-sessions",
+      "query": "index-sessions.py agent-id",
+      "expect": { "anyContains": ["index-sessions", "agent", "index"] }
+    },
+    {
+      "id": "vitest-ci",
+      "query": "vitest run passWithNoTests CI",
+      "expect": { "anyContains": ["vitest", "CI", "passWithNoTests", "test:ci"] }
+    },
+    {
+      "id": "wlxc-container",
+      "query": "WLXC container runtime Windows",
+      "expect": { "anyContains": ["WLXC", "container", "Windows"] }
+    },
+    {
+      "id": "debounce-cooldown",
+      "query": "debounce 60s cooldown 5m reindex",
+      "expect": { "anyContains": ["debounce", "cooldown", "reindex"] }
+    },
+    {
+      "id": "hybrid-retrieval",
+      "query": "hybrid search semantic keyword",
+      "expect": { "anyContains": ["hybrid", "semantic", "keyword", "search"] }
+    },
+    {
+      "id": "accuracy-998",
+      "query": "99.8% accuracy 8457 tests",
+      "expect": { "anyContains": ["99.8", "accuracy", "tests"] }
+    },
+    {
+      "id": "option2-tools",
+      "query": "Option 2 new tools refs expand",
+      "expect": { "anyContains": ["Option 2", "refs", "expand", "tool"] }
+    },
+    {
+      "id": "ground-truth-suite",
+      "query": "ground truth test suite metrics",
+      "expect": { "anyContains": ["ground truth", "test", "metrics", "suite"] }
+    }
+  ]
+}

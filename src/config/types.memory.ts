@@ -8,6 +8,18 @@ export type MemoryConfig = {
   backend?: MemoryBackend;
   citations?: MemoryCitationsMode;
   qmd?: MemoryQmdConfig;
+  rlm?: MemoryRlmConfig;
+};
+
+export type MemoryRlmConfig = {
+  /** Enable/disable the RLM tools/hook integration without uninstalling the skill. */
+  enabled?: boolean;
+  /** Path to temporal_search.py relative to workspace (default: skills/rlm-retrieval/scripts/temporal_search.py). */
+  script?: string;
+  /** Default max results when not specified by the tool call. */
+  defaultMaxResults?: number;
+  /** Exec timeout for the RLM search script. */
+  timeoutMs?: number;
 };
 
 export type MemoryQmdConfig = {
