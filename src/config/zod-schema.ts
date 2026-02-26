@@ -111,6 +111,15 @@ const MemorySchema = z
     backend: z.union([z.literal("builtin"), z.literal("qmd")]).optional(),
     citations: z.union([z.literal("auto"), z.literal("on"), z.literal("off")]).optional(),
     qmd: MemoryQmdSchema.optional(),
+    rlm: z
+      .object({
+        enabled: z.boolean().optional(),
+        script: z.string().optional(),
+        defaultMaxResults: z.number().int().positive().optional(),
+        timeoutMs: z.number().int().positive().optional(),
+      })
+      .strict()
+      .optional(),
   })
   .strict()
   .optional();

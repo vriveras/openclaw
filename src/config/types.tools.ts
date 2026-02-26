@@ -407,6 +407,28 @@ export type MemorySearchConfig = {
         halfLifeDays?: number;
       };
     };
+
+    /** Experimental: bounded recursive refs-first retrieval. */
+    recursiveRefs?: {
+      /** Enable recursive multi-hop retrieval (default: false). */
+      enabled?: boolean;
+      /** Maximum hops including hop 0 (default: 1). */
+      maxHops?: number;
+      /** Max refs returned per hop before merging (default: 8). */
+      maxRefsPerHop?: number;
+      /** How many top refs to expand per hop (default: 2). */
+      expandTopK?: number;
+      /** Default lines to read per ref expansion (default: 20). */
+      defaultLines?: number;
+      /** Max chars returned per ref expansion (default: 8000). */
+      maxCharsPerRef?: number;
+      /** Global cap across all expansions (default: 12000). */
+      maxTotalExpandedChars?: number;
+      /** Max derived query terms per hop (default: 12). */
+      derivedQueryMaxTerms?: number;
+      /** Stop early when a hop produces no new refs (default: true). */
+      earlyStop?: boolean;
+    };
   };
   /** Index cache behavior. */
   cache?: {

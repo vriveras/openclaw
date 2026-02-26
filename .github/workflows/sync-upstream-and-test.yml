@@ -1,0 +1,205 @@
+name: Sync Upstream & Verify Clean Build
+
+on:
+  schedule:
+    # Run at 2 AM PST (10 AM UTC) every day
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  sync-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout fork
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/openclaw/openclaw.git || true
+          git fetch upstream main
+
+      # 1) Keep fork/main identical to upstream/main (clean base)
+      - name: Sync fork main to upstream/main
+        id: sync_main
+        run: |
+          git checkout main
+          git reset --hard upstream/main
+          git push --force-with-lease origin main
+
+      # 2) Rebase feature branch on top of clean main
+      - name: Rebase feature branch on main
+        id: rebase
+        continue-on-error: true
+        run: |
+          git checkout feature/memory-search-hook
+          git rebase main
+
+      - name: Check for conflicts
+        id: check_conflicts
+        if: steps.rebase.outcome == 'failure'
+        run: |
+          echo "conflict=true" >> $GITHUB_OUTPUT
+          git rebase --abort
+
+      - name: Create sync-failure issue (rebase conflict)
+        if: steps.check_conflicts.outputs.conflict == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '🚨 Upstream sync failed: rebase conflict';
+            const body = `## Conflict Alert
+
+Nightly sync detected merge conflicts while rebasing \`feature/memory-search-hook\` onto upstream \`main\`.
+
+**Next steps:**
+\`\`\`bash
+git fetch upstream main
+git checkout feature/memory-search-hook
+git rebase upstream/main
+# resolve conflicts
+git push --force-with-lease
+\`\`\`
+
+**Detected:** ${new Date().toISOString()}
+`;
+
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'sync-failure'
+            });
+
+            if (issues.data.length === 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['sync-failure', 'automated']
+              });
+            }
+
+      # 3) Verify build is clean (what we did locally today)
+      - name: Setup Node.js
+        if: steps.check_conflicts.outputs.conflict != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Enable pnpm via corepack
+        if: steps.check_conflicts.outputs.conflict != 'true'
+        run: |
+          corepack enable
+          pnpm --version
+
+      - name: Install dependencies (frozen lockfile)
+        id: deps
+        if: steps.check_conflicts.outputs.conflict != 'true'
+        continue-on-error: true
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        id: lint
+        if: steps.check_conflicts.outputs.conflict != 'true'
+        continue-on-error: true
+        run: pnpm lint
+
+      - name: Build
+        id: build
+        if: steps.check_conflicts.outputs.conflict != 'true'
+        continue-on-error: true
+        run: pnpm build
+
+      - name: Create sync-failure issue (lint/build/install failed)
+        if: steps.check_conflicts.outputs.conflict != 'true' && (steps.deps.outcome == 'failure' || steps.lint.outcome == 'failure' || steps.build.outcome == 'failure')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '🚨 Upstream sync failed: clean build check failed';
+            const body = `## Build/Lint Failure
+
+Nightly sync completed rebase without conflicts, but the verification steps failed.
+
+**Results:**
+- deps: ${'${{ steps.deps.outcome }}'}
+- lint: ${'${{ steps.lint.outcome }}'}
+- build: ${'${{ steps.build.outcome }}'}
+
+**Branch:** feature/memory-search-hook
+**Detected:** ${new Date().toISOString()}
+
+Check the workflow run logs for details.`;
+
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'sync-failure'
+            });
+
+            if (issues.data.length === 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['sync-failure', 'automated']
+              });
+            }
+
+      - name: Push rebased feature branch
+        if: steps.check_conflicts.outputs.conflict != 'true' && (steps.deps.outcome != 'failure' && steps.lint.outcome != 'failure' && steps.build.outcome != 'failure')
+        run: |
+          git push --force-with-lease origin feature/memory-search-hook
+
+      - name: Close resolved sync-failure issues
+        if: steps.check_conflicts.outputs.conflict != 'true' && (steps.deps.outcome != 'failure' && steps.lint.outcome != 'failure' && steps.build.outcome != 'failure')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'sync-failure'
+            });
+
+            for (const issue of issues.data) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: '✅ Sync is clean again (main synced + branch rebased + lint/build passed).'
+              });
+
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              });
+            }
+
+      - name: Summary
+        if: steps.check_conflicts.outputs.conflict != 'true'
+        run: |
+          echo "✅ main synced to upstream/main"
+          echo "✅ feature/memory-search-hook rebased"
+          echo "deps:  ${{ steps.deps.outcome }}"
+          echo "lint:  ${{ steps.lint.outcome }}"
+          echo "build: ${{ steps.build.outcome }}"
+          git log --oneline -5

@@ -655,6 +655,20 @@ export const MemorySearchSchema = z
           })
           .strict()
           .optional(),
+        recursiveRefs: z
+          .object({
+            enabled: z.boolean().optional(),
+            maxHops: z.number().int().positive().optional(),
+            maxRefsPerHop: z.number().int().positive().optional(),
+            expandTopK: z.number().int().nonnegative().optional(),
+            defaultLines: z.number().int().positive().optional(),
+            maxCharsPerRef: z.number().int().positive().optional(),
+            maxTotalExpandedChars: z.number().int().positive().optional(),
+            derivedQueryMaxTerms: z.number().int().nonnegative().optional(),
+            earlyStop: z.boolean().optional(),
+          })
+          .strict()
+          .optional(),
       })
       .strict()
       .optional(),

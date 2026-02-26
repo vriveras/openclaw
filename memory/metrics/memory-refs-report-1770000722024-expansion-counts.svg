@@ -1,0 +1,98 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='520' viewBox='0 0 1400 520'>
+<rect x='0' y='0' width='100%' height='100%' fill='#0b1220' />
+<text x='80' y='32' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='20' font-weight='600'>Retrieval: refs returned vs expanded</text>
+<line x1='80' y1='60' x2='80' y2='380' stroke='#94a3b8' stroke-width='2' />
+<line x1='80' y1='380' x2='1360' y2='380' stroke='#94a3b8' stroke-width='2' />
+<text x='16' y='220.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='14' transform='rotate(-90 16 220.0)'>Count</text>
+<line x1='74' y1='380.0' x2='80' y2='380.0' stroke='#94a3b8' />
+<text x='70' y='384.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>0</text>
+<line x1='74' y1='316.0' x2='80' y2='316.0' stroke='#94a3b8' />
+<text x='70' y='320.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>1</text>
+<line x1='74' y1='252.0' x2='80' y2='252.0' stroke='#94a3b8' />
+<text x='70' y='256.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>3</text>
+<line x1='74' y1='188.0' x2='80' y2='188.0' stroke='#94a3b8' />
+<text x='70' y='192.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>5</text>
+<line x1='74' y1='124.0' x2='80' y2='124.0' stroke='#94a3b8' />
+<text x='70' y='128.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>7</text>
+<line x1='74' y1='60.0' x2='80' y2='60.0' stroke='#94a3b8' />
+<text x='70' y='64.0' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='end'>8</text>
+<text x='105.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 105.6 402)'>whatsapp-connected</text>
+<rect x='88.53333333333333' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='105.6' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='156.79999999999998' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 156.79999999999998 402)'>rlm-augment-hook</text>
+<rect x='139.73333333333332' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='156.79999999999998' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='208.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 208.0 402)'>token-optimization</text>
+<rect x='190.93333333333334' y='270.90909090909093' width='13.653333333333334' height='109.09090909090907' fill='#93c5fd' />
+<rect x='208.0' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='259.20000000000005' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 259.20000000000005 402)'>chessrt-rtc</text>
+<rect x='242.13333333333335' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='259.20000000000005' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='310.40000000000003' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 310.40000000000003 402)'>analysis-queue</text>
+<rect x='293.33333333333337' y='343.6363636363636' width='13.653333333333334' height='36.363636363636374' fill='#93c5fd' />
+<rect x='310.40000000000003' y='343.6363636363636' width='13.653333333333334' height='36.363636363636374' fill='#fbbf24' />
+<text x='361.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 361.6 402)'>glicko-rating</text>
+<rect x='344.53333333333336' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='361.6' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='412.80000000000007' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 412.80000000000007 402)'>memory-search-refs-tool</text>
+<rect x='395.7333333333334' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='412.80000000000007' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='464.00000000000006' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 464.00000000000006 402)'>memory-expand-tool</text>
+<rect x='446.9333333333334' y='380.0' width='13.653333333333334' height='0.0' fill='#93c5fd' />
+<rect x='464.00000000000006' y='380.0' width='13.653333333333334' height='0.0' fill='#fbbf24' />
+<text x='515.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 515.2 402)'>base64-blob-filter</text>
+<rect x='498.1333333333334' y='380.0' width='13.653333333333334' height='0.0' fill='#93c5fd' />
+<rect x='515.2' y='380.0' width='13.653333333333334' height='0.0' fill='#fbbf24' />
+<text x='566.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 566.4 402)'>transcript-dump</text>
+<rect x='549.3333333333333' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='566.4' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='617.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 617.6 402)'>claude-code-skill</text>
+<rect x='600.5333333333333' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='617.6' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='668.8000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 668.8000000000001 402)'>hook-event-post</text>
+<rect x='651.7333333333333' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='668.8000000000001' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='720.0000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 720.0000000000001 402)'>session-transcript-update</text>
+<rect x='702.9333333333334' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='720.0000000000001' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='771.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 771.2 402)'>openclaw-fork</text>
+<rect x='754.1333333333333' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='771.2' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='822.4000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 822.4000000000001 402)'>blog-part1</text>
+<rect x='805.3333333333334' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='822.4000000000001' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='873.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 873.6 402)'>blog-part2</text>
+<rect x='856.5333333333333' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='873.6' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='924.8000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 924.8000000000001 402)'>temporal-search</text>
+<rect x='907.7333333333333' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='924.8000000000001' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='976.0000000000001' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 976.0000000000001 402)'>index-sessions</text>
+<rect x='958.9333333333334' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='976.0000000000001' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='1027.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1027.2 402)'>vitest-ci</text>
+<rect x='1010.1333333333333' y='380.0' width='13.653333333333334' height='0.0' fill='#93c5fd' />
+<rect x='1027.2' y='380.0' width='13.653333333333334' height='0.0' fill='#fbbf24' />
+<text x='1078.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1078.4 402)'>wlxc-container</text>
+<rect x='1061.3333333333335' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='1078.4' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='1129.6' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1129.6 402)'>debounce-cooldown</text>
+<rect x='1112.5333333333333' y='380.0' width='13.653333333333334' height='0.0' fill='#93c5fd' />
+<rect x='1129.6' y='380.0' width='13.653333333333334' height='0.0' fill='#fbbf24' />
+<text x='1180.8' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1180.8 402)'>hybrid-retrieval</text>
+<rect x='1163.7333333333333' y='89.09090909090912' width='13.653333333333334' height='290.9090909090909' fill='#93c5fd' />
+<rect x='1180.8' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<text x='1232.0' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1232.0 402)'>accuracy-998</text>
+<rect x='1214.9333333333334' y='343.6363636363636' width='13.653333333333334' height='36.363636363636374' fill='#93c5fd' />
+<rect x='1232.0' y='343.6363636363636' width='13.653333333333334' height='36.363636363636374' fill='#fbbf24' />
+<text x='1283.2' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1283.2 402)'>option2-tools</text>
+<rect x='1266.1333333333334' y='380.0' width='13.653333333333334' height='0.0' fill='#93c5fd' />
+<rect x='1283.2' y='380.0' width='13.653333333333334' height='0.0' fill='#fbbf24' />
+<text x='1334.4' y='402' fill='#cbd5e1' font-family='ui-sans-serif,system-ui' font-size='12' text-anchor='middle' transform='rotate(35 1334.4 402)'>ground-truth-suite</text>
+<rect x='1317.3333333333335' y='234.54545454545456' width='13.653333333333334' height='145.45454545454544' fill='#93c5fd' />
+<rect x='1334.4' y='307.27272727272725' width='13.653333333333334' height='72.72727272727275' fill='#fbbf24' />
+<rect x='80' y='460' width='14' height='14' fill='#93c5fd' />
+<text x='100' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>refs returned</text>
+<rect x='340' y='460' width='14' height='14' fill='#fbbf24' />
+<text x='360' y='472' fill='#e5e7eb' font-family='ui-sans-serif,system-ui' font-size='13'>refs expanded</text>
+</svg>

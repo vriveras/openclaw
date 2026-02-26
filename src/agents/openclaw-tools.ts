@@ -13,6 +13,9 @@ import { createGatewayTool } from "./tools/gateway-tool.js";
 import { createImageTool } from "./tools/image-tool.js";
 import { createMessageTool } from "./tools/message-tool.js";
 import { createNodesTool } from "./tools/nodes-tool.js";
+import { createRlmContextSearchTool } from "./tools/rlm-context-search-tool.js";
+import { createRlmExpandTool, createRlmGetTool } from "./tools/rlm-expand-tool.js";
+import { createRlmSearchRefsTool, createRlmSearchTool } from "./tools/rlm-search-tool.js";
 import { createSessionStatusTool } from "./tools/session-status-tool.js";
 import { createSessionsHistoryTool } from "./tools/sessions-history-tool.js";
 import { createSessionsListTool } from "./tools/sessions-list-tool.js";
@@ -118,6 +121,33 @@ export function createOpenClawTools(options?: {
       agentSessionKey: options?.agentSessionKey,
       config: options?.config,
     }),
+    ...(createRlmSearchTool({
+      agentSessionKey: options?.agentSessionKey,
+      config: options?.config,
+    })
+      ? [
+          createRlmContextSearchTool({
+            agentSessionKey: options?.agentSessionKey,
+            config: options?.config,
+          })!,
+          createRlmSearchTool({
+            agentSessionKey: options?.agentSessionKey,
+            config: options?.config,
+          })!,
+          createRlmSearchRefsTool({
+            agentSessionKey: options?.agentSessionKey,
+            config: options?.config,
+          })!,
+          createRlmGetTool({
+            agentSessionKey: options?.agentSessionKey,
+            config: options?.config,
+          })!,
+          createRlmExpandTool({
+            agentSessionKey: options?.agentSessionKey,
+            config: options?.config,
+          })!,
+        ]
+      : []),
     createCronTool({
       agentSessionKey: options?.agentSessionKey,
     }),
