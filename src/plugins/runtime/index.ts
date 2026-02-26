@@ -1,8 +1,11 @@
 import { createRequire } from "node:module";
 import { resolveEffectiveMessagesConfig, resolveHumanDelayConfig } from "../../agents/identity.js";
-import { createMemoryExpandTool } from "../../agents/tools/memory-tool.expand.js";
-import { createMemoryGetTool, createMemorySearchTool } from "../../agents/tools/memory-tool.js";
-import { createMemorySearchRefsTool } from "../../agents/tools/memory-tool.refs.js";
+import {
+  createMemoryGetTool,
+  createMemorySearchTool,
+  createMemorySearchRefsTool,
+  createMemoryExpandTool,
+} from "../../agents/tools/memory-tool.js";
 import { handleSlackAction } from "../../agents/tools/slack-actions.js";
 import {
   chunkByNewline,

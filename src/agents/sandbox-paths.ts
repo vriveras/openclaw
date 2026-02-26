@@ -1,18 +1,26 @@
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, URL } from "node:url";
+import { assertNoHardlinkedFinalPath } from "../infra/hardlink-guards.js";
+import { isNotFoundPathError, isPathInside } from "../infra/path-guards.js";
+import { resolvePreferredOpenClawTmpDir } from "../infra/tmp-openclaw-dir.js";
 
 const UNICODE_SPACES = /[\u00A0\u2000-\u200A\u202F\u205F\u3000]/g;
 const HTTP_URL_RE = /^https?:\/\//i;
 const DATA_URL_RE = /^data:/i;
+const SANDBOX_CONTAINER_WORKDIR = "/workspace";
 
 function normalizeUnicodeSpaces(str: string): string {
   return str.replace(UNICODE_SPACES, " ");
 }
 
+function normalizeAtPrefix(filePath: string): string {
+  return filePath.startsWith("@") ? filePath.slice(1) : filePath;
+}
+
 function expandPath(filePath: string): string {
-  const normalized = normalizeUnicodeSpaces(filePath);
+  const normalized = normalizeUnicodeSpaces(normalizeAtPrefix(filePath));
   if (normalized === "~") {
     return os.homedir();
   }
@@ -55,10 +63,17 @@ export async function assertSandboxPath(params: {
   cwd: string;
   root: string;
   allowFinalSymlink?: boolean;
+  allowFinalHardlink?: boolean;
 }) {
   const resolved = resolveSandboxPath(params);
   await assertNoSymlinkEscape(resolved.relative, path.resolve(params.root), {
     allowFinalSymlink: params.allowFinalSymlink,
+  });
+  await assertNoHardlinkedFinalPath({
+    filePath: resolved.resolved,
+    root: path.resolve(params.root),
+    boundaryLabel: "sandbox root",
+    allowFinalHardlink: params.allowFinalHardlink,
   });
   return resolved;
 }
@@ -83,18 +98,116 @@ export async function resolveSandboxedMediaSource(params: {
   }
   let candidate = raw;
   if (/^file:\/\//i.test(candidate)) {
-    try {
-      candidate = fileURLToPath(candidate);
-    } catch {
-      throw new Error(`Invalid file:// URL for sandboxed media: ${raw}`);
+    const workspaceMappedFromUrl = mapContainerWorkspaceFileUrl({
+      fileUrl: candidate,
+      sandboxRoot: params.sandboxRoot,
+    });
+    if (workspaceMappedFromUrl) {
+      candidate = workspaceMappedFromUrl;
+    } else {
+      try {
+        candidate = fileURLToPath(candidate);
+      } catch {
+        throw new Error(`Invalid file:// URL for sandboxed media: ${raw}`);
+      }
     }
   }
-  const resolved = await assertSandboxPath({
+  const containerWorkspaceMapped = mapContainerWorkspacePath({
+    candidate,
+    sandboxRoot: params.sandboxRoot,
+  });
+  if (containerWorkspaceMapped) {
+    candidate = containerWorkspaceMapped;
+  }
+  const tmpMediaPath = await resolveAllowedTmpMediaPath({
+    candidate,
+    sandboxRoot: params.sandboxRoot,
+  });
+  if (tmpMediaPath) {
+    return tmpMediaPath;
+  }
+  const sandboxResult = await assertSandboxPath({
     filePath: candidate,
     cwd: params.sandboxRoot,
     root: params.sandboxRoot,
   });
-  return resolved.resolved;
+  return sandboxResult.resolved;
+}
+
+function mapContainerWorkspaceFileUrl(params: {
+  fileUrl: string;
+  sandboxRoot: string;
+}): string | undefined {
+  let parsed: URL;
+  try {
+    parsed = new URL(params.fileUrl);
+  } catch {
+    return undefined;
+  }
+  if (parsed.protocol !== "file:") {
+    return undefined;
+  }
+  // Sandbox paths are Linux-style (/workspace/*). Parse the URL path directly so
+  // Windows hosts can still accept file:///workspace/... media references.
+  const normalizedPathname = decodeURIComponent(parsed.pathname).replace(/\\/g, "/");
+  if (
+    normalizedPathname !== SANDBOX_CONTAINER_WORKDIR &&
+    !normalizedPathname.startsWith(`${SANDBOX_CONTAINER_WORKDIR}/`)
+  ) {
+    return undefined;
+  }
+  return mapContainerWorkspacePath({
+    candidate: normalizedPathname,
+    sandboxRoot: params.sandboxRoot,
+  });
+}
+
+function mapContainerWorkspacePath(params: {
+  candidate: string;
+  sandboxRoot: string;
+}): string | undefined {
+  const normalized = params.candidate.replace(/\\/g, "/");
+  if (normalized === SANDBOX_CONTAINER_WORKDIR) {
+    return path.resolve(params.sandboxRoot);
+  }
+  const prefix = `${SANDBOX_CONTAINER_WORKDIR}/`;
+  if (!normalized.startsWith(prefix)) {
+    return undefined;
+  }
+  const rel = normalized.slice(prefix.length);
+  if (!rel) {
+    return path.resolve(params.sandboxRoot);
+  }
+  return path.resolve(params.sandboxRoot, ...rel.split("/").filter(Boolean));
+}
+
+async function resolveAllowedTmpMediaPath(params: {
+  candidate: string;
+  sandboxRoot: string;
+}): Promise<string | undefined> {
+  const candidateIsAbsolute = path.isAbsolute(expandPath(params.candidate));
+  if (!candidateIsAbsolute) {
+    return undefined;
+  }
+  const resolved = path.resolve(resolveSandboxInputPath(params.candidate, params.sandboxRoot));
+  const openClawTmpDir = path.resolve(resolvePreferredOpenClawTmpDir());
+  if (!isPathInside(openClawTmpDir, resolved)) {
+    return undefined;
+  }
+  await assertNoTmpAliasEscape({ filePath: resolved, tmpRoot: openClawTmpDir });
+  return resolved;
+}
+
+async function assertNoTmpAliasEscape(params: {
+  filePath: string;
+  tmpRoot: string;
+}): Promise<void> {
+  await assertNoSymlinkEscape(path.relative(params.tmpRoot, params.filePath), params.tmpRoot);
+  await assertNoHardlinkedFinalPath({
+    filePath: params.filePath,
+    root: params.tmpRoot,
+    boundaryLabel: "tmp root",
+  });
 }
 
 async function assertNoSymlinkEscape(
@@ -129,8 +242,7 @@ async function assertNoSymlinkEscape(
         current = target;
       }
     } catch (err) {
-      const anyErr = err as { code?: string };
-      if (anyErr.code === "ENOENT") {
+      if (isNotFoundPathError(err)) {
         return;
       }
       throw err;
@@ -144,14 +256,6 @@ async function tryRealpath(value: string): Promise<string> {
   } catch {
     return path.resolve(value);
   }
-}
-
-function isPathInside(root: string, target: string): boolean {
-  const relative = path.relative(root, target);
-  if (!relative || relative === "") {
-    return true;
-  }
-  return !(relative.startsWith("..") || path.isAbsolute(relative));
 }
 
 function shortPath(value: string) {

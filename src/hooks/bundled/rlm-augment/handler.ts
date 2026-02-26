@@ -8,7 +8,7 @@ import { exec } from "node:child_process";
 import * as path from "node:path";
 import { promisify } from "node:util";
 import type { OpenClawConfig } from "../../../config/config.js";
-import type { MemorySearchResult } from "../../../memory/manager.js";
+import type { MemorySearchResult } from "../../../memory/types.js";
 import type { InternalHookHandler } from "../../internal-hooks.js";
 import { resolveAgentWorkspaceDir } from "../../../agents/agent-scope.js";
 

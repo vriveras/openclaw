@@ -3,7 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import type { SessionEntry } from "./types.js";
 import { emitSessionTranscriptUpdate } from "../../sessions/transcript-events.js";
-import { resolveDefaultSessionStorePath, resolveSessionFilePath } from "./paths.js";
+import { resolveDefaultSessionStorePath } from "./paths.js";
+import { resolveAndPersistSessionFile } from "./session-file.js";
 import { loadSessionStore, updateSessionStore } from "./store.js";
 
 function stripQuery(value: string): string {
@@ -108,10 +109,16 @@ export async function appendAssistantMessageToSessionTranscript(params: {
 
   let sessionFile: string;
   try {
-    sessionFile = resolveSessionFilePath(entry.sessionId, entry, {
+    const resolvedSessionFile = await resolveAndPersistSessionFile({
+      sessionId: entry.sessionId,
+      sessionKey,
+      sessionStore: store,
+      storePath,
+      sessionEntry: entry,
       agentId: params.agentId,
       sessionsDir: path.dirname(storePath),
     });
+    sessionFile = resolvedSessionFile.sessionFile;
   } catch (err) {
     return {
       ok: false,
