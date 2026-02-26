@@ -8,6 +8,7 @@ import {
   resolvePairingPaths,
   writeJsonAtomic,
 } from "./pairing-files.js";
+import { rejectPendingPairingRequest } from "./pairing-pending.js";
 import { generatePairingToken, verifyPairingToken } from "./pairing-token.js";
 
 export type DevicePairingPendingRequest = {
@@ -56,6 +57,7 @@ export type PairedDevice = {
   role?: string;
   roles?: string[];
   scopes?: string[];
+  approvedScopes?: string[];
   remoteIp?: string;
   tokens?: Record<string, DeviceAuthToken>;
   createdAtMs: number;
@@ -176,6 +178,44 @@ function mergePendingDevicePairingRequest(
   };
 }
 
+function scopesAllow(requested: string[], allowed: string[]): boolean {
+  if (requested.length === 0) {
+    return true;
+  }
+  if (allowed.length === 0) {
+    return false;
+  }
+  const allowedSet = new Set(allowed);
+  return requested.every((scope) => allowedSet.has(scope));
+}
+
+const DEVICE_SCOPE_IMPLICATIONS: Readonly<Record<string, readonly string[]>> = {
+  "operator.admin": ["operator.read", "operator.write", "operator.approvals", "operator.pairing"],
+  "operator.write": ["operator.read"],
+};
+
+function expandScopeImplications(scopes: string[]): string[] {
+  const expanded = new Set(scopes);
+  const queue = [...scopes];
+  while (queue.length > 0) {
+    const scope = queue.pop();
+    if (!scope) {
+      continue;
+    }
+    for (const impliedScope of DEVICE_SCOPE_IMPLICATIONS[scope] ?? []) {
+      if (!expanded.has(impliedScope)) {
+        expanded.add(impliedScope);
+        queue.push(impliedScope);
+      }
+    }
+  }
+  return [...expanded];
+}
+
+function scopesAllowWithImplications(requested: string[], allowed: string[]): boolean {
+  return scopesAllow(expandScopeImplications(requested), expandScopeImplications(allowed));
+}
+
 function newToken() {
   return generatePairingToken();
 }
@@ -286,12 +326,24 @@ export async function approveDevicePairing(
     const now = Date.now();
     const existing = state.pairedByDeviceId[pending.deviceId];
     const roles = mergeRoles(existing?.roles, existing?.role, pending.roles, pending.role);
-    const scopes = mergeScopes(existing?.scopes, pending.scopes);
+    const approvedScopes = mergeScopes(
+      existing?.approvedScopes ?? existing?.scopes,
+      pending.scopes,
+    );
     const tokens = existing?.tokens ? { ...existing.tokens } : {};
     const roleForToken = normalizeRole(pending.role);
     if (roleForToken) {
-      const nextScopes = normalizeDeviceAuthScopes(pending.scopes);
       const existingToken = tokens[roleForToken];
+      const requestedScopes = normalizeDeviceAuthScopes(pending.scopes);
+      const nextScopes =
+        requestedScopes.length > 0
+          ? requestedScopes
+          : normalizeDeviceAuthScopes(
+              existingToken?.scopes ??
+                approvedScopes ??
+                existing?.approvedScopes ??
+                existing?.scopes,
+            );
       const now = Date.now();
       tokens[roleForToken] = {
         token: newToken(),
@@ -312,7 +364,8 @@ export async function approveDevicePairing(
       clientMode: pending.clientMode,
       role: pending.role,
       roles,
-      scopes,
+      scopes: approvedScopes,
+      approvedScopes,
       remoteIp: pending.remoteIp,
       tokens,
       createdAtMs: existing?.createdAtMs ?? now,
@@ -330,14 +383,17 @@ export async function rejectDevicePairing(
   baseDir?: string,
 ): Promise<{ requestId: string; deviceId: string } | null> {
   return await withLock(async () => {
-    const state = await loadState(baseDir);
-    const pending = state.pendingById[requestId];
-    if (!pending) {
-      return null;
-    }
-    delete state.pendingById[requestId];
-    await persistState(state, baseDir);
-    return { requestId, deviceId: pending.deviceId };
+    return await rejectPendingPairingRequest<
+      DevicePairingPendingRequest,
+      DevicePairingStateFile,
+      "deviceId"
+    >({
+      requestId,
+      idKey: "deviceId",
+      loadState: () => loadState(baseDir),
+      persistState: (state) => persistState(state, baseDir),
+      getId: (pending: DevicePairingPendingRequest) => pending.deviceId,
+    });
   });
 }
 
@@ -359,7 +415,9 @@ export async function removePairedDevice(
 
 export async function updatePairedDeviceMetadata(
   deviceId: string,
-  patch: Partial<Omit<PairedDevice, "deviceId" | "createdAtMs" | "approvedAtMs">>,
+  patch: Partial<
+    Omit<PairedDevice, "deviceId" | "createdAtMs" | "approvedAtMs" | "approvedScopes">
+  >,
   baseDir?: string,
 ): Promise<void> {
   return await withLock(async () => {
@@ -376,6 +434,7 @@ export async function updatePairedDeviceMetadata(
       deviceId: existing.deviceId,
       createdAtMs: existing.createdAtMs,
       approvedAtMs: existing.approvedAtMs,
+      approvedScopes: existing.approvedScopes,
       role: patch.role ?? existing.role,
       roles,
       scopes,
@@ -525,6 +584,12 @@ export async function rotateDeviceToken(params: {
     const requestedScopes = normalizeDeviceAuthScopes(
       params.scopes ?? existing?.scopes ?? device.scopes,
     );
+    const approvedScopes = normalizeDeviceAuthScopes(
+      device.approvedScopes ?? device.scopes ?? existing?.scopes,
+    );
+    if (!scopesAllowWithImplications(requestedScopes, approvedScopes)) {
+      return null;
+    }
     const now = Date.now();
     const next = buildDeviceAuthToken({
       role,
@@ -535,9 +600,6 @@ export async function rotateDeviceToken(params: {
     });
     tokens[role] = next;
     device.tokens = tokens;
-    if (params.scopes !== undefined) {
-      device.scopes = requestedScopes;
-    }
     state.pairedByDeviceId[device.deviceId] = device;
     await persistState(state, params.baseDir);
     return next;
@@ -569,5 +631,18 @@ export async function revokeDeviceToken(params: {
     state.pairedByDeviceId[device.deviceId] = device;
     await persistState(state, params.baseDir);
     return entry;
+  });
+}
+
+export async function clearDevicePairing(deviceId: string, baseDir?: string): Promise<boolean> {
+  return await withLock(async () => {
+    const state = await loadState(baseDir);
+    const normalizedId = normalizeDeviceId(deviceId);
+    if (!state.pairedByDeviceId[normalizedId]) {
+      return false;
+    }
+    delete state.pairedByDeviceId[normalizedId];
+    await persistState(state, baseDir);
+    return true;
   });
 }

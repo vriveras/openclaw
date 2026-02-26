@@ -260,6 +260,15 @@ async function resolvePatchPath(
       filePath,
       cwd: options.cwd,
     });
+    if (options.workspaceOnly !== false) {
+      await assertSandboxPath({
+        filePath: resolved.hostPath,
+        cwd: options.cwd,
+        root: options.cwd,
+        allowFinalSymlink: purpose === "unlink",
+        allowFinalHardlink: purpose === "unlink",
+      });
+    }
     return {
       resolved: resolved.hostPath,
       display: resolved.relativePath || resolved.hostPath,
@@ -274,6 +283,7 @@ async function resolvePatchPath(
           cwd: options.cwd,
           root: options.cwd,
           allowFinalSymlink: purpose === "unlink",
+          allowFinalHardlink: purpose === "unlink",
         })
       ).resolved
     : resolvePathFromCwd(filePath, options.cwd);

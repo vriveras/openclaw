@@ -15,8 +15,13 @@ import {
   clearHistoryEntriesIfEnabled,
   DEFAULT_GROUP_HISTORY_LIMIT,
   recordPendingHistoryEntryIfEnabled,
+  isDangerousNameMatchingEnabled,
   resolveControlCommandGate,
+  resolveDmGroupAccessWithLists,
+  resolveAllowlistProviderRuntimeGroupPolicy,
+  resolveDefaultGroupPolicy,
   resolveChannelMediaMaxBytes,
+  warnMissingProviderGroupPolicyFallbackOnce,
   type HistoryEntry,
 } from "openclaw/plugin-sdk";
 import { getMattermostRuntime } from "../runtime.js";
@@ -149,6 +154,7 @@ function isSenderAllowed(params: {
   senderId: string;
   senderName?: string;
   allowFrom: string[];
+  allowNameMatching?: boolean;
 }): boolean {
   const allowFrom = params.allowFrom;
   if (allowFrom.length === 0) {
@@ -159,10 +165,15 @@ function isSenderAllowed(params: {
   }
   const normalizedSenderId = normalizeAllowEntry(params.senderId);
   const normalizedSenderName = params.senderName ? normalizeAllowEntry(params.senderName) : "";
-  return allowFrom.some(
-    (entry) =>
-      entry === normalizedSenderId || (normalizedSenderName && entry === normalizedSenderName),
-  );
+  return allowFrom.some((entry) => {
+    if (entry === normalizedSenderId) {
+      return true;
+    }
+    if (params.allowNameMatching !== true) {
+      return false;
+    }
+    return normalizedSenderName ? entry === normalizedSenderName : false;
+  });
 }
 
 type MattermostMediaInfo = {
@@ -203,6 +214,7 @@ export async function monitorMattermostProvider(opts: MonitorMattermostOpts = {}
     cfg,
     accountId: opts.accountId,
   });
+  const allowNameMatching = isDangerousNameMatchingEnabled(account.config);
   const botToken = opts.botToken?.trim() || account.botToken?.trim();
   if (!botToken) {
     throw new Error(
@@ -242,6 +254,19 @@ export async function monitorMattermostProvider(opts: MonitorMattermostOpts = {}
     cfg.messages?.groupChat?.historyLimit ?? DEFAULT_GROUP_HISTORY_LIMIT,
   );
   const channelHistories = new Map<string, HistoryEntry[]>();
+  const defaultGroupPolicy = resolveDefaultGroupPolicy(cfg);
+  const { groupPolicy, providerMissingFallbackApplied } =
+    resolveAllowlistProviderRuntimeGroupPolicy({
+      providerConfigPresent: cfg.channels?.mattermost !== undefined,
+      groupPolicy: account.config.groupPolicy,
+      defaultGroupPolicy,
+    });
+  warnMissingProviderGroupPolicyFallbackOnce({
+    providerMissingFallbackApplied,
+    providerKey: "mattermost",
+    accountId: account.accountId,
+    log: (message) => logVerboseMessage(message),
+  });
 
   const fetchWithAuth: FetchLike = (input, init) => {
     const headers = new Headers(init?.headers);
@@ -375,12 +400,12 @@ export async function monitorMattermostProvider(opts: MonitorMattermostOpts = {}
       senderId;
     const rawText = post.message?.trim() || "";
     const dmPolicy = account.config.dmPolicy ?? "pairing";
-    const defaultGroupPolicy = cfg.channels?.defaults?.groupPolicy;
-    const groupPolicy = account.config.groupPolicy ?? defaultGroupPolicy ?? "allowlist";
     const configAllowFrom = normalizeAllowList(account.config.allowFrom ?? []);
     const configGroupAllowFrom = normalizeAllowList(account.config.groupAllowFrom ?? []);
     const storeAllowFrom = normalizeAllowList(
-      await core.channel.pairing.readAllowFromStore("mattermost").catch(() => []),
+      dmPolicy === "allowlist"
+        ? []
+        : await core.channel.pairing.readAllowFromStore("mattermost").catch(() => []),
     );
     const effectiveAllowFrom = Array.from(new Set([...configAllowFrom, ...storeAllowFrom]));
     const effectiveGroupAllowFrom = Array.from(
@@ -400,11 +425,13 @@ export async function monitorMattermostProvider(opts: MonitorMattermostOpts = {}
       senderId,
       senderName,
       allowFrom: effectiveAllowFrom,
+      allowNameMatching,
     });
     const groupAllowedForCommands = isSenderAllowed({
       senderId,
       senderName,
       allowFrom: effectiveGroupAllowFrom,
+      allowNameMatching,
     });
     const commandGate = resolveControlCommandGate({
       useAccessGroups,
@@ -742,6 +769,7 @@ export async function monitorMattermostProvider(opts: MonitorMattermostOpts = {}
       core.channel.reply.createReplyDispatcherWithTyping({
         ...prefixOptions,
         humanDelay: core.channel.reply.resolveHumanDelayConfig(cfg, route.agentId),
+        typingCallbacks,
         deliver: async (payload: ReplyPayload) => {
           const mediaUrls = payload.mediaUrls ?? (payload.mediaUrl ? [payload.mediaUrl] : []);
           const text = core.channel.text.convertMarkdownTables(payload.text ?? "", tableMode);
@@ -778,7 +806,6 @@ export async function monitorMattermostProvider(opts: MonitorMattermostOpts = {}
         onError: (err, info) => {
           runtime.error?.(`mattermost ${info.kind} reply failed: ${String(err)}`);
         },
-        onReplyStart: typingCallbacks.onReplyStart,
       });
 
     await core.channel.reply.dispatchReplyFromConfig({
@@ -857,63 +884,38 @@ export async function monitorMattermostProvider(opts: MonitorMattermostOpts = {}
     const kind = channelKind(channelInfo.type);
 
     // Enforce DM/group policy and allowlist checks (same as normal messages)
-    if (kind === "direct") {
-      const dmPolicy = account.config.dmPolicy ?? "pairing";
-      if (dmPolicy === "disabled") {
-        logVerboseMessage(`mattermost: drop reaction (dmPolicy=disabled sender=${userId})`);
-        return;
-      }
-      // For pairing/allowlist modes, only allow reactions from approved senders
-      if (dmPolicy !== "open") {
-        const configAllowFrom = normalizeAllowList(account.config.allowFrom ?? []);
-        const storeAllowFrom = normalizeAllowList(
-          await core.channel.pairing.readAllowFromStore("mattermost").catch(() => []),
-        );
-        const effectiveAllowFrom = Array.from(new Set([...configAllowFrom, ...storeAllowFrom]));
-        const allowed = isSenderAllowed({
+    const dmPolicy = account.config.dmPolicy ?? "pairing";
+    const storeAllowFrom = normalizeAllowList(
+      dmPolicy === "allowlist"
+        ? []
+        : await core.channel.pairing.readAllowFromStore("mattermost").catch(() => []),
+    );
+    const reactionAccess = resolveDmGroupAccessWithLists({
+      isGroup: kind !== "direct",
+      dmPolicy,
+      groupPolicy,
+      allowFrom: account.config.allowFrom,
+      groupAllowFrom: account.config.groupAllowFrom,
+      storeAllowFrom,
+      isSenderAllowed: (allowFrom) =>
+        isSenderAllowed({
           senderId: userId,
           senderName,
-          allowFrom: effectiveAllowFrom,
-        });
-        if (!allowed) {
-          logVerboseMessage(
-            `mattermost: drop reaction (dmPolicy=${dmPolicy} sender=${userId} not allowed)`,
-          );
-          return;
-        }
-      }
-    } else if (kind) {
-      const defaultGroupPolicy = cfg.channels?.defaults?.groupPolicy;
-      const groupPolicy = account.config.groupPolicy ?? defaultGroupPolicy ?? "allowlist";
-      if (groupPolicy === "disabled") {
-        logVerboseMessage(`mattermost: drop reaction (groupPolicy=disabled channel=${channelId})`);
-        return;
-      }
-      if (groupPolicy === "allowlist") {
-        const configAllowFrom = normalizeAllowList(account.config.allowFrom ?? []);
-        const configGroupAllowFrom = normalizeAllowList(account.config.groupAllowFrom ?? []);
-        const storeAllowFrom = normalizeAllowList(
-          await core.channel.pairing.readAllowFromStore("mattermost").catch(() => []),
+          allowFrom: normalizeAllowList(allowFrom),
+          allowNameMatching,
+        }),
+    });
+    if (reactionAccess.decision !== "allow") {
+      if (kind === "direct") {
+        logVerboseMessage(
+          `mattermost: drop reaction (dmPolicy=${dmPolicy} sender=${userId} reason=${reactionAccess.reason})`,
         );
-        const effectiveGroupAllowFrom = Array.from(
-          new Set([
-            ...(configGroupAllowFrom.length > 0 ? configGroupAllowFrom : configAllowFrom),
-            ...storeAllowFrom,
-          ]),
+      } else {
+        logVerboseMessage(
+          `mattermost: drop reaction (groupPolicy=${groupPolicy} sender=${userId} reason=${reactionAccess.reason} channel=${channelId})`,
         );
-        // Drop when allowlist is empty (same as normal message handler)
-        const allowed =
-          effectiveGroupAllowFrom.length > 0 &&
-          isSenderAllowed({
-            senderId: userId,
-            senderName,
-            allowFrom: effectiveGroupAllowFrom,
-          });
-        if (!allowed) {
-          logVerboseMessage(`mattermost: drop reaction (groupPolicy=allowlist sender=${userId})`);
-          return;
-        }
       }
+      return;
     }
 
     const teamId = channelInfo?.team_id ?? undefined;
