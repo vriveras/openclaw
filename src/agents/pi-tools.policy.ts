@@ -1,6 +1,7 @@
 import type { OpenClawConfig } from "../config/config.js";
 import type { AnyAgentTool } from "./pi-tools.types.js";
 import type { SandboxToolPolicy } from "./sandbox.js";
+import { DEFAULT_SUBAGENT_MAX_SPAWN_DEPTH } from "../config/agent-limits.js";
 import { getChannelDock } from "../channels/dock.js";
 import { resolveChannelGroupToolsPolicy } from "../config/group-policy.js";
 import { normalizeAgentId } from "../routing/session-key.js";

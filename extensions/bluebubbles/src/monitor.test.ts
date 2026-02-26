@@ -124,6 +124,10 @@ function createMockRuntime(): PluginRuntime {
       createMemoryGetTool: vi.fn() as unknown as PluginRuntime["tools"]["createMemoryGetTool"],
       createMemorySearchTool:
         vi.fn() as unknown as PluginRuntime["tools"]["createMemorySearchTool"],
+      createMemorySearchRefsTool:
+        vi.fn() as unknown as PluginRuntime["tools"]["createMemorySearchRefsTool"],
+      createMemoryExpandTool:
+        vi.fn() as unknown as PluginRuntime["tools"]["createMemoryExpandTool"],
       registerMemoryCli: vi.fn() as unknown as PluginRuntime["tools"]["registerMemoryCli"],
     },
     channel: {

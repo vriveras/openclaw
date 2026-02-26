@@ -85,9 +85,9 @@ type CreateMemoryGetTool = typeof import("../../agents/tools/memory-tool.js").cr
 type CreateMemorySearchTool =
   typeof import("../../agents/tools/memory-tool.js").createMemorySearchTool;
 type CreateMemorySearchRefsTool =
-  typeof import("../../agents/tools/memory-tool.refs.js").createMemorySearchRefsTool;
+  typeof import("../../agents/tools/memory-tool.js").createMemorySearchRefsTool;
 type CreateMemoryExpandTool =
-  typeof import("../../agents/tools/memory-tool.expand.js").createMemoryExpandTool;
+  typeof import("../../agents/tools/memory-tool.js").createMemoryExpandTool;
 type RegisterMemoryCli = typeof import("../../cli/memory-cli.js").registerMemoryCli;
 type DiscordMessageActions =
   typeof import("../../channels/plugins/actions/discord.js").discordMessageActions;

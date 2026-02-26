@@ -262,3 +262,7 @@ function deriveChatTypeFromSessionKey(sessionKey?: string): "direct" | "group" |
   }
   return "direct";
 }
+
+// Re-export RLM memory tools
+export { createMemorySearchRefsTool } from "./memory-tool.refs.js";
+export { createMemoryExpandTool } from "./memory-tool.expand.js";
